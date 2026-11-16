@@ -1,0 +1,1022 @@
+
+/* =========================================
+   LENSCRAFT TEAM — POSEIFY INSPIRED
+   Editorial / Split Reveal / Portrait Grid
+========================================= */
+
+.pt-section {
+  --pt-bg: #faf9f6;
+  --pt-ink: #29262e;
+  --pt-muted: #77717d;
+  --pt-accent: #8a6aa8;
+
+  position: relative;
+  padding: 110px 0 130px;
+  background: var(--pt-bg);
+  color: var(--pt-ink);
+  overflow-x: clip;
+}
+
+.pt-section *,
+.pt-section *::before,
+.pt-section *::after {
+  box-sizing: border-box;
+}
+
+.pt-container {
+  width: min(1370px, calc(100% - 60px));
+  margin: 0 auto;
+}
+
+/* =========================================
+   HEADING
+========================================= */
+
+.pt-heading {
+  max-width: 800px;
+  margin: 0 auto 75px;
+  text-align: center;
+}
+
+.pt-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--pt-accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.pt-heading h2 {
+  margin: 24px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(48px, 6vw, 86px);
+  line-height: 1.1;
+  letter-spacing: -2.5px;
+  font-weight: 500;
+}
+
+.pt-heading h2 em {
+  color: var(--pt-accent);
+  font-weight: 400;
+}
+
+.pt-heading p {
+  max-width: 570px;
+  margin: 0 auto;
+  color: var(--pt-muted);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.pt-heading-rule {
+  display: block;
+  width: 70px;
+  height: 1px;
+  margin: 32px auto 0;
+  background: #b7a0c8;
+}
+
+/* =========================================
+   GRID HEADING
+========================================= */
+
+.pt-grid-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 23px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #e2dce4;
+  color: #8d8291;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   FOUR-COLUMN PORTRAIT GRID
+========================================= */
+
+.pt-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.pt-card {
+  min-width: 0;
+}
+
+.pt-portrait {
+  position: relative;
+  height: 440px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #e5dde6;
+}
+
+.pt-portrait > img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  transition:
+    transform .8s cubic-bezier(.2,.7,.2,1),
+    filter .5s ease;
+}
+
+.pt-card:hover .pt-portrait > img,
+.pt-card:focus-within .pt-portrait > img {
+  transform: scale(1.07);
+  filter: brightness(.8);
+}
+
+.pt-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #927ba4;
+  background: linear-gradient(145deg, #eae1ed, #d5c5dc);
+}
+
+.pt-photo-shade {
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(
+    transparent,
+    rgba(14, 12, 17, .65)
+  );
+  pointer-events: none;
+}
+
+.pt-photo-index {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* =========================================
+   POSEIFY-STYLE SPLIT PANELS
+========================================= */
+
+.pt-split {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  bottom: 72px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 15px;
+  background: rgba(30, 25, 36, .94);
+  color: #fff;
+  transition:
+    transform .55s cubic-bezier(.22,1,.36,1);
+}
+
+.pt-split-left {
+  left: 0;
+  align-items: flex-end;
+  text-align: right;
+  transform: translateX(-102%);
+  border-right: 1px solid rgba(255,255,255,.14);
+}
+
+.pt-split-right {
+  right: 0;
+  align-items: flex-start;
+  text-align: left;
+  transform: translateX(102%);
+}
+
+.pt-card:hover .pt-split,
+.pt-card:focus-within .pt-split {
+  transform: translateX(0);
+}
+
+.pt-split-kicker {
+  display: block;
+  margin-bottom: 25px;
+  color: #cbb6da;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.pt-split-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  width: 100%;
+}
+
+.pt-detail-label {
+  color: #c0a7d3;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.pt-split-content strong {
+  max-width: 100%;
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.pt-hover-bio {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  line-clamp: 7;
+  overflow: hidden;
+  margin: 0;
+  color: #e3dce7;
+  font-size: 11px;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+.pt-hover-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.pt-hover-link {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  color: #33283d;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.pt-hover-link:hover {
+  background: #cdb4df;
+  color: #241b2c;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   NAME STRIP
+========================================= */
+
+.pt-name-strip {
+  position: absolute;
+  z-index: 5;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 20px;
+  background: rgba(23, 20, 27, .87);
+  backdrop-filter: blur(12px);
+  color: white;
+}
+
+.pt-name-strip h3 {
+  margin: 0 0 5px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.pt-name-strip p {
+  margin: 0;
+  color: #d2c8d7;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.pt-name-strip > svg {
+  flex-shrink: 0;
+  color: #d6bee7;
+  transition: transform .3s;
+}
+
+.pt-card:hover .pt-name-strip > svg {
+  transform: translate(4px, -4px);
+}
+
+/* =========================================
+   CARD FOOTER
+========================================= */
+
+.pt-card-footer {
+  padding: 20px 0 0;
+}
+
+.pt-footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 38px;
+}
+
+.pt-footer-label {
+  color: #8a7d8f;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.pt-social-link {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 35px;
+  height: 35px;
+  color: #685b70;
+  border: 1px solid #e1dbe4;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: .25s;
+}
+
+.pt-social-link:hover {
+  background: #8a6aa8;
+  border-color: #8a6aa8;
+  color: white;
+}
+
+.pt-card-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 17px;
+  border-top: 1px solid #e6e0e7;
+}
+
+.pt-card-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #302b38;
+  font-size: 11px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .25s;
+}
+
+.pt-card-links a:hover {
+  color: #8a6aa8;
+}
+
+.pt-card-links .pt-book-link {
+  color: #8a6aa8;
+}
+
+/* =========================================
+   LOADING / ERROR
+========================================= */
+
+.pt-message {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+  color: #8a6aa8;
+}
+
+.pt-message h3 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: #302b38;
+}
+
+.pt-message p {
+  margin: 0;
+  color: #77717d;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pt-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 20px;
+  background: #302b38;
+  border: 0;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.pt-spin {
+  animation: ptSpin 1.1s linear infinite;
+}
+
+@keyframes ptSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1200px) {
+  .pt-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 950px) {
+  .pt-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pt-portrait {
+    height: 460px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pt-section {
+    padding: 75px 0 85px;
+  }
+
+  .pt-container {
+    width: calc(100% - 36px);
+  }
+
+  .pt-heading {
+    margin-bottom: 45px;
+  }
+
+  .pt-heading h2 {
+    font-size: 48px;
+  }
+
+  .pt-grid-heading {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .pt-grid {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .pt-portrait {
+    height: 470px;
+  }
+
+  .pt-split {
+    padding: 18px;
+  }
+
+  .pt-hover-bio {
+    font-size: 12px;
+  }
+}
+
+/* Touch devices: keep actions available
+   without requiring hover */
+
+@media (hover: none) {
+  .pt-split {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-section *,
+  .pt-section *::before,
+  .pt-section *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ==================================================
+   LENSCRAFT — PREMIUM STYLE ENHANCEMENTS
+   Add below existing PhotographerTeam.css
+================================================== */
+
+/* 1. REFINED SECTION BACKGROUND */
+
+.pt-section {
+  background:
+    radial-gradient(
+      ellipse at 8% 8%,
+      rgba(170, 139, 190, 0.075),
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 95% 85%,
+      rgba(198, 176, 207, 0.09),
+      transparent 32%
+    ),
+    #faf9f6;
+}
+
+/* Subtle editorial texture */
+
+.pt-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: radial-gradient(
+    rgba(67, 53, 73, 0.18) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 9px 9px;
+}
+
+.pt-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 2. ELEGANT HEADING */
+
+.pt-heading h2 {
+  text-wrap: balance;
+  text-shadow: 0 8px 35px rgba(49, 37, 57, 0.035);
+}
+
+.pt-heading h2 em {
+  background: linear-gradient(
+    110deg,
+    #6e527f,
+    #a889ba,
+    #71568d
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pt-eyebrow {
+  transition: letter-spacing 0.4s ease;
+}
+
+.pt-heading:hover .pt-eyebrow {
+  letter-spacing: 3.2px;
+}
+
+.pt-heading-rule {
+  position: relative;
+  overflow: hidden;
+}
+
+.pt-heading-rule::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #d8c7e1;
+  transform: translateX(-100%);
+  animation: ptRuleGlow 4s ease-in-out infinite;
+}
+
+@keyframes ptRuleGlow {
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 3. PREMIUM CARD DEPTH */
+
+.pt-card {
+  position: relative;
+  isolation: isolate;
+  transition:
+    transform 0.5s cubic-bezier(.22, 1, .36, 1),
+    filter 0.4s ease;
+}
+
+.pt-card:hover {
+  transform: translateY(-10px);
+}
+
+.pt-card::before {
+  content: "";
+  position: absolute;
+  inset: -7px -7px 0;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: -1;
+  transition:
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.pt-card:hover::before {
+  border-color: rgba(142, 112, 164, 0.24);
+  box-shadow: 0 20px 55px rgba(45, 35, 52, 0.07);
+}
+
+/* 4. CINEMATIC PORTRAIT EFFECT */
+
+.pt-portrait {
+  box-shadow: 0 15px 35px rgba(35, 29, 42, 0.06);
+  transition: box-shadow 0.5s ease;
+}
+
+.pt-card:hover .pt-portrait {
+  box-shadow: 0 28px 60px rgba(35, 29, 42, 0.17);
+}
+
+.pt-portrait > img {
+  filter: saturate(0.91) contrast(1.04);
+  transition:
+    transform 1s cubic-bezier(.22, 1, .36, 1),
+    filter 0.7s ease;
+}
+
+.pt-card:hover .pt-portrait > img {
+  transform: scale(1.095);
+  filter: saturate(1.08) contrast(1.06) brightness(0.83);
+}
+
+/* Subtle photographic lighting */
+
+.pt-portrait::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.085) 45%,
+    transparent 65%
+  );
+  transform: translateX(-140%);
+  transition: transform 1s ease;
+}
+
+.pt-card:hover .pt-portrait::after {
+  transform: translateX(140%);
+}
+
+/* 5. PHOTOGRAPHER NUMBER */
+
+.pt-photo-index {
+  padding: 8px 11px;
+  background: rgba(22, 18, 27, 0.34);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pt-card:hover .pt-photo-index {
+  background: rgba(117, 87, 141, 0.75);
+  transform: translateY(-3px);
+}
+
+/* 6. ENHANCED SPLIT PANELS */
+
+.pt-split {
+  background: rgba(29, 24, 35, 0.95);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition:
+    transform 0.7s cubic-bezier(.22, 1, .36, 1);
+}
+
+.pt-split-left {
+  background: linear-gradient(
+    145deg,
+    rgba(37, 30, 43, 0.98),
+    rgba(63, 45, 75, 0.96)
+  );
+}
+
+.pt-split-right {
+  background: linear-gradient(
+    215deg,
+    rgba(37, 30, 43, 0.98),
+    rgba(55, 42, 64, 0.96)
+  );
+}
+
+.pt-split-kicker {
+  position: relative;
+  padding-bottom: 12px;
+  color: #e1cce9;
+}
+
+.pt-split-kicker::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 28px;
+  height: 1px;
+  background: #c5a8d5;
+}
+
+.pt-split-left .pt-split-kicker::after {
+  left: auto;
+  right: 0;
+}
+
+.pt-detail-label {
+  color: #c7add9;
+}
+
+.pt-split-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.pt-hover-bio {
+  color: #e6dfe9;
+}
+
+/* 7. PROFILE & BOOKING HOVER ICONS */
+
+.pt-hover-link {
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+.pt-hover-link:hover {
+  background: #d9c1e7;
+  color: #30233a;
+  transform: translateY(-4px) rotate(8deg);
+}
+
+/* 8. LUXURY NAME STRIP */
+
+.pt-name-strip {
+  background: linear-gradient(
+    100deg,
+    rgba(24, 20, 29, 0.96),
+    rgba(47, 36, 54, 0.91)
+  );
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  transition:
+    background 0.45s ease,
+    padding 0.45s ease;
+}
+
+.pt-card:hover .pt-name-strip {
+  background: linear-gradient(
+    100deg,
+    rgba(43, 32, 52, 0.98),
+    rgba(80, 57, 91, 0.94)
+  );
+}
+
+.pt-name-strip h3 {
+  letter-spacing: -0.35px;
+  transition: color 0.3s ease;
+}
+
+.pt-card:hover .pt-name-strip h3 {
+  color: #f2e4fa;
+}
+
+.pt-name-strip > svg {
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+
+.pt-card:hover .pt-name-strip > svg {
+  transform: translate(5px, -5px) rotate(8deg);
+  color: #fff;
+}
+
+/* 9. REFINED CARD FOOTER */
+
+.pt-card-footer {
+  transition: transform 0.35s ease;
+}
+
+.pt-footer-label {
+  color: #776c7d;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.pt-social-link {
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.pt-social-link:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(138, 106, 168, 0.2);
+}
+
+/* 10. ANIMATED PROFILE LINKS */
+
+.pt-card-links {
+  position: relative;
+}
+
+.pt-card-links::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #9974b0;
+  transition: width 0.5s ease;
+}
+
+.pt-card:hover .pt-card-links::before {
+  width: 100%;
+}
+
+.pt-card-links a {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pt-card-links a:hover {
+  color: #78559a;
+  transform: translateY(-2px);
+}
+
+.pt-card-links a svg {
+  transition: transform 0.3s ease;
+}
+
+.pt-card-links a:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.pt-card-links .pt-book-link {
+  color: #79559b;
+}
+
+/* 11. IMPROVED GRID SPACING */
+
+.pt-grid {
+  row-gap: 48px;
+}
+
+/* 12. KEYBOARD ACCESSIBILITY */
+
+.pt-card:focus-within::before {
+  border-color: rgba(142, 112, 164, 0.4);
+}
+
+.pt-card-links a:focus-visible,
+.pt-hover-link:focus-visible,
+.pt-social-link:focus-visible {
+  outline: 2px solid #9c78bb;
+  outline-offset: 4px;
+}
+
+/* 13. RESPONSIVE REFINEMENTS */
+
+@media (max-width: 950px) {
+  .pt-grid {
+    gap: 28px;
+    row-gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pt-heading h2 {
+    letter-spacing: -1.4px;
+  }
+
+  .pt-grid {
+    gap: 35px;
+  }
+
+  .pt-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .pt-portrait {
+    box-shadow: 0 12px 28px rgba(35, 29, 42, 0.09);
+  }
+
+  .pt-name-strip h3 {
+    font-size: 22px;
+  }
+
+  .pt-card-footer {
+    padding-top: 18px;
+  }
+}
+
+/* 14. REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-section *,
+  .pt-section *::before,
+  .pt-section *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================
+   TRANSPARENT PHOTOGRAPHER HOVER EFFECT
+========================================== */
+
+/* Clear original image when not hovering */
+.pt-portrait > img {
+  filter: none;
+  opacity: 1;
+  transition:
+    transform 0.9s ease,
+    filter 0.5s ease,
+    opacity 0.5s ease;
+}
+
+/* Keep image visible when hovering */
+.pt-card:hover .pt-portrait > img {
+  transform: scale(1.06);
+  filter: brightness(0.95);
+  opacity: 1;
+}
+
+/* Remove the dark image overlay */
+.pt-photo-shade {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.25),
+    transparent 35%
+  );
+}
+
+/* Transparent sliding panels */
+.pt-split {
+  background: rgba(30, 25, 36, 0.28);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+/* Override existing dark gradient panels */
+.pt-split-left,
+.pt-split-right {
+  background: rgba(30, 25, 36, 0.28);
+}
+
+/* Transparent name strip */
+.pt-name-strip,
+.pt-card:hover .pt-name-strip {
+  background: rgba(25, 20, 30, 0.35);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Remove unnecessary lighting overlay */
+.pt-portrait::after {
+  display: none;
+}
+
+/* Smooth glass transition */
+.pt-split {
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    background 0.4s ease;
+}
+

@@ -1,0 +1,238 @@
+
+/* ============================================
+   LENSCRAFT — CINEMATIC CAMERA LOADER
+============================================ */
+
+.lens-loader {
+  min-height: 65vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #101010;
+  color: #fffaf6;
+  animation: lensLoaderEnter 0.4s ease both;
+}
+
+.lens-loader::before {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(242, 107, 94, 0.13),
+    transparent 70%
+  );
+  filter: blur(35px);
+  pointer-events: none;
+}
+
+.lens-loader-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+/* CAMERA */
+
+.lens-loader-camera {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.lens-loader-ring {
+  position: relative;
+  width: 95px;
+  height: 95px;
+  border: 2px solid rgba(242, 107, 94, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 0 35px rgba(242, 107, 94, 0.15),
+    inset 0 0 25px rgba(242, 107, 94, 0.08);
+  animation: lensRingPulse 2s ease-in-out infinite;
+}
+
+.lens-loader-aperture {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid rgba(242, 107, 94, 0.35);
+  animation: lensShutterRotate 3s linear infinite;
+}
+
+.lens-loader-aperture span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 27px;
+  height: 2px;
+  background: #f26b5e;
+  transform-origin: 0 50%;
+}
+
+.lens-loader-aperture span:nth-child(1) {
+  transform: rotate(0deg) translateX(5px);
+}
+.lens-loader-aperture span:nth-child(2) {
+  transform: rotate(60deg) translateX(5px);
+}
+.lens-loader-aperture span:nth-child(3) {
+  transform: rotate(120deg) translateX(5px);
+}
+.lens-loader-aperture span:nth-child(4) {
+  transform: rotate(180deg) translateX(5px);
+}
+.lens-loader-aperture span:nth-child(5) {
+  transform: rotate(240deg) translateX(5px);
+}
+.lens-loader-aperture span:nth-child(6) {
+  transform: rotate(300deg) translateX(5px);
+}
+
+.lens-loader-center {
+  position: absolute;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: #101010;
+  border: 2px solid #f26b5e;
+  box-shadow: 0 0 12px rgba(242, 107, 94, 0.5);
+}
+
+/* BRANDING */
+
+.lens-loader-title {
+  margin: 0;
+  font-size: clamp(27px, 5vw, 39px);
+  font-weight: 600;
+  letter-spacing: 7px;
+  color: #fffaf6;
+}
+
+.lens-loader-title span {
+  color: #f26b5e;
+}
+
+.lens-loader-subtitle {
+  margin-top: 13px;
+  color: #b9aaa5;
+  font-size: 10px;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+}
+
+/* PROGRESS */
+
+.lens-loader-progress {
+  width: 180px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 30px auto 16px;
+}
+
+.lens-loader-progress-fill {
+  height: 100%;
+  width: 40%;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    #b96d55,
+    #f26b5e,
+    #ffd1bd
+  );
+  animation: lensProgress 1.7s ease-in-out infinite;
+}
+
+.lens-loader-caption {
+  color: #928987;
+  font-size: 12px;
+  letter-spacing: 0.6px;
+}
+
+.lens-loader-dots {
+  display: inline-block;
+  width: 16px;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: lensDots 1.3s steps(4, end) infinite;
+}
+
+/* ANIMATIONS */
+
+@keyframes lensShutterRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes lensRingPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(242, 107, 94, 0.12);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(242, 107, 94, 0.32);
+  }
+}
+
+@keyframes lensProgress {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(360%); }
+}
+
+@keyframes lensDots {
+  from { width: 0; }
+  to { width: 16px; }
+}
+
+@keyframes lensLoaderEnter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .lens-loader {
+    min-height: 70vh;
+  }
+
+  .lens-loader-ring {
+    width: 80px;
+    height: 80px;
+  }
+
+  .lens-loader-title {
+    font-size: 26px;
+    letter-spacing: 4px;
+  }
+
+  .lens-loader-subtitle {
+    font-size: 9px;
+    letter-spacing: 1.3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lens-loader,
+  .lens-loader-ring,
+  .lens-loader-aperture,
+  .lens-loader-progress-fill,
+  .lens-loader-dots {
+    animation: none;
+  }
+
+  .lens-loader-progress-fill {
+    width: 40%;
+  }
+}

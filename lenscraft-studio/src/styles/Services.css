@@ -1,0 +1,1472 @@
+
+/* ==========================================
+   LENSCRAFT STUDIO — SERVICES PAGE
+   PREMIUM CORAL DESIGN
+========================================== */
+
+.services-page {
+  --services-bg: #fffaf6;
+  --services-surface: #fff0e6;
+  --services-card: #ffffff;
+  --services-gold: #f26b5e;
+  --services-gold-light: #ffb5a5;
+  --services-white: #272126;
+  --services-muted: #71666b;
+  --services-border: rgba(242, 107, 94, 0.16);
+
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--services-bg);
+  color: var(--services-white);
+  overflow-x: clip;
+}
+
+.services-page *,
+.services-page *::before,
+.services-page *::after {
+  box-sizing: border-box;
+}
+
+.services-page .container {
+  width: min(1200px, 90%);
+  margin-inline: auto;
+}
+
+.services-page .section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.services-page .eyebrow {
+  color: var(--services-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+.services-page h2 {
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+
+.services-page h2 em {
+  color: var(--services-gold);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.services-page h3 {
+  font-size: 21px;
+  font-weight: 500;
+}
+
+.services-page p {
+  line-height: 1.8;
+}
+
+/* ==========================================
+   FULLSCREEN CINEMATIC HERO
+========================================== */
+
+.services-page .services-cinematic-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 680px;
+
+  margin: 0;
+  padding: 110px 8% 70px;
+
+  background: #171419;
+  color: #ffffff;
+}
+
+/* BACKGROUND IMAGE — NO DELAYED ANIMATION */
+
+.services-cinematic-hero::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  z-index: 0;
+
+  background-image: url("/images/services1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: translateZ(0);
+  pointer-events: none;
+}
+
+/* CINEMATIC GRADIENT */
+
+.services-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(13, 12, 17, 0.88) 0%,
+      rgba(13, 12, 17, 0.66) 38%,
+      rgba(13, 12, 17, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(13, 12, 17, 0.45),
+      transparent 45%
+    );
+
+  pointer-events: none;
+}
+
+/* CENTER-LEFT CONTENT */
+
+.services-hero-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+  max-width: 750px;
+  margin: 0;
+  padding: 0;
+
+  text-align: left;
+}
+
+/* GLASS EYEBROW */
+
+.services-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 11px 17px;
+  margin-bottom: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #ffb5a5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.services-hero-label svg {
+  color: #f26b5e;
+}
+
+/* HERO HEADING */
+
+.services-page .services-hero-content h1 {
+  margin: 0;
+
+  color: #ffffff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(58px, 7vw, 108px);
+  font-weight: 500;
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+
+  text-align: left;
+}
+
+.services-page .services-hero-content h1 em {
+  color: #ffb5a5;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* DECORATIVE DIVIDER */
+
+.services-hero-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 32px 0 22px;
+}
+
+.services-hero-divider span:first-child {
+  display: block;
+  width: 58px;
+  height: 2px;
+  background: #f26b5e;
+}
+
+.services-hero-divider span:last-child {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* HERO DESCRIPTION */
+
+.services-page .services-hero-content p {
+  max-width: 490px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+  text-align: left;
+}
+
+/* HERO BUTTONS */
+
+.services-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.services-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 18px 26px;
+
+  background: #f26b5e;
+  color: #ffffff !important;
+
+  border: 1px solid #f26b5e;
+  border-radius: 4px;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.services-hero-primary:hover {
+  background: #d95749;
+  border-color: #d95749;
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(242, 107, 94, 0.3);
+}
+
+.services-hero-primary svg {
+  transition: transform 0.3s ease;
+}
+
+.services-hero-primary:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.services-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-bottom: 8px;
+
+  color: #ffffff !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.services-hero-secondary:hover {
+  color: #ffb5a5 !important;
+  gap: 18px;
+}
+
+/* VERTICAL EDITORIAL LABEL */
+
+.services-hero-side-text {
+  position: absolute;
+  z-index: 2;
+
+  right: 28px;
+  top: 50%;
+
+  writing-mode: vertical-rl;
+  transform: translateY(-50%);
+
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+/* SCROLL INDICATOR */
+
+.services-hero-scroll {
+  position: absolute;
+  z-index: 2;
+
+  bottom: 35px;
+  left: 8%;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.services-scroll-line {
+  display: block;
+  width: 35px;
+  height: 1px;
+  background: #f26b5e;
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.services-intro {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: 75px;
+
+  scroll-margin-top: 80px;
+}
+
+.services-intro > div:first-child {
+  max-width: 570px;
+}
+
+.services-intro h2 {
+  margin: 0 0 28px;
+}
+
+.services-intro p:not(.eyebrow) {
+  color: var(--services-muted);
+  font-size: 15px;
+}
+
+.services-intro-image {
+  height: 480px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #e9d9d0;
+}
+
+.services-intro-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  filter: brightness(0.9);
+
+  transition:
+    transform 0.5s ease,
+    filter 0.5s ease;
+}
+
+.services-intro-image:hover img {
+  transform: scale(1.04);
+  filter: brightness(1);
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.services-page .section-heading {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 55px;
+}
+
+.services-page .section-heading h2 {
+  margin: 0 0 18px;
+}
+
+.services-page .section-heading > p:not(.eyebrow) {
+  color: var(--services-muted);
+  font-size: 15px;
+}
+
+/* ==========================================
+   SERVICES AND PACKAGES
+========================================== */
+
+.services-packages-section {
+  background: var(--services-surface);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  min-width: 0;
+
+  background: var(--services-card);
+  border: 1px solid var(--services-border);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--services-gold);
+  box-shadow: 0 20px 45px rgba(85, 45, 40, 0.12);
+  transform: translateY(-5px);
+}
+
+/* SERVICE IMAGES */
+
+.service-image {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background: #e9d9d0;
+}
+
+.service-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.05);
+}
+
+.service-image-badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  background: rgba(20, 17, 20, 0.82);
+  color: #ffb5a5;
+
+  border: 1px solid rgba(255, 181, 165, 0.3);
+  border-radius: 30px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  backdrop-filter: blur(8px);
+}
+
+/* SERVICE CARD CONTENT */
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+
+  padding: 28px;
+  min-height: 290px;
+}
+
+.service-content h3 {
+  color: #272126;
+  font-size: 23px;
+  margin: 0 0 14px;
+}
+
+.service-description {
+  color: var(--services-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+  line-height: 1.8;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.service-meta {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.service-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--services-muted);
+  font-size: 13px;
+}
+
+.service-meta svg {
+  color: var(--services-gold);
+}
+
+/* PRICE AND BOOKING */
+
+.service-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  margin-top: auto;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--services-border);
+}
+
+.service-price {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.service-price > span {
+  color: var(--services-muted);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+
+.service-price strong {
+  color: var(--services-gold);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.service-book-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 12px 15px;
+
+  background: #f26b5e;
+  color: #ffffff !important;
+
+  border-radius: 6px;
+
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.service-book-btn:hover {
+  background: #d95749;
+  transform: translateY(-3px);
+}
+
+/* ==========================================
+   LOADING, ERROR, EMPTY STATES
+========================================== */
+
+.services-status {
+  min-height: 250px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--services-muted);
+}
+
+.services-status h3 {
+  color: var(--services-white);
+}
+
+.services-status p {
+  max-width: 450px;
+}
+
+.services-spinner {
+  width: 38px;
+  height: 38px;
+
+  border: 3px solid rgba(242, 107, 94, 0.2);
+  border-top-color: #f26b5e;
+  border-radius: 50%;
+
+  animation: services-spin 0.8s linear infinite;
+}
+
+@keyframes services-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================
+   WHY CHOOSE LENSCRAFT
+========================================== */
+
+.services-features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.services-feature-card {
+  padding: 42px 30px;
+
+  background: #ffffff;
+  border: 1px solid var(--services-border);
+  border-radius: 16px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+.services-feature-card:hover {
+  border-color: #f26b5e;
+  box-shadow: 0 15px 40px rgba(85, 45, 40, 0.1);
+  transform: translateY(-5px);
+}
+
+.services-feature-icon {
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #fff0e6;
+  border: 1px solid var(--services-border);
+  border-radius: 50%;
+
+  margin-bottom: 25px;
+  color: #f26b5e;
+}
+
+.services-feature-card h3 {
+  color: #272126;
+  margin: 0 0 15px;
+}
+
+.services-feature-card p {
+  color: var(--services-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* ==========================================
+   BOOKING PROCESS
+========================================== */
+
+.services-process-section {
+  background: var(--services-surface);
+}
+
+.services-process-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.services-process-card {
+  position: relative;
+
+  padding: 35px;
+
+  background: #ffffff;
+  border: 1px solid var(--services-border);
+  border-radius: 16px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.services-process-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(85, 45, 40, 0.1);
+}
+
+.services-step-number {
+  display: block;
+
+  color: #f26b5e;
+  font-family: Georgia, serif;
+  font-size: 48px;
+  line-height: 1;
+
+  margin-bottom: 25px;
+}
+
+.services-process-card h3 {
+  color: #272126;
+  margin: 0 0 15px;
+}
+
+.services-process-card p {
+  color: var(--services-muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+.services-step-arrow {
+  position: absolute;
+  top: 50%;
+  right: -28px;
+  z-index: 2;
+
+  color: #f26b5e;
+}
+
+/* ==========================================
+   FINAL CALL TO ACTION
+========================================== */
+
+.services-cta {
+  padding: 110px 20px;
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(242, 107, 94, 0.12),
+      transparent 65%
+    ),
+    #211b20;
+
+  border-top: 1px solid var(--services-border);
+  text-align: center;
+}
+
+.services-cta-icon {
+  color: #f26b5e;
+  margin-bottom: 25px;
+}
+
+.services-page .services-cta h2 {
+  color: #ffffff;
+  margin: 0 auto 25px;
+  max-width: 850px;
+}
+
+.services-page .services-cta h2 em {
+  color: #ffb5a5;
+}
+
+.services-cta > .container > div > p:not(.eyebrow) {
+  max-width: 600px;
+  margin: 0 auto 30px;
+
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.services-page .btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 15px 30px;
+
+  background: #f26b5e;
+  color: #ffffff !important;
+  border-radius: 5px;
+
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.services-page .btn-gold:hover {
+  background: #d95749;
+  transform: translateY(-3px);
+}
+
+/* ACCESSIBILITY */
+
+.services-page a:focus-visible {
+  outline: 2px solid #f26b5e;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1024px) {
+  .services-page .services-cinematic-hero {
+    padding: 115px 6% 75px;
+  }
+
+  .services-page .services-hero-content h1 {
+    font-size: clamp(52px, 7vw, 78px);
+  }
+
+  .services-hero-side-text {
+    display: none;
+  }
+
+  .services-page .section {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+
+  .services-intro {
+    gap: 40px;
+  }
+
+  .services-intro-image {
+    height: 400px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .services-process-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-step-arrow {
+    display: none;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .services-page .services-cinematic-hero {
+    min-height: 650px;
+    height: 100svh;
+
+    padding: 110px 22px 70px;
+
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .services-cinematic-hero::before {
+    background-position: 54% center;
+  }
+
+  .services-hero-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(12, 10, 15, 0.94) 0%,
+        rgba(12, 10, 15, 0.76) 40%,
+        rgba(12, 10, 15, 0.28) 80%
+      );
+  }
+
+  .services-hero-content {
+    max-width: 100%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .services-hero-label {
+    margin-bottom: 22px;
+    padding: 9px 13px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .services-page .services-hero-content h1 {
+    font-size: clamp(42px, 10vw, 62px);
+    line-height: 1.12;
+  }
+
+  .services-hero-divider {
+    margin: 24px 0 18px;
+  }
+
+  .services-page .services-hero-content p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
+  .services-hero-actions {
+    gap: 20px;
+    margin-top: 27px;
+  }
+
+  .services-hero-primary {
+    padding: 15px 18px;
+    font-size: 9px;
+  }
+
+  .services-hero-secondary {
+    font-size: 9px;
+  }
+
+  .services-hero-scroll {
+    display: none;
+  }
+
+  .services-intro {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .services-intro-image {
+    height: 320px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .services-page .container {
+    width: 90%;
+  }
+
+  .services-page .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .services-page h2 {
+    font-size: 32px;
+  }
+
+  .services-page .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .services-page .section-heading {
+    margin-bottom: 35px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .service-image {
+    height: 250px;
+  }
+
+  .service-content {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .service-bottom {
+    flex-wrap: wrap;
+  }
+
+  .service-price strong {
+    font-size: 22px;
+  }
+
+  .services-features-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .services-feature-card {
+    padding: 30px 25px;
+  }
+
+  .services-process-card {
+    padding: 30px 25px;
+  }
+
+  .services-cta {
+    padding: 75px 20px;
+  }
+
+  .services-page .services-cta h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .services-page .services-cinematic-hero {
+    padding: 100px 20px 55px;
+  }
+
+  .services-page .services-hero-content h1 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .services-hero-label {
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .services-page h2 {
+    font-size: 28px;
+  }
+
+  .service-image {
+    height: 220px;
+  }
+
+  .service-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .service-book-btn {
+    width: 100%;
+  }
+}
+
+/* SHORT MOBILE SCREENS */
+
+@media (max-width: 768px) and (max-height: 700px) {
+  .services-page .services-cinematic-hero {
+    height: auto;
+    min-height: 100svh;
+  }
+}
+
+/* ==========================================
+   REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page *,
+  .services-page *::before,
+  .services-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   LENSCRAFT SERVICES — SOFT LAVENDER THEME
+   Coral + Lavender + Warm Cream
+============================================ */
+
+/* MAIN PAGE */
+
+.services-page {
+  --services-lavender: #f3eeff;
+  --services-lavender-light: #faf7ff;
+  --services-lavender-border: #e5d8fa;
+  --services-violet: #a78bc8;
+
+  --services-bg: #fffaf6;
+  --services-surface: #f5efff;
+  --services-card: #ffffff;
+
+  background: #fffaf6;
+}
+
+/* INTRODUCTION SECTION */
+
+.services-page .services-intro {
+  position: relative;
+}
+
+.services-intro-image {
+  border: 5px solid #ffffff;
+  box-shadow:
+    0 20px 55px rgba(167, 139, 200, 0.14),
+    0 5px 20px rgba(242, 107, 94, 0.06);
+}
+
+.services-page .services-intro h2 em {
+  color: #a78bc8;
+}
+
+/* SERVICES & PACKAGES */
+
+.services-packages-section {
+  background:
+    radial-gradient(
+      circle at 8% 15%,
+      rgba(167, 139, 200, 0.16),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 92% 80%,
+      rgba(242, 107, 94, 0.08),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #faf7ff,
+      #f3eeff 55%,
+      #fff5ef
+    );
+}
+
+/* SERVICE CARDS */
+
+.services-page .service-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #ffffff 78%,
+    #faf7ff 100%
+  );
+
+  border: 1px solid #e9def5;
+
+  box-shadow: 0 12px 35px rgba(128, 101, 164, 0.05);
+}
+
+.services-page .service-card:hover {
+  border-color: #c7a8e5;
+
+  box-shadow:
+    0 22px 55px rgba(128, 101, 164, 0.14),
+    0 5px 18px rgba(242, 107, 94, 0.05);
+
+  transform: translateY(-6px);
+}
+
+/* IMAGE BADGE */
+
+.services-page .service-image-badge {
+  background: rgba(35, 26, 43, 0.88);
+  color: #ead9ff;
+  border-color: rgba(229, 216, 250, 0.35);
+}
+
+/* SERVICE META ICONS */
+
+.services-page .service-meta svg {
+  color: #a78bc8;
+}
+
+/* SERVICE CARD DIVIDER */
+
+.services-page .service-bottom {
+  border-top: 1px solid #eee3f7;
+}
+
+/* KEEP CORAL FOR PRICES AND BUTTONS */
+
+.services-page .service-price strong {
+  color: #f26b5e;
+}
+
+.services-page .service-book-btn {
+  background: #f26b5e;
+  color: #ffffff;
+}
+
+.services-page .service-book-btn:hover {
+  background: #d95749;
+}
+
+/* WHY CHOOSE LENSCRAFT */
+
+.services-page .services-feature-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #faf7ff
+  );
+
+  border: 1px solid #e9def5;
+}
+
+.services-page .services-feature-card:hover {
+  border-color: #c7a8e5;
+
+  box-shadow:
+    0 18px 45px rgba(128, 101, 164, 0.12);
+
+  transform: translateY(-5px);
+}
+
+/* FEATURE ICON */
+
+.services-page .services-feature-icon {
+  background: linear-gradient(
+    135deg,
+    #fff0e6,
+    #eee3ff
+  );
+
+  border: 1px solid #e5d8fa;
+  color: #a78bc8;
+}
+
+.services-page .services-feature-card:hover
+.services-feature-icon {
+  background: #f26b5e;
+  border-color: #f26b5e;
+  color: #ffffff;
+}
+
+/* BOOKING PROCESS SECTION */
+
+.services-process-section {
+  background: linear-gradient(
+    135deg,
+    #f3eeff 0%,
+    #faf7ff 55%,
+    #fff5ef 100%
+  );
+}
+
+/* PROCESS CARDS */
+
+.services-page .services-process-card {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #faf7ff
+  );
+
+  border: 1px solid #e5d8fa;
+
+  box-shadow: 0 12px 35px rgba(128, 101, 164, 0.05);
+}
+
+.services-page .services-process-card:hover {
+  border-color: #c7a8e5;
+
+  box-shadow:
+    0 20px 50px rgba(128, 101, 164, 0.13);
+
+  transform: translateY(-5px);
+}
+
+/* PROCESS NUMBERS */
+
+.services-page .services-step-number {
+  color: #a78bc8;
+}
+
+/* PROCESS ARROWS */
+
+.services-page .services-step-arrow {
+  color: #f26b5e;
+}
+
+/* FINAL CTA — DARK LAVENDER GLOW */
+
+.services-page .services-cta {
+  background:
+    radial-gradient(
+      ellipse at 30% 30%,
+      rgba(167, 139, 200, 0.17),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 80% 75%,
+      rgba(242, 107, 94, 0.12),
+      transparent 55%
+    ),
+    #211b20;
+}
+
+.services-page .services-cta h2 em {
+  color: #e5d8fa;
+}
+
+/* SOFT BUTTON HOVER */
+
+.services-page .btn-gold:hover {
+  box-shadow: 0 12px 30px rgba(242, 107, 94, 0.24);
+}
+
+/* ACCESSIBLE KEYBOARD FOCUS */
+
+.services-page a:focus-visible {
+  outline: 2px solid #a78bc8;
+  outline-offset: 4px;
+}
+
+
+/* Shared Lenscraft typography (import this after page CSS if possible) */
+.services-page { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.services-page :is(h1,h2,h3,h4) { font-family: var(--brand-heading-font, "Playfair Display", Georgia, serif); }
+.services-page :is(p,button,input,select,textarea,label,a) { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.services-page h2 { font-size: var(--brand-section-size, clamp(40px,5vw,72px)); }
+.services-page h3 { font-size: var(--brand-subheading-size, clamp(24px,3vw,36px)); }
+.services-page :is(h1,h2,h3) em { color: var(--brand-coral, #f26b5e); }
+.services-page :is(.about-hero,.portfolio-hero,.services-cinematic-hero) h1 { font-size: var(--brand-hero-size, clamp(50px,6.5vw,100px)); color: white; }
+.services-page :is(.about-hero,.portfolio-hero,.services-cinematic-hero) :is(h1,h2) em { color: #ffb5a5; }
+@media(max-width:767px) { .services-page h2 { font-size:clamp(32px,8vw,46px); } .services-page h3 { font-size:clamp(22px,5vw,30px); } }
+
+/* LENSCRAFT — SHARED LOGO-ALIGNED CONTENT GUTTER
+   Match Navbar logo by setting its inner wrapper to the same 1200px/64px container. */
+
+.services-page .container {width:min(1200px,calc(100% - 64px));margin-inline:auto;}
+.services-page .services-cinematic-hero {padding-left:max(32px,calc((100% - 1200px)/2));padding-right:max(32px,calc((100% - 1200px)/2));}
+.services-page .services-hero-content {margin-left:0;margin-right:0;}
+.services-page .services-hero-scroll {left:max(32px,calc((100% - 1200px)/2));}
+@media(max-width:767px){.services-page .container{width:calc(100% - 40px)}.services-page .services-cinematic-hero{padding-left:20px;padding-right:20px}.services-page .services-hero-scroll{left:20px;}}
+
+/* ==========================================
+   LENSCRAFT SERVICES
+   CINEMATIC HERO CONTENT ANIMATION
+========================================== */
+
+/* SAME ANIMATION AS CONTACT PAGE */
+
+@keyframes servicesHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 1. SMALL HERO LABEL */
+
+.services-page
+.services-hero-content
+.services-hero-label {
+  animation: servicesHeroFade 0.8s ease 0s both;
+}
+
+/* 2. MAIN HERO HEADING */
+
+.services-page
+.services-hero-content h1 {
+  animation: servicesHeroFade 1s ease 0.15s both;
+}
+
+/* 3. DECORATIVE DIVIDER */
+
+.services-page
+.services-hero-content
+.services-hero-divider {
+  animation: servicesHeroFade 1s ease 0.25s both;
+}
+
+/* 4. HERO DESCRIPTION */
+
+.services-page
+.services-hero-content p {
+  animation: servicesHeroFade 1s ease 0.3s both;
+}
+
+/* 5. HERO BUTTONS */
+
+.services-page
+.services-hero-content
+.services-hero-actions {
+  animation: servicesHeroFade 1s ease 0.45s both;
+}
+
+/* 6. SIDE TEXT */
+
+.services-page
+.services-hero-side-text {
+  animation: servicesSideFade 1s ease 0.7s both;
+}
+
+@keyframes servicesSideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+/* 7. SCROLL INDICATOR */
+
+.services-page
+.services-hero-scroll {
+  animation: servicesHeroFade 1s ease 0.8s both;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  .services-page .services-hero-label,
+  .services-page .services-hero-content h1,
+  .services-page .services-hero-divider,
+  .services-page .services-hero-content p,
+  .services-page .services-hero-actions,
+  .services-page .services-hero-side-text,
+  .services-page .services-hero-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+  }
+}

@@ -1,0 +1,355 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+.lc-admin-dashboard {
+  --admin-coral: #f26b5e;
+  --admin-deep: #d95749;
+  --admin-ink: #252c29;
+  --admin-muted: #807870;
+  --admin-cream: #fffaf6;
+
+  min-height: 100vh;
+  padding: 140px 24px 90px;
+  background: #faf5ee;
+  color: var(--admin-ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+.lc-admin-dashboard *,
+.lc-admin-dashboard *::before,
+.lc-admin-dashboard *::after {
+  box-sizing: border-box;
+}
+
+.lc-admin-container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* TOP BAR */
+
+.lc-admin-topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.lc-admin-topline > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.lc-admin-topline > span:first-child {
+  color: #b96d55;
+}
+
+.lc-admin-secure {
+  color: #527e60;
+}
+
+/* HERO */
+
+.lc-admin-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 330px;
+  padding: 55px 60px;
+  overflow: hidden;
+  background: #252c29;
+  color: white;
+}
+
+.lc-admin-hero::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  right: -100px;
+  top: -170px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(242, 107, 94, 0.23),
+    transparent 70%
+  );
+}
+
+.lc-admin-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.lc-admin-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #f2b3a5;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.lc-admin-hero h1 {
+  margin: 22px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(44px, 6vw, 76px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.lc-admin-hero h1 em {
+  color: #f2a997;
+  font-weight: 400;
+}
+
+.lc-admin-hero p {
+  max-width: 460px;
+  color: #d1d2cc;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.lc-admin-hero-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 18px;
+  padding: 15px 21px;
+  background: var(--admin-coral);
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.lc-admin-hero-link:hover {
+  background: var(--admin-deep);
+  color: white;
+  transform: translateY(-2px);
+}
+
+.lc-admin-hero-art {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(242, 169, 151, 0.25);
+}
+
+/* SECTION HEADING */
+
+.lc-admin-section-heading {
+  margin: 65px 0 28px;
+}
+
+.lc-admin-section-heading span {
+  color: #b96d55;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lc-admin-section-heading h2 {
+  margin: 12px 0;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 4vw, 45px);
+  font-weight: 400;
+}
+
+.lc-admin-section-heading p {
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* MANAGEMENT CARDS */
+
+.lc-admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.lc-admin-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+  padding: 30px;
+  background: #fffefa;
+  border: 1px solid #e9e0d7;
+  color: var(--admin-ink);
+  text-decoration: none;
+  transition:
+    transform 0.3s,
+    border-color 0.3s,
+    box-shadow 0.3s;
+}
+
+.lc-admin-card:hover {
+  transform: translateY(-5px);
+  border-color: #efb2a4;
+  box-shadow: 0 20px 45px rgba(70, 55, 43, 0.08);
+}
+
+.lc-admin-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.lc-admin-card-icon {
+  display: grid;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  background: #fff0e6;
+  color: var(--admin-coral);
+}
+
+.lc-admin-card-number {
+  color: #cbbfb4;
+  font-family: "Playfair Display", serif;
+  font-size: 23px;
+}
+
+.lc-admin-card-content {
+  margin: 30px 0;
+}
+
+.lc-admin-card h3 {
+  margin: 0 0 12px;
+  color: var(--admin-ink);
+  font-family: "Playfair Display", serif;
+  font-size: 29px;
+  font-weight: 500;
+}
+
+.lc-admin-card p {
+  margin: 0;
+  max-width: 330px;
+  color: var(--admin-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.lc-admin-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 17px;
+  border-top: 1px solid #eee4da;
+  color: var(--admin-deep);
+}
+
+.lc-admin-card-bottom span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+/* BOTTOM NOTE */
+
+.lc-admin-bottom-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 40px;
+  padding: 20px 24px;
+  background: #edf3ed;
+  border-left: 3px solid #5b8768;
+}
+
+.lc-admin-bottom-note svg {
+  flex-shrink: 0;
+  color: #5b8768;
+}
+
+.lc-admin-bottom-note p {
+  margin: 0;
+  color: #56715c;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .lc-admin-dashboard {
+    padding-top: 125px;
+  }
+
+  .lc-admin-hero {
+    padding: 45px 40px;
+  }
+
+  .lc-admin-hero-art {
+    right: 5%;
+    opacity: 0.5;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .lc-admin-dashboard {
+    padding: 115px 15px 55px;
+  }
+
+  .lc-admin-topline > span {
+    font-size: 9px;
+    letter-spacing: 0.8px;
+  }
+
+  .lc-admin-hero {
+    min-height: 320px;
+    padding: 35px 25px;
+  }
+
+  .lc-admin-hero h1 {
+    font-size: 46px;
+  }
+
+  .lc-admin-hero p {
+    font-size: 12px;
+  }
+
+  .lc-admin-hero-art {
+    right: -30px;
+    opacity: 0.15;
+  }
+
+  .lc-admin-section-heading {
+    margin: 45px 0 25px;
+  }
+
+  .lc-admin-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lc-admin-card {
+    min-height: 235px;
+    padding: 24px;
+  }
+
+  .lc-admin-card h3 {
+    font-size: 27px;
+  }
+
+  .lc-admin-bottom-note {
+    padding: 17px;
+  }
+}

@@ -1,0 +1,3147 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+
+
+/* =====================================================
+   LENSCRAFT — PREMIUM EDITORIAL HOME
+   Palette: Midnight Plum / Soft Ivory / Royal Violet
+===================================================== */
+
+.lenscraft-home {
+  --lc-ink: #211c1b;
+  --lc-ink-soft: #514540;
+  --lc-coral: #f26b5e;
+  --lc-coral-deep: #d95749;
+  --lc-cream: #fffaf6;
+  --lc-sand: #fff0e6;
+  --lc-paper: #ffffff;
+  --lc-muted: #756e6a;
+  --lc-line: #eadfd8;
+  --lc-shadow: 0 24px 65px rgba(33, 11, 44, 0.09);
+
+  color: var(--lc-ink);
+  background: var(--lc-cream);
+  font-family: "DM Sans", sans-serif;
+  overflow: clip;
+}
+
+.lenscraft-home *,
+.lenscraft-home *::before,
+.lenscraft-home *::after {
+  box-sizing: border-box;
+}
+
+.lenscraft-home img {
+  display: block;
+  max-width: 100%;
+}
+
+.lenscraft-home a {
+  text-decoration: none;
+}
+
+.lenscraft-home button {
+  font: inherit;
+}
+
+.lenscraft-home .container {
+  width: min(90%, 1320px);
+  margin-inline: auto;
+}
+
+.lenscraft-home .section {
+  position: relative;
+  padding: clamp(85px, 9vw, 145px) 0;
+}
+
+.lenscraft-home h1,
+.lenscraft-home h2,
+.lenscraft-home h3 {
+  margin-top: 0;
+  color: var(--lc-ink);
+}
+
+.lenscraft-home h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+.lenscraft-home h3 {
+  font-family: "Manrope", sans-serif;
+}
+
+.lenscraft-home p {
+  line-height: 1.85;
+}
+
+.lenscraft-home :is(a, button):focus-visible {
+  outline: 3px solid var(--lc-coral);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   SHARED SECTION HEADING
+===================================================== */
+
+.lenscraft-home .section-heading {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.lenscraft-home .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  color: var(--lc-coral-deep);
+  font-family: "Manrope", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 3.4px;
+  text-transform: uppercase;
+}
+
+.lenscraft-home .section-heading .eyebrow::before,
+.lenscraft-home .section-heading .eyebrow::after {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: var(--lc-coral);
+}
+
+.lenscraft-home .section-heading h2 {
+  margin: 0 0 23px;
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: 1.13;
+  letter-spacing: -2.3px;
+}
+
+.lenscraft-home h2 em {
+  color: var(--lc-coral-deep);
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.lenscraft-home .section-heading > p:last-child {
+  max-width: 600px;
+  margin: 0 auto;
+  color: var(--lc-muted);
+  font-size: 15px;
+  line-height: 1.95;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.lenscraft-home .editorial-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  min-height: 60px;
+  padding: 18px 31px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: var(--lc-ink);
+  border: 1px solid var(--lc-ink);
+  border-radius: 2px;
+  color: #fff;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.lenscraft-home .editorial-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--lc-coral-deep);
+  transform: translateY(101%);
+  transition: transform 0.45s cubic-bezier(.2,.8,.2,1);
+}
+
+.lenscraft-home .editorial-button:hover {
+  color: #fff;
+  border-color: var(--lc-coral-deep);
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(121,60,145,0.22);
+}
+
+.lenscraft-home .editorial-button:hover::before {
+  transform: translateY(0);
+}
+
+.lenscraft-home .editorial-button svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.lenscraft-home .editorial-button:hover svg {
+  transform: translate(4px, -3px);
+}
+
+.lenscraft-home .section-bottom-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+}
+
+/* =====================================================
+   PHOTOGRAPHY TICKER
+===================================================== */
+
+.lenscraft-home .photography-ticker {
+  position: relative;
+  overflow: hidden;
+  background: var(--lc-ink);
+  color: #fff;
+}
+
+.lenscraft-home .ticker-top-line,
+.lenscraft-home .ticker-bottom-line {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  padding: 14px 20px;
+
+  color: rgba(255,255,255,0.57);
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.8px;
+  text-align: center;
+}
+
+.lenscraft-home .ticker-top-line {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.lenscraft-home .ticker-top-line span:nth-child(2) {
+  color: var(--lc-coral);
+  font-size: 17px;
+}
+
+.lenscraft-home .ticker-bottom-line {
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.lenscraft-home .ticker-marquee {
+  padding: 34px 0;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 6%,
+    black 94%,
+    transparent
+  );
+}
+
+.lenscraft-home .ticker-track {
+  display: flex;
+  width: max-content;
+  animation: lcTicker 40s linear infinite;
+  will-change: transform;
+}
+
+.lenscraft-home .ticker-group {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lenscraft-home .ticker-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 35px;
+  padding: 0 25px;
+}
+
+.lenscraft-home .ticker-text {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(35px, 4.6vw, 67px);
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.lenscraft-home .ticker-text-filled {
+  color: #fffaf5;
+}
+
+.lenscraft-home .ticker-text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.58);
+}
+
+.lenscraft-home .ticker-separator {
+  flex-shrink: 0;
+  color: var(--lc-coral);
+  animation: lcAperture 12s linear infinite;
+}
+
+.lenscraft-home .ticker-bottom-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--lc-coral);
+}
+
+.lenscraft-home .photography-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes lcTicker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes lcAperture {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================================================
+   SERVICES — CINEMATIC CARDS
+===================================================== */
+
+.lenscraft-home .home-services {
+  background: var(--lc-paper);
+}
+
+.lenscraft-home .home-services::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 65px;
+  background: var(--lc-coral);
+  opacity: 0.55;
+}
+
+.lenscraft-home .home-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.lenscraft-home .home-service-item {
+  min-width: 0;
+  height: 100%;
+}
+
+.lenscraft-home .home-service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+
+  background: #fff;
+  border: 1px solid var(--lc-line);
+  border-radius: 3px;
+  box-shadow: 0 10px 30px rgba(33,11,44,0.035);
+
+  transition:
+    transform 0.55s cubic-bezier(.2,.8,.2,1),
+    box-shadow 0.55s ease,
+    border-color 0.35s ease;
+}
+
+.lenscraft-home .home-service-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(121,60,145,0.35);
+  box-shadow: var(--lc-shadow);
+}
+
+.lenscraft-home .home-service-image {
+  position: relative;
+  height: 365px;
+  overflow: hidden;
+  background: var(--lc-sand);
+  isolation: isolate;
+}
+
+.lenscraft-home .home-service-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1),
+    filter 0.6s ease;
+}
+
+.lenscraft-home .home-service-card:hover
+.home-service-image > img {
+  transform: scale(1.095);
+  filter: saturate(1.07);
+}
+
+.lenscraft-home .home-service-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.16),
+    transparent 45%,
+    rgba(0,0,0,0.53)
+  );
+  pointer-events: none;
+}
+
+.lenscraft-home .home-service-number {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+
+  display: grid;
+  place-items: center;
+  width: 53px;
+  height: 53px;
+
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 50%;
+  color: var(--lc-ink);
+
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.lenscraft-home .home-service-card:hover
+.home-service-number {
+  background: var(--lc-coral-deep);
+  color: white;
+  transform: rotate(10deg);
+}
+
+.lenscraft-home .home-service-image-brand {
+  position: absolute;
+  bottom: 23px;
+  left: 24px;
+  z-index: 3;
+
+  color: rgba(255,255,255,0.92);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.lenscraft-home .home-service-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(33,11,44,0.27);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.lenscraft-home .home-service-card:hover
+.home-service-overlay,
+.lenscraft-home .home-service-card:focus-within
+.home-service-overlay {
+  opacity: 1;
+}
+
+.lenscraft-home .home-service-view {
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+
+  background: #fff;
+  border-radius: 50%;
+  color: var(--lc-ink);
+
+  transform: translateY(25px) scale(0.82);
+  transition:
+    transform 0.45s cubic-bezier(.2,.8,.2,1),
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.lenscraft-home .home-service-card:hover
+.home-service-view,
+.lenscraft-home .home-service-card:focus-within
+.home-service-view {
+  transform: translateY(0) scale(1);
+}
+
+.lenscraft-home .home-service-view:hover {
+  background: var(--lc-coral-deep);
+  color: white;
+}
+
+.lenscraft-home .home-service-info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 33px 30px 29px;
+}
+
+.lenscraft-home .home-service-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 15px;
+  color: #b18dc0;
+}
+
+.lenscraft-home .home-service-label {
+  color: var(--lc-coral-deep);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.lenscraft-home .home-service-info h3 {
+  margin: 0 0 14px;
+  font-size: clamp(23px, 2.1vw, 30px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.3;
+}
+
+.lenscraft-home .home-service-info > p {
+  margin: 0 0 28px;
+  color: var(--lc-muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.lenscraft-home .home-service-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: auto;
+  padding-top: 19px;
+
+  border-top: 1px solid var(--lc-line);
+  color: var(--lc-ink);
+  font-size: 12px;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.lenscraft-home .home-service-link-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--lc-line);
+  border-radius: 50%;
+  color: var(--lc-coral-deep);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lenscraft-home .home-service-link:hover {
+  color: var(--lc-coral-deep);
+}
+
+.lenscraft-home .home-service-link:hover
+.home-service-link-icon {
+  background: var(--lc-coral-deep);
+  border-color: var(--lc-coral-deep);
+  color: white;
+  transform: rotate(45deg);
+}
+
+/* =====================================================
+   PORTFOLIO — EDITORIAL MASONRY FEEL
+===================================================== */
+
+.lenscraft-home .portfolio-section {
+  background: var(--lc-cream);
+}
+
+.lenscraft-home .portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 55px 35px;
+}
+
+.lenscraft-home .portfolio-card {
+  min-width: 0;
+}
+
+.lenscraft-home .portfolio-card:nth-child(even) {
+  padding-top: 70px;
+}
+
+.lenscraft-home .portfolio-image-button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  overflow: hidden;
+
+  background: var(--lc-ink);
+  border: 0;
+  border-radius: 2px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lenscraft-home .portfolio-card.large
+.portfolio-image-button {
+  height: 590px;
+}
+
+.lenscraft-home .portfolio-card.small
+.portfolio-image-button {
+  height: 460px;
+}
+
+.lenscraft-home .portfolio-image-button > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 1s cubic-bezier(.2,.8,.2,1),
+    filter 0.6s ease;
+}
+
+.lenscraft-home .portfolio-card:hover
+.portfolio-image-button > img,
+.lenscraft-home .portfolio-card.is-active
+.portfolio-image-button > img {
+  transform: scale(1.075);
+  filter: brightness(0.72);
+}
+
+.lenscraft-home .portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 45px;
+
+  background: linear-gradient(
+    180deg,
+    transparent 15%,
+    rgba(33,11,44,0.85)
+  );
+
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.lenscraft-home .portfolio-card:hover
+.portfolio-overlay,
+.lenscraft-home .portfolio-card.is-active
+.portfolio-overlay,
+.lenscraft-home .portfolio-image-button:focus-visible
+.portfolio-overlay {
+  opacity: 1;
+}
+
+.lenscraft-home .portfolio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transform: translateY(22px);
+  transition: transform 0.45s ease;
+}
+
+.lenscraft-home .portfolio-card:hover
+.portfolio-content,
+.lenscraft-home .portfolio-card.is-active
+.portfolio-content,
+.lenscraft-home .portfolio-image-button:focus-visible
+.portfolio-content {
+  transform: translateY(0);
+}
+
+.lenscraft-home .portfolio-category {
+  color: #dcb5eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.lenscraft-home .portfolio-content strong {
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(29px, 3.5vw, 48px);
+  font-weight: 500;
+}
+
+.lenscraft-home .portfolio-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.9);
+  font-size: 12px;
+}
+
+.lenscraft-home .portfolio-view-icon {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 2;
+
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+
+  background: var(--lc-coral-deep);
+  border-radius: 50%;
+  color: white;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: 0.4s ease;
+}
+
+.lenscraft-home .portfolio-card:hover
+.portfolio-view-icon,
+.lenscraft-home .portfolio-card.is-active
+.portfolio-view-icon {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lenscraft-home .portfolio-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0 0;
+}
+
+.lenscraft-home .portfolio-card-footer span {
+  color: var(--lc-coral-deep);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.lenscraft-home .portfolio-card-footer h3 {
+  margin: 8px 0 0;
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.lenscraft-home .portfolio-footer-link {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+
+  border: 1px solid var(--lc-line);
+  border-radius: 50%;
+  color: var(--lc-ink);
+  transition: 0.3s ease;
+}
+
+.lenscraft-home .portfolio-footer-link:hover {
+  background: var(--lc-coral-deep);
+  border-color: var(--lc-coral-deep);
+  color: white;
+  transform: rotate(45deg);
+}
+
+/* =====================================================
+   STATS — DARK LUXURY STRIP
+===================================================== */
+
+.lenscraft-home .stats-section {
+  position: relative;
+  padding: 80px 0 45px;
+  background: var(--lc-ink);
+  color: #fff;
+  overflow: hidden;
+}
+
+.lenscraft-home .stats-section::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -140px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 50%;
+}
+
+.lenscraft-home .stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  z-index: 1;
+}
+
+.lenscraft-home .stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  min-height: 150px;
+  padding: 20px;
+  text-align: center;
+}
+
+.lenscraft-home .stat:not(:last-child) {
+  border-right: 1px solid rgba(255,255,255,0.13);
+}
+
+.lenscraft-home .stat strong {
+  color: #d4a1e4;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(47px, 5.2vw, 76px);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.lenscraft-home .stat span {
+  color: rgba(255,255,255,0.72);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.lenscraft-home .stats-note {
+  margin: 20px 0 0;
+  color: rgba(255,255,255,0.42);
+  font-size: 10px;
+  text-align: center;
+}
+
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
+
+.lenscraft-home .why-choose-section {
+  background: var(--lc-paper);
+}
+
+.lenscraft-home .why-choose-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(60px, 8vw, 120px);
+}
+
+.lenscraft-home .why-choose-content h2 {
+  margin: 0 0 28px;
+  font-size: clamp(42px, 4.6vw, 68px);
+  line-height: 1.15;
+  letter-spacing: -1.7px;
+}
+
+.lenscraft-home .why-choose-content > p:not(.eyebrow) {
+  max-width: 570px;
+  color: var(--lc-muted);
+  font-size: 14px;
+}
+
+.lenscraft-home .why-features {
+  display: flex;
+  flex-direction: column;
+  gap: 29px;
+  margin: 39px 0 43px;
+}
+
+.lenscraft-home .why-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.lenscraft-home .why-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+
+  background: #f2e8f6;
+  border: 1px solid #e4d0eb;
+  border-radius: 50%;
+  color: var(--lc-coral-deep);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.lenscraft-home .why-feature:hover .why-icon {
+  background: var(--lc-coral-deep);
+  color: #fff;
+  transform: rotate(-10deg);
+}
+
+.lenscraft-home .why-feature h3 {
+  margin: 0 0 7px;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.lenscraft-home .why-feature p {
+  margin: 0;
+  color: var(--lc-muted);
+  font-size: 13px;
+}
+
+.lenscraft-home .why-choose-image {
+  position: relative;
+  height: 670px;
+  isolation: isolate;
+}
+
+.lenscraft-home .why-choose-image::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: 75%;
+  height: 75%;
+  border: 1px solid rgba(121,60,145,0.4);
+  z-index: -1;
+}
+
+.lenscraft-home .why-choose-image > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2px;
+  transition: filter 0.6s ease;
+}
+
+.lenscraft-home .why-choose-image:hover > img {
+  filter: saturate(1.15);
+}
+
+.lenscraft-home .why-image-label {
+  position: absolute;
+  bottom: 30px;
+  left: -25px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 25px;
+
+  background: var(--lc-coral-deep);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 15px 35px rgba(121,60,145,0.25);
+}
+
+/* =====================================================
+   PROCESS — CREATIVE TIMELINE
+===================================================== */
+
+.lenscraft-home .process-section {
+  background: var(--lc-sand);
+}
+
+.lenscraft-home .process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.lenscraft-home .process-card {
+  position: relative;
+  min-height: 335px;
+  padding: 37px 29px;
+  overflow: hidden;
+
+  background: var(--lc-paper);
+  border: 1px solid var(--lc-line);
+  border-radius: 2px;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.3s ease;
+}
+
+.lenscraft-home .process-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--lc-coral-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+
+.lenscraft-home .process-card:hover {
+  transform: translateY(-10px);
+  border-color: #cda6dc;
+  box-shadow: var(--lc-shadow);
+}
+
+.lenscraft-home .process-card:hover::after {
+  transform: scaleX(1);
+}
+
+.lenscraft-home .process-number {
+  color: #cba2d9;
+  font-family: "Playfair Display", serif;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.lenscraft-home .process-line {
+  width: 45px;
+  height: 2px;
+  margin: 27px 0;
+  background: var(--lc-coral-deep);
+}
+
+.lenscraft-home .process-card h3 {
+  margin: 0 0 14px;
+  font-size: 22px;
+  letter-spacing: -0.5px;
+}
+
+.lenscraft-home .process-card p {
+  margin: 0;
+  color: var(--lc-muted);
+  font-size: 13px;
+}
+
+.lenscraft-home .process-arrow {
+  position: absolute;
+  top: 35px;
+  right: 28px;
+  color: var(--lc-coral-deep);
+  transition: transform 0.35s ease;
+}
+
+.lenscraft-home .process-card:hover .process-arrow {
+  transform: translate(4px, -4px);
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+
+.lenscraft-home .testimonials-section {
+  background: var(--lc-paper);
+}
+
+.lenscraft-home .testimonial-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.lenscraft-home .testimonial-motion {
+  flex: 1;
+  min-width: 0;
+  max-width: 850px;
+}
+
+.lenscraft-home .testimonial-wrap > button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 54px;
+  height: 54px;
+
+  background: var(--lc-cream);
+  border: 1px solid var(--lc-line);
+  border-radius: 50%;
+  color: var(--lc-ink);
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lenscraft-home .testimonial-wrap > button:hover {
+  background: var(--lc-coral-deep);
+  color: white;
+  transform: scale(1.08);
+}
+
+.lenscraft-home .sample-note {
+  margin-top: 20px;
+  color: var(--lc-muted);
+  font-size: 11px;
+  text-align: center;
+}
+
+.lenscraft-home .dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 35px;
+}
+
+.lenscraft-home .dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  background: #d7c7de;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: width 0.3s ease, background 0.3s ease;
+}
+
+.lenscraft-home .dots button.active {
+  width: 30px;
+  background: var(--lc-coral-deep);
+  border-radius: 10px;
+}
+
+/* =====================================================
+   JOURNAL — MODERN EDITORIAL CARDS
+===================================================== */
+
+.lenscraft-home .journal-section {
+  background: var(--lc-cream);
+}
+
+.lenscraft-home .journal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.lenscraft-home .journal-card {
+  overflow: hidden;
+  background: var(--lc-paper);
+  border: 1px solid var(--lc-line);
+  border-radius: 3px;
+
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.lenscraft-home .journal-card:hover {
+  transform: translateY(-9px);
+  box-shadow: var(--lc-shadow);
+}
+
+.lenscraft-home .journal-image {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  background: var(--lc-sand);
+}
+
+.lenscraft-home .journal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.85s ease;
+}
+
+.lenscraft-home .journal-card:hover
+.journal-image img {
+  transform: scale(1.085);
+}
+
+.lenscraft-home .journal-category {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  padding: 11px 15px;
+
+  background: var(--lc-coral-deep);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.lenscraft-home .journal-content {
+  padding: 32px 30px 35px;
+}
+
+.lenscraft-home .journal-content h3 {
+  margin: 0 0 17px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(23px, 2vw, 29px);
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.lenscraft-home .journal-content p {
+  margin: 0;
+  color: var(--lc-muted);
+  font-size: 13px;
+}
+
+.lenscraft-home .journal-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 24px;
+
+  color: var(--lc-coral-deep);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.lenscraft-home .journal-link svg {
+  transition: transform 0.3s ease;
+}
+
+.lenscraft-home .journal-link:hover svg {
+  transform: translate(4px, -4px);
+}
+
+/* =====================================================
+   FINAL BOOKING CTA
+===================================================== */
+
+.lenscraft-home .home-booking-cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 650px;
+  padding: 125px 0;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--lc-ink);
+}
+
+.lenscraft-home .home-booking-bg,
+.lenscraft-home .home-booking-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.lenscraft-home .home-booking-bg {
+  z-index: -2;
+}
+
+.lenscraft-home .home-booking-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 1.2s ease;
+}
+
+.lenscraft-home .home-booking-cta:hover
+.home-booking-bg img {
+  transform: scale(1.07);
+}
+
+.lenscraft-home .home-booking-overlay {
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgba(33,11,44,0.94),
+    rgba(33,11,44,0.77),
+    rgba(33,11,44,0.65)
+  );
+}
+
+.lenscraft-home .home-booking-content {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  text-align: center;
+}
+
+.lenscraft-home .home-booking-content .eyebrow {
+  color: #d4a1e4;
+}
+
+.lenscraft-home .home-booking-content h2 {
+  margin: 0 0 30px;
+  color: white;
+  font-size: clamp(43px, 5.8vw, 79px);
+  line-height: 1.13;
+  letter-spacing: -1.5px;
+}
+
+.lenscraft-home .home-booking-content h2 em {
+  color: #d4a1e4;
+}
+
+.lenscraft-home .home-booking-content > p:not(.eyebrow) {
+  max-width: 630px;
+  margin: 0 auto 38px;
+  color: rgba(255,255,255,0.8);
+  font-size: 15px;
+}
+
+.lenscraft-home .home-booking-content
+.editorial-button {
+  background: var(--lc-coral-deep);
+  border-color: var(--lc-coral-deep);
+}
+
+.lenscraft-home .home-booking-content
+.editorial-button::before {
+  background: #fff;
+}
+
+.lenscraft-home .home-booking-content
+.editorial-button:hover {
+  color: var(--lc-ink);
+  border-color: #fff;
+}
+
+/* =====================================================
+   RESPONSIVE — LARGE TABLETS
+===================================================== */
+
+@media (max-width: 1100px) {
+  .lenscraft-home .section {
+    padding: 95px 0;
+  }
+
+  .lenscraft-home .about-preview-grid,
+  .lenscraft-home .why-choose-grid {
+    gap: 50px;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    min-height: 555px;
+  }
+
+  .lenscraft-home .about-main-image {
+    height: 465px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 260px;
+  }
+
+  .lenscraft-home .home-services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lenscraft-home .home-service-image {
+    height: 345px;
+  }
+
+  .lenscraft-home .process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lenscraft-home .why-choose-image {
+    height: 560px;
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — TABLETS
+===================================================== */
+
+@media (max-width: 800px) {
+  .lenscraft-home .section {
+    padding: 80px 0;
+  }
+
+  .lenscraft-home .section-heading {
+    margin-bottom: 48px;
+  }
+
+  .lenscraft-home .section-heading h2 {
+    font-size: clamp(38px, 7vw, 55px);
+  }
+
+  .lenscraft-home .about-preview-grid,
+  .lenscraft-home .why-choose-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    width: min(100%, 600px);
+    min-height: 570px;
+    margin: 0 auto;
+  }
+
+  .lenscraft-home .about-main-image {
+    height: 480px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 275px;
+  }
+
+  .lenscraft-home .about-preview-content h2,
+  .lenscraft-home .why-choose-content h2 {
+    font-size: clamp(40px, 7vw, 56px);
+  }
+
+  .lenscraft-home .portfolio-card:nth-child(even) {
+    padding-top: 35px;
+  }
+
+  .lenscraft-home .portfolio-card.large
+  .portfolio-image-button {
+    height: 470px;
+  }
+
+  .lenscraft-home .portfolio-card.small
+  .portfolio-image-button {
+    height: 380px;
+  }
+
+  .lenscraft-home .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .lenscraft-home .stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .lenscraft-home .stat:nth-child(-n+2) {
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+
+  .lenscraft-home .why-choose-image {
+    width: min(100%, 620px);
+    height: 550px;
+    margin: 0 auto;
+  }
+
+  .lenscraft-home .journal-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .lenscraft-home .container {
+    width: 90%;
+  }
+
+  .lenscraft-home .section {
+    padding: 75px 0;
+  }
+
+  .lenscraft-home .section-heading {
+    margin-bottom: 42px;
+  }
+
+  .lenscraft-home .section-heading h2 {
+    font-size: clamp(36px, 9vw, 46px);
+    line-height: 1.16;
+    letter-spacing: -1px;
+  }
+
+  .lenscraft-home .section-heading > p:last-child {
+    font-size: 13px;
+  }
+
+  .lenscraft-home .eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .lenscraft-home .ticker-top-line {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .lenscraft-home .ticker-top-line span:last-child {
+    display: none;
+  }
+
+  .lenscraft-home .ticker-marquee {
+    padding: 24px 0;
+  }
+
+  .lenscraft-home .ticker-text {
+    font-size: 35px;
+  }
+
+  .lenscraft-home .ticker-item {
+    gap: 20px;
+    padding: 0 15px;
+  }
+
+  .lenscraft-home .ticker-separator {
+    width: 21px;
+    height: 21px;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    min-height: 470px;
+  }
+
+  .lenscraft-home .about-main-image {
+    width: 82%;
+    height: 390px;
+  }
+
+  .lenscraft-home .about-small-image {
+    width: 48%;
+    height: 210px;
+    bottom: 24px;
+    border-width: 6px;
+  }
+
+  .lenscraft-home .about-experience {
+    left: 12px;
+    bottom: 40px;
+    width: 125px;
+    min-height: 125px;
+    padding: 12px;
+  }
+
+  .lenscraft-home .about-experience strong {
+    font-size: 19px;
+  }
+
+  .lenscraft-home .about-experience span {
+    font-size: 8px;
+  }
+
+  .lenscraft-home .about-preview-content h2 {
+    font-size: clamp(37px, 9vw, 47px);
+  }
+
+  .lenscraft-home .about-preview-content .about-lead {
+    font-size: 15px;
+  }
+
+  .lenscraft-home .about-features {
+    gap: 15px;
+  }
+
+  .lenscraft-home .about-features > div {
+    font-size: 11px;
+  }
+
+  .lenscraft-home .home-services-grid,
+  .lenscraft-home .portfolio-grid,
+  .lenscraft-home .process-grid,
+  .lenscraft-home .journal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .lenscraft-home .home-service-image {
+    height: 330px;
+  }
+
+  .lenscraft-home .home-service-info {
+    padding: 28px 25px;
+  }
+
+  .lenscraft-home .home-service-overlay {
+    opacity: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 18px;
+    background: transparent;
+  }
+
+  .lenscraft-home .home-service-view {
+    width: 52px;
+    height: 52px;
+    transform: none;
+  }
+
+  .lenscraft-home .portfolio-card:nth-child(even) {
+    padding-top: 0;
+  }
+
+  .lenscraft-home .portfolio-card.large
+  .portfolio-image-button,
+  .lenscraft-home .portfolio-card.small
+  .portfolio-image-button {
+    height: 420px;
+  }
+
+  .lenscraft-home .portfolio-overlay {
+    opacity: 1;
+    padding: 25px;
+  }
+
+  .lenscraft-home .portfolio-content {
+    transform: none;
+  }
+
+  .lenscraft-home .portfolio-view-icon {
+    opacity: 1;
+    transform: none;
+  }
+
+  .lenscraft-home .portfolio-card-footer h3 {
+    font-size: 23px;
+  }
+
+  .lenscraft-home .stats-section {
+    padding: 60px 0 35px;
+  }
+
+  .lenscraft-home .stat {
+    min-height: 120px;
+    padding: 15px 10px;
+  }
+
+  .lenscraft-home .stat strong {
+    font-size: 45px;
+  }
+
+  .lenscraft-home .stat span {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .lenscraft-home .why-choose-image {
+    height: 430px;
+  }
+
+  .lenscraft-home .why-image-label {
+    left: 0;
+    bottom: 20px;
+    padding: 15px 18px;
+  }
+
+  .lenscraft-home .process-card {
+    min-height: 270px;
+    padding: 30px 25px;
+  }
+
+  .lenscraft-home .testimonial-wrap {
+    gap: 8px;
+  }
+
+  .lenscraft-home .testimonial-wrap > button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .lenscraft-home .testimonial-wrap > button svg {
+    width: 18px;
+  }
+
+  .lenscraft-home .journal-image {
+    height: 290px;
+  }
+
+  .lenscraft-home .home-booking-cta {
+    min-height: 530px;
+    padding: 90px 0;
+  }
+
+  .lenscraft-home .home-booking-content h2 {
+    font-size: clamp(38px, 9vw, 50px);
+  }
+
+  .lenscraft-home .home-booking-content
+  > p:not(.eyebrow) {
+    font-size: 13px;
+  }
+
+  .lenscraft-home .section-bottom-link
+  .editorial-button {
+    width: 100%;
+    max-width: 360px;
+  }
+}
+
+/* =====================================================
+   VERY SMALL SCREENS
+===================================================== */
+
+@media (max-width: 380px) {
+  .lenscraft-home .about-preview-visual {
+    min-height: 405px;
+  }
+
+  .lenscraft-home .about-main-image {
+    height: 330px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 175px;
+  }
+
+  .lenscraft-home .about-experience {
+    width: 105px;
+    min-height: 105px;
+  }
+
+  .lenscraft-home .about-experience strong {
+    font-size: 16px;
+  }
+
+  .lenscraft-home .home-service-image {
+    height: 280px;
+  }
+
+  .lenscraft-home .portfolio-card.large
+  .portfolio-image-button,
+  .lenscraft-home .portfolio-card.small
+  .portfolio-image-button {
+    height: 350px;
+  }
+
+  .lenscraft-home .about-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================================
+   TOUCH DEVICES
+===================================================== */
+
+@media (hover: none) {
+  .lenscraft-home .home-service-overlay {
+    opacity: 1;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 18px;
+    background: transparent;
+  }
+
+  .lenscraft-home .home-service-view {
+    width: 52px;
+    height: 52px;
+    transform: none;
+  }
+
+  .lenscraft-home .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .lenscraft-home .portfolio-content {
+    transform: none;
+  }
+
+  .lenscraft-home .portfolio-view-icon {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .lenscraft-home *,
+  .lenscraft-home *::before,
+  .lenscraft-home *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --lc-dark: #210b2c;
+  --lc-primary: #4b165c;
+  --lc-purple: #793c91;
+  --lc-lavender: #bc84cd;
+  --lc-light-purple: #d4a1e4;
+  --lc-ivory: #f8f5f9;
+
+  --lc-text: #24172d;
+  --lc-muted: #807286;
+
+  --lc-brand-gradient: linear-gradient(
+    110deg,
+    #4b165c 0%,
+    #793c91 40%,
+    #bc84cd 65%,
+    #793c91 100%
+  );
+}
+
+/* Purple gradient accent headings */
+
+.brand-gradient-text {
+  background: var(--lc-brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Reusable primary button */
+
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 28px;
+
+  background: var(--lc-brand-gradient);
+  color: #fff;
+  border: 1px solid #793c91;
+  border-radius: 0;
+
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.brand-button:hover {
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(121, 60, 145, 0.3);
+}
+
+
+/* ================================================
+   FINAL BRAND REFINEMENTS — PURPLE / BLACK TEXT
+   Preserves all existing layouts and animations
+================================================ */
+.lenscraft-home {
+  --lc-ink: #17131b;
+  --lc-ink-soft: #34243d;
+  --lc-coral: #bc84cd;
+  --lc-coral-deep: #793c91;
+  --lc-muted: #655b6a;
+  --lc-shadow: 0 24px 65px rgba(75,22,92,.13);
+}
+.lenscraft-home .section-heading h2 em,
+.lenscraft-home .about-preview-content h2 em,
+.lenscraft-home .why-choose-content h2 em {
+  color: #793c91;
+}
+.lenscraft-home .editorial-button {
+  background: #4b165c;
+  border-color: #4b165c;
+}
+.lenscraft-home .editorial-button::before { background: #793c91; }
+.lenscraft-home .photography-ticker,
+.lenscraft-home .stats-section { background: #210b2c; }
+.lenscraft-home .ticker-separator,
+.lenscraft-home .stat strong { color: #d4a1e4; }
+.lenscraft-home .about-experience,
+.lenscraft-home .why-image-label,
+.lenscraft-home .journal-category { background: #793c91; }
+.lenscraft-home .home-service-card:hover,
+.lenscraft-home .journal-card:hover,
+.lenscraft-home .process-card:hover {
+  box-shadow: 0 22px 58px rgba(75,22,92,.13);
+}
+.lenscraft-home .home-booking-content h2 { color: #fff; }
+.lenscraft-home .home-booking-content h2 em { color: #d4a1e4; }
+.lenscraft-home .home-booking-content > p:not(.eyebrow) { color: rgba(255,255,255,.84); }
+
+/* TRANSPARENT NAVBAR — NORMAL AND SCROLLED */
+
+.lens-navbar,
+.lens-navbar.scrolled,
+.lens-navbar.navbar-inner-page:not(.scrolled) {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.lens-navbar.scrolled {
+  top: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(121, 60, 145, 0.12);
+  backdrop-filter: blur(24px) saturate(140%);
+  -webkit-backdrop-filter: blur(24px) saturate(140%);
+}
+
+/* BLACK TEXT */
+
+.lens-navbar .nav-main-link,
+.lens-navbar.scrolled .nav-main-link,
+.lens-navbar .brand-name,
+.lens-navbar .brand-name span,
+.lens-navbar .profile-trigger,
+.lens-navbar .nav-notification,
+.lens-navbar .menu-toggle {
+  color: #17131b;
+  text-shadow: none;
+}
+
+/* PURPLE HOVER */
+
+.lens-navbar .nav-main-link:hover,
+.lens-navbar .nav-main-link.active {
+  color: #793c91;
+}
+
+/* LIGHT DROPDOWNS WITH BLACK TEXT */
+
+.lens-navbar .profile-menu,
+.lens-navbar .nav-links.open {
+  background: rgba(248, 245, 249, 0.94);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.lens-navbar .profile-menu-item,
+.lens-navbar .profile-menu-user-info strong,
+.lens-navbar .profile-guest-header strong {
+  color: #17131b;
+}
+
+@media (max-width: 1050px) {
+  .lens-navbar .nav-links {
+    background: rgba(248, 245, 249, 0.94);
+  }
+}
+
+
+
+/* ==========================================
+   LENSCRAFT SIGNATURE COLLECTION
+========================================== */
+
+.signature-ticker {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 75px 0 28px;
+  background: #f2ece3;
+  color: #35271f;
+}
+
+/* INTRO */
+
+.signature-ticker-intro {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 6% 52px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.signature-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #9a775c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.signature-sparkle {
+  font-size: 20px;
+}
+
+.signature-intro-left h2 {
+  margin: 18px 0 0;
+  font-family: "Italiana", serif;
+  font-size: clamp(38px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.signature-intro-left h2 em {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  color: #a27d61;
+}
+
+.signature-intro-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-shrink: 0;
+  padding-bottom: 12px;
+}
+
+.signature-intro-line {
+  width: 45px;
+  height: 1px;
+  background: #b79a81;
+}
+
+.signature-intro-right p {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 1.8px;
+  color: #8c725f;
+}
+
+/* MARQUEE */
+
+.signature-marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 26px 0 36px;
+  border-top: 1px solid #dacabb;
+  border-bottom: 1px solid #dacabb;
+  background: #eae0d4;
+
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    black 4%,
+    black 96%,
+    transparent
+  );
+}
+
+.signature-track {
+  display: flex;
+  width: max-content;
+  animation: signatureSlide 48s linear infinite;
+  will-change: transform;
+}
+
+.signature-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+@keyframes signatureSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* CATEGORY ITEMS */
+
+.signature-item {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 18px;
+  padding: 0 35px;
+  cursor: default;
+}
+
+.signature-number {
+  align-self: flex-start;
+  margin-top: 8px;
+  color: #9d816b;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.signature-item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.signature-name {
+  font-family: "Italiana", serif;
+  font-size: clamp(48px, 5vw, 76px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #35271f;
+
+  transition:
+    color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.signature-detail {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 19px;
+  color: #9a775c;
+  text-align: right;
+}
+
+.signature-diamond {
+  margin-left: 10px;
+  font-size: 43px;
+  color: #ae8b6f;
+  font-family: Georgia, serif;
+  transition: transform 0.4s ease;
+}
+
+.signature-item:hover .signature-name {
+  color: #aa7d5d;
+  transform: translateY(-3px);
+}
+
+.signature-item:hover .signature-diamond {
+  transform: rotate(90deg);
+}
+
+.signature-marquee:hover .signature-track {
+  animation-play-state: paused;
+}
+
+/* FOOTER */
+
+.signature-ticker-footer {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 27px 6% 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #8c725f;
+}
+
+.signature-footer-center {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.signature-footer-center span {
+  color: #b18b6c;
+  font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .signature-ticker-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .signature-intro-right {
+    display: none;
+  }
+
+  .signature-name {
+    font-size: 58px;
+  }
+}
+
+@media (max-width: 600px) {
+  .signature-ticker {
+    padding-top: 55px;
+  }
+
+  .signature-ticker-intro {
+    padding: 0 6% 35px;
+  }
+
+  .signature-intro-left h2 {
+    font-size: 43px;
+  }
+
+  .signature-marquee {
+    padding: 25px 0;
+  }
+
+  .signature-item {
+    gap: 12px;
+    padding: 0 22px;
+  }
+
+  .signature-name {
+    font-size: 48px;
+  }
+
+  .signature-detail {
+    font-size: 16px;
+  }
+
+  .signature-diamond {
+    font-size: 30px;
+    margin-left: 0;
+  }
+
+  .signature-ticker-footer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .signature-ticker-footer > span:first-child,
+  .signature-ticker-footer > span:last-child {
+    display: none;
+  }
+
+  .signature-track {
+    animation-duration: 36s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signature-track {
+    animation: none;
+  }
+
+  .signature-item *,
+  .signature-diamond {
+    transition: none;
+  }
+
+}
+/* =====================================================
+   ABOUT — FIXED POSITION INTERACTIVE PHOTO LAYERS
+   Click to change stacking order, not size or position
+===================================================== */
+
+/* =========================================
+   LENSCRAFT — THE CINEMATIC GALLERY
+========================================= */
+
+.lenscraft-home .about-preview {
+  --about-bg: #201925;
+  --about-text: #f7f1f6;
+  --about-muted: #b9aebd;
+  --about-accent: #d4a9ce;
+  --about-line: rgba(255,255,255,.16);
+
+  position: relative;
+  padding: 120px 0 70px;
+  background:
+    radial-gradient(
+      circle at 8% 20%,
+      rgba(151, 91, 142, .17),
+      transparent 40%
+    ),
+    #201925;
+  color: var(--about-text);
+  overflow: hidden;
+}
+
+.lenscraft-home .about-preview::before {
+  content: "";
+  position: absolute;
+  right: -180px;
+  top: -180px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(212,169,206,.12);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.lenscraft-home .about-preview-inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* TOP HEADING */
+
+.lenscraft-home .about-top-heading {
+  margin-bottom: 75px;
+}
+
+.lenscraft-home .about-top-label,
+.lenscraft-home .about-content-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--about-accent);
+  font: 700 10px "Manrope", sans-serif;
+  letter-spacing: 2.6px;
+}
+
+.lenscraft-home .about-label-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--about-accent);
+  border-radius: 50%;
+}
+
+.lenscraft-home .about-heading-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.lenscraft-home .about-heading-row h2 {
+  margin: 0;
+  color: var(--about-text);
+  font: 400 clamp(52px, 7.5vw, 115px)/1.04
+    "Playfair Display", serif;
+  letter-spacing: -4px;
+}
+
+.lenscraft-home .about-heading-row h2 em {
+  color: var(--about-accent);
+  font-weight: 400;
+}
+
+.lenscraft-home .about-heading-index {
+  padding-bottom: 12px;
+  color: var(--about-muted);
+  font: 600 11px "Manrope", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* MAIN GRID */
+
+.lenscraft-home .about-preview-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(55px, 7vw, 120px);
+}
+
+/* IMAGE COMPOSITION */
+
+.lenscraft-home .about-preview-visual {
+  position: relative;
+  width: 100%;
+  height: 650px;
+  min-width: 0;
+  isolation: isolate;
+}
+
+.lenscraft-home .about-visual-outline {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  width: 77%;
+  height: 78%;
+  border: 1px solid rgba(212,169,206,.35);
+  pointer-events: none;
+}
+
+.lenscraft-home .about-main-image,
+.lenscraft-home .about-small-image {
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 0;
+  cursor: pointer;
+  background: #443b46;
+  box-shadow: 0 24px 65px rgba(0,0,0,.25);
+  transition: box-shadow .35s ease;
+}
+
+.lenscraft-home .about-main-image {
+  top: 0;
+  left: 0;
+  width: 77%;
+  height: 530px;
+  z-index: 4;
+}
+
+.lenscraft-home .about-small-image {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 25px;
+  width: 49%;
+  height: 320px;
+  border: 8px solid #201925;
+  z-index: 2;
+}
+
+/* CLICK TO SWITCH LAYERS */
+
+.lenscraft-home .about-preview-visual.is-expanded
+.about-main-image {
+  z-index: 2;
+}
+
+.lenscraft-home .about-preview-visual.is-expanded
+.about-small-image {
+  z-index: 5;
+}
+
+/* PHOTOGRAPH */
+
+.lenscraft-home .about-main-image img,
+.lenscraft-home .about-small-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
+  transition: filter .35s ease;
+}
+
+.lenscraft-home .about-main-image:hover img,
+.lenscraft-home .about-small-image:hover img {
+  filter: brightness(1.07);
+}
+
+/* PHOTO LABELS */
+
+.lenscraft-home .about-photo-index {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  padding: 9px 12px;
+  background: rgba(25,20,29,.68);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font: 700 9px "Manrope", sans-serif;
+  letter-spacing: 2px;
+  pointer-events: none;
+}
+
+/* ORBIT EMBLEM */
+
+.lenscraft-home .about-orbit-seal {
+  position: absolute;
+  left: 3%;
+  bottom: 40px;
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: #d4a9ce;
+  color: #201925;
+  box-shadow: 0 15px 45px rgba(0,0,0,.2);
+  pointer-events: none;
+}
+
+.lenscraft-home .about-orbit-seal span {
+  max-width: 90px;
+  text-align: center;
+  font: 800 9px/1.5 "Manrope", sans-serif;
+  letter-spacing: 1.3px;
+}
+
+.lenscraft-home .about-visual-footnote {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: var(--about-muted);
+  font: 700 9px "Manrope", sans-serif;
+  letter-spacing: 2px;
+}
+
+/* RIGHT CONTENT */
+
+.lenscraft-home .about-preview-content {
+  min-width: 0;
+}
+
+.lenscraft-home .about-kicker-line {
+  width: 30px;
+  height: 1px;
+  background: var(--about-accent);
+}
+
+.lenscraft-home .about-preview-content h3 {
+  margin: 30px 0;
+  color: var(--about-text);
+  font: 400 clamp(40px, 4.4vw, 69px)/1.14
+    "Playfair Display", serif;
+  letter-spacing: -1.8px;
+}
+
+.lenscraft-home .about-preview-content h3 em {
+  color: var(--about-accent);
+  font-weight: 400;
+}
+
+.lenscraft-home .about-preview-content .about-lead {
+  margin: 0 0 20px;
+  color: #f2e9f0;
+  font: 500 18px/1.8 "DM Sans", sans-serif;
+}
+
+.lenscraft-home .about-preview-content .about-description {
+  margin: 0 0 18px;
+  color: var(--about-muted);
+  font: 400 14px/1.9 "DM Sans", sans-serif;
+}
+
+/* FEATURES */
+
+.lenscraft-home .about-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px 20px;
+  margin: 35px 0 45px;
+}
+
+.lenscraft-home .about-feature {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: #f1e8f0;
+  font: 600 12px "Manrope", sans-serif;
+}
+
+.lenscraft-home .about-feature svg {
+  flex-shrink: 0;
+  color: var(--about-accent);
+}
+
+/* STORY LINK */
+
+.lenscraft-home .about-story-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--about-accent);
+  color: #fff;
+  text-decoration: none;
+  font: 700 11px "Manrope", sans-serif;
+  letter-spacing: 2px;
+}
+
+.lenscraft-home .about-story-arrow {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(212,169,206,.5);
+  border-radius: 50%;
+  color: var(--about-accent);
+  transition: background .3s, color .3s, transform .3s;
+}
+
+.lenscraft-home .about-story-link:hover
+.about-story-arrow {
+  background: var(--about-accent);
+  color: #201925;
+  transform: rotate(45deg);
+}
+
+/* BOTTOM SIGNATURE */
+
+.lenscraft-home .about-bottom-signature {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 65px;
+  padding-top: 25px;
+  border-top: 1px solid var(--about-line);
+  color: var(--about-muted);
+  font: 700 9px "Manrope", sans-serif;
+  letter-spacing: 2px;
+}
+
+.lenscraft-home .about-signature-line {
+  flex: 1;
+  height: 1px;
+  background: var(--about-line);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1050px) {
+  .lenscraft-home .about-preview-grid {
+    gap: 45px;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    height: 560px;
+  }
+
+  .lenscraft-home .about-main-image {
+    height: 460px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 270px;
+  }
+}
+
+@media (max-width: 800px) {
+  .lenscraft-home .about-preview {
+    padding: 85px 0 50px;
+  }
+
+  .lenscraft-home .about-preview-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    width: min(100%, 600px);
+    height: 610px;
+    margin: 0 auto;
+  }
+
+  .lenscraft-home .about-main-image {
+    height: 510px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 300px;
+  }
+
+  .lenscraft-home .about-top-heading {
+    margin-bottom: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lenscraft-home .about-preview {
+    padding: 70px 0 45px;
+  }
+
+  .lenscraft-home .about-heading-row h2 {
+    font-size: clamp(44px, 10vw, 62px);
+    letter-spacing: -2px;
+  }
+
+  .lenscraft-home .about-heading-index {
+    display: none;
+  }
+
+  .lenscraft-home .about-preview-visual {
+    height: 435px;
+  }
+
+  .lenscraft-home .about-main-image {
+    width: 79%;
+    height: 350px;
+  }
+
+  .lenscraft-home .about-small-image {
+    width: 49%;
+    height: 205px;
+    bottom: 25px;
+    border-width: 5px;
+  }
+
+  .lenscraft-home .about-orbit-seal {
+    width: 90px;
+    height: 90px;
+    bottom: 30px;
+    gap: 6px;
+  }
+
+  .lenscraft-home .about-orbit-seal svg {
+    width: 25px;
+  }
+
+  .lenscraft-home .about-orbit-seal span {
+    font-size: 6px;
+    max-width: 70px;
+  }
+
+  .lenscraft-home .about-preview-content h3 {
+    font-size: clamp(38px, 9vw, 50px);
+  }
+
+  .lenscraft-home .about-features {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .lenscraft-home .about-bottom-signature {
+    gap: 12px;
+    font-size: 7px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lenscraft-home .about-main-image,
+  .lenscraft-home .about-small-image,
+  .lenscraft-home .about-story-arrow {
+    transition: none;
+  }
+}
+
+/* ==============================================
+   LENSCRAFT — PREMIUM INTERACTIVE PHOTO LAYERS
+============================================== */
+
+.lenscraft-home .about-preview-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: visible;
+}
+
+/* ==============================================
+   COMMON PHOTO CARD
+============================================== */
+
+.lenscraft-home .about-main-image,
+.lenscraft-home .about-small-image {
+  position: absolute;
+  display: block;
+  padding: 0;
+  margin: 0;
+
+  overflow: hidden;
+  cursor: pointer;
+
+  border-radius: 2px;
+  background: #443b46;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.22);
+
+  /* Cards never move or resize */
+  transform: none;
+
+  transition:
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+/* ==============================================
+   LEFT PHOTO
+============================================== */
+
+.lenscraft-home .about-main-image {
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
+
+  width: 77%;
+  height: 530px;
+
+  border: 0;
+  z-index: 3;
+}
+
+/* ==============================================
+   RIGHT PHOTO
+============================================== */
+
+.lenscraft-home .about-small-image {
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 25px;
+
+  width: 49%;
+  height: 320px;
+
+  border: 8px solid #201925;
+  z-index: 2;
+}
+
+/* ==============================================
+   HOVER — SWITCH PHOTO LAYERS
+============================================== */
+
+.lenscraft-home .about-main-image:hover,
+.lenscraft-home .about-main-image:focus-visible {
+  z-index: 10;
+}
+
+.lenscraft-home .about-small-image:hover,
+.lenscraft-home .about-small-image:focus-visible {
+  z-index: 10;
+}
+
+/* ==============================================
+   CINEMATIC IMAGE ZOOM
+   Only the image zooms, not its container
+============================================== */
+
+.lenscraft-home .about-main-image img,
+.lenscraft-home .about-small-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform: scale(1);
+  transform-origin: center;
+
+  filter: brightness(0.96) saturate(0.95);
+
+  transition:
+    transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 0.6s ease;
+}
+
+.lenscraft-home .about-main-image:hover img,
+.lenscraft-home .about-small-image:hover img,
+.lenscraft-home .about-main-image:focus-visible img,
+.lenscraft-home .about-small-image:focus-visible img {
+  transform: scale(1.055);
+  filter: brightness(1.07) saturate(1.12);
+}
+
+/* ==============================================
+   CINEMATIC GRADIENT
+============================================== */
+
+.lenscraft-home .about-main-image::after,
+.lenscraft-home .about-small-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    180deg,
+    rgba(25, 12, 30, 0) 35%,
+    rgba(25, 12, 30, 0.15) 60%,
+    rgba(25, 12, 30, 0.65) 100%
+  );
+
+  opacity: 0.4;
+  pointer-events: none;
+
+  transition: opacity 0.5s ease;
+}
+
+.lenscraft-home .about-main-image:hover::after,
+.lenscraft-home .about-small-image:hover::after,
+.lenscraft-home .about-main-image:focus-visible::after,
+.lenscraft-home .about-small-image:focus-visible::after {
+  opacity: 1;
+}
+
+/* ==============================================
+   ANIMATED LAVENDER INNER BORDER
+============================================== */
+
+.lenscraft-home .about-main-image::before,
+.lenscraft-home .about-small-image::before {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  z-index: 3;
+
+  border: 1px solid rgba(235, 198, 235, 0.9);
+
+  opacity: 0;
+  transform: scale(0.97);
+  pointer-events: none;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.55s ease;
+}
+
+.lenscraft-home .about-main-image:hover::before,
+.lenscraft-home .about-small-image:hover::before,
+.lenscraft-home .about-main-image:focus-visible::before,
+.lenscraft-home .about-small-image:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==============================================
+   PREMIUM FLOATING SHADOW
+============================================== */
+
+.lenscraft-home .about-main-image:hover,
+.lenscraft-home .about-small-image:hover,
+.lenscraft-home .about-main-image:focus-visible,
+.lenscraft-home .about-small-image:focus-visible {
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.35),
+    0 0 35px rgba(212, 169, 206, 0.2);
+}
+
+/* ==============================================
+   PHOTO INDEX LABEL
+============================================== */
+
+.lenscraft-home .about-photo-index {
+  position: absolute;
+  z-index: 4;
+
+  left: 20px;
+  bottom: 20px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px 15px;
+
+  background: rgba(25, 17, 31, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #ffffff;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  pointer-events: none;
+
+  transition:
+    transform 0.45s ease,
+    background 0.45s ease,
+    color 0.45s ease,
+    border-color 0.45s ease;
+}
+
+/* Small decorative line */
+
+.lenscraft-home .about-photo-index::before {
+  content: "";
+  width: 16px;
+  height: 1px;
+  background: #d4a9ce;
+
+  transition:
+    width 0.4s ease,
+    background 0.4s ease;
+}
+
+/* Hover label animation */
+
+.lenscraft-home .about-main-image:hover .about-photo-index,
+.lenscraft-home .about-small-image:hover .about-photo-index,
+.lenscraft-home .about-main-image:focus-visible .about-photo-index,
+.lenscraft-home .about-small-image:focus-visible .about-photo-index {
+  transform: translateY(-8px);
+
+  background: rgba(222, 181, 217, 0.94);
+  color: #201925;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.lenscraft-home .about-main-image:hover .about-photo-index::before,
+.lenscraft-home .about-small-image:hover .about-photo-index::before {
+  width: 27px;
+  background: #201925;
+}
+
+/* ==============================================
+   ACCESSIBILITY
+============================================== */
+
+.lenscraft-home .about-main-image:focus-visible,
+.lenscraft-home .about-small-image:focus-visible {
+  outline: 2px solid #d4a9ce;
+  outline-offset: 5px;
+}
+
+/* ==============================================
+   RESPONSIVE
+============================================== */
+
+@media (max-width: 1050px) {
+  .lenscraft-home .about-main-image {
+    height: 460px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 270px;
+  }
+}
+
+@media (max-width: 800px) {
+  .lenscraft-home .about-main-image {
+    height: 510px;
+  }
+
+  .lenscraft-home .about-small-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .lenscraft-home .about-main-image {
+    width: 79%;
+    height: 350px;
+  }
+
+  .lenscraft-home .about-small-image {
+    width: 49%;
+    height: 205px;
+    bottom: 25px;
+    border-width: 5px;
+  }
+
+  .lenscraft-home .about-main-image::before,
+  .lenscraft-home .about-small-image::before {
+    inset: 7px;
+  }
+
+  .lenscraft-home .about-photo-index {
+    left: 10px;
+    bottom: 10px;
+    padding: 7px 9px;
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ==============================================
+   TOUCH DEVICES
+============================================== */
+
+@media (hover: none) {
+  .lenscraft-home .about-main-image:hover img,
+  .lenscraft-home .about-small-image:hover img {
+    transform: scale(1);
+    filter: none;
+  }
+
+  .lenscraft-home .about-main-image:hover::before,
+  .lenscraft-home .about-small-image:hover::before {
+    opacity: 0;
+  }
+
+  .lenscraft-home .about-main-image:hover .about-photo-index,
+  .lenscraft-home .about-small-image:hover .about-photo-index {
+    transform: none;
+  }
+}
+
+/* ==============================================
+   REDUCED MOTION
+============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .lenscraft-home .about-main-image,
+  .lenscraft-home .about-small-image,
+  .lenscraft-home .about-main-image img,
+  .lenscraft-home .about-small-image img,
+  .lenscraft-home .about-main-image::before,
+  .lenscraft-home .about-small-image::before,
+  .lenscraft-home .about-main-image::after,
+  .lenscraft-home .about-small-image::after,
+  .lenscraft-home .about-photo-index {
+    transition: none;
+  }
+
+  .lenscraft-home .about-main-image:hover img,
+  .lenscraft-home .about-small-image:hover img {
+    transform: none;
+  }
+}
+
+/* Initially big image behind */
+.lenscraft-home .about-main-image {
+  z-index: 2;
+}
+
+/* Initially small image in front */
+.lenscraft-home .about-small-image {
+  z-index: 5;
+}
+
+/* Hover big image -> bring it to front */
+.lenscraft-home .about-preview-visual:has(.about-main-image:hover)
+.about-main-image {
+  z-index: 10;
+}
+
+/* Hover small image -> keep it in front */
+.lenscraft-home .about-preview-visual:has(.about-small-image:hover)
+.about-small-image {
+  z-index: 10;
+}
+
+/* Keyboard focus support */
+.lenscraft-home .about-main-image:focus-visible,
+.lenscraft-home .about-small-image:focus-visible {
+  z-index: 10;
+}
+
+
+/* Shared Lenscraft typography (import this after page CSS if possible) */
+.lenscraft-home { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.lenscraft-home :is(h1,h2,h3,h4) { font-family: var(--brand-heading-font, "Playfair Display", Georgia, serif); }
+.lenscraft-home :is(p,button,input,select,textarea,label,a) { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.lenscraft-home h2 { font-size: var(--brand-section-size, clamp(40px,5vw,72px)); }
+.lenscraft-home h3 { font-size: var(--brand-subheading-size, clamp(24px,3vw,36px)); }
+.lenscraft-home :is(h1,h2,h3) em { color: var(--brand-coral, #f26b5e); }
+.lenscraft-home :is(.about-hero,.portfolio-hero,.services-cinematic-hero) h1 { font-size: var(--brand-hero-size, clamp(50px,6.5vw,100px)); color: white; }
+.lenscraft-home :is(.about-hero,.portfolio-hero,.services-cinematic-hero) :is(h1,h2) em { color: #ffb5a5; }
+@media(max-width:767px) { .lenscraft-home h2 { font-size:clamp(32px,8vw,46px); } .lenscraft-home h3 { font-size:clamp(22px,5vw,30px); } }
+/* REMOVE NAVBAR BORDER ON REFRESH AND SCROLL */
+
+.lens-navbar,
+.lens-navbar.scrolled,
+.lens-navbar.navbar-inner-page:not(.scrolled) {
+  border: none !important;
+  outline: none !important;
+}
+
+/* Remove border from possible inner navbar wrappers */
+.lens-navbar .navbar-container,
+.lens-navbar .navbar-inner,
+.lens-navbar .nav-container {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}

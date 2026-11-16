@@ -1,0 +1,1783 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+/* =========================================
+   LENSCRAFT CONTACT PAGE
+========================================= */
+
+.lc-contact-page {
+  --lc-coral: #f26b5e;
+  --lc-deep: #d95749;
+  --lc-terracotta: #b96d55;
+  --lc-peach: #fff0e6;
+  --lc-cream: #fffaf6;
+  --lc-dark: #211c1b;
+  --lc-muted: #756e6a;
+  --lc-border: #eadfd8;
+
+  color: var(--lc-dark);
+  background: var(--lc-cream);
+  font-family: "DM Sans", sans-serif;
+  overflow: clip;
+}
+
+.lc-contact-page *,
+.lc-contact-page *::before,
+.lc-contact-page *::after {
+  box-sizing: border-box;
+}
+
+.lc-container {
+  width: min(1200px, calc(100% - 64px));
+  margin-inline: auto;
+}
+
+.lc-contact-page h2,
+.lc-contact-page h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+
+.lc-contact-page h2 em {
+  color: var(--lc-coral);
+  font-weight: 400;
+}
+
+.lc-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: var(--lc-terracotta);
+}
+
+.lc-eyebrow-line {
+  width: 29px;
+  height: 1px;
+  background: var(--lc-coral);
+}
+
+.lc-section-index {
+  color: var(--lc-terracotta);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+}
+
+/* =========================================
+   INTRO SECTION
+========================================= */
+
+.lc-contact-intro {
+  padding: 112px 0 105px;
+  background: var(--lc-cream);
+}
+
+.lc-intro-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 100px;
+  align-items: end;
+}
+
+.lc-contact-intro h2 {
+  font-size: clamp(40px, 5vw, 72px);
+  line-height: 1.13;
+  margin: 28px 0 0;
+}
+
+.lc-intro-right {
+  padding-bottom: 8px;
+}
+
+.lc-intro-right p {
+  font-size: 16px;
+  line-height: 1.95;
+  color: var(--lc-muted);
+  margin: 0 0 29px;
+}
+
+.lc-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--lc-coral);
+  text-decoration: none;
+  color: var(--lc-dark);
+  font-weight: 700;
+  font-size: 13px;
+  transition: color 0.3s, gap 0.3s;
+}
+
+.lc-text-link:hover {
+  color: var(--lc-coral);
+  gap: 21px;
+}
+
+/* =========================================
+   MAIN CONTACT SECTION
+========================================= */
+
+.lc-contact-main {
+  background: #fff;
+  padding: 110px 0 120px;
+}
+
+.lc-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(35px, 6vw, 95px);
+  align-items: start;
+}
+
+.lc-contact-sidebar {
+  padding-top: 16px;
+}
+
+.lc-sidebar-heading h2 {
+  font-size: clamp(37px, 4vw, 56px);
+  line-height: 1.17;
+  margin: 25px 0;
+}
+
+.lc-sidebar-heading > p {
+  max-width: 390px;
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--lc-muted);
+}
+
+/* CONTACT INFO */
+
+.lc-contact-info-list {
+  margin-top: 50px;
+  border-top: 1px solid var(--lc-border);
+}
+
+.lc-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid var(--lc-border);
+  transition: padding-left 0.3s;
+}
+
+.lc-info-card:hover {
+  padding-left: 7px;
+}
+
+.lc-info-icon {
+  width: 47px;
+  height: 47px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--lc-coral);
+  background: var(--lc-peach);
+  border-radius: 50%;
+}
+
+.lc-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 3px;
+  min-width: 0;
+}
+
+.lc-info-content > span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  color: var(--lc-terracotta);
+}
+
+.lc-info-content strong,
+.lc-info-content a {
+  color: var(--lc-dark);
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 600;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.lc-info-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.lc-info-content a:hover {
+  color: var(--lc-coral);
+}
+
+/* SOCIALS */
+
+.lc-social-section {
+  margin-top: 43px;
+}
+
+.lc-social-section > span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--lc-muted);
+}
+
+.lc-social-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.lc-social-links a {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--lc-border);
+  border-radius: 50%;
+  color: var(--lc-dark);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.lc-social-links a:hover {
+  background: var(--lc-coral);
+  border-color: var(--lc-coral);
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* QUOTE CARD */
+
+.lc-quote-card {
+  position: relative;
+  margin-top: 65px;
+  padding: 38px 34px;
+  background: var(--lc-peach);
+  overflow: hidden;
+}
+
+.lc-quote-card > svg {
+  color: var(--lc-coral);
+}
+
+.lc-quote-card p {
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  line-height: 1.55;
+  font-style: italic;
+  margin: 25px 0;
+}
+
+.lc-quote-card > span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--lc-terracotta);
+}
+
+/* =========================================
+   FORM PANEL
+========================================= */
+
+.lc-form-panel {
+  background: var(--lc-cream);
+  padding: clamp(28px, 4vw, 55px);
+  border: 1px solid #f1e8e1;
+  box-shadow: 0 25px 75px rgba(85, 55, 42, 0.045);
+}
+
+.lc-form-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lc-form-decor {
+  color: var(--lc-coral);
+}
+
+.lc-form-header h2 {
+  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.16;
+  margin: 23px 0 17px;
+}
+
+.lc-form-header > p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--lc-muted);
+  max-width: 440px;
+}
+
+.lc-contact-form {
+  margin-top: 37px;
+}
+
+.lc-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px 20px;
+}
+
+.lc-field {
+  min-width: 0;
+}
+
+.lc-field.lc-full {
+  grid-column: 1 / -1;
+}
+
+.lc-field label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  color: #514540;
+  margin-bottom: 11px;
+}
+
+.lc-field input,
+.lc-field select,
+.lc-field textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 15px 16px;
+  border: 1px solid #e8dcd4;
+  border-radius: 0;
+  background: #fff;
+  color: var(--lc-dark);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition:
+    border-color 0.25s,
+    box-shadow 0.25s,
+    background 0.25s;
+}
+
+.lc-field input,
+.lc-field select {
+  min-height: 51px;
+}
+
+.lc-field input::placeholder,
+.lc-field textarea::placeholder {
+  color: #aaa09a;
+}
+
+.lc-field input:focus,
+.lc-field select:focus,
+.lc-field textarea:focus {
+  border-color: var(--lc-coral);
+  box-shadow: 0 0 0 3px rgba(242, 107, 94, 0.09);
+  background: #fff;
+}
+
+.lc-field input[aria-invalid="true"],
+.lc-field select[aria-invalid="true"],
+.lc-field textarea[aria-invalid="true"] {
+  border-color: #c94c4c;
+}
+
+.lc-field select {
+  cursor: pointer;
+}
+
+.lc-field textarea {
+  resize: vertical;
+  min-height: 145px;
+  line-height: 1.7;
+}
+
+.lc-field-error {
+  display: block;
+  color: #c94c4c;
+  font-size: 11px;
+  margin-top: 7px;
+}
+
+.lc-form-footer {
+  margin-top: 28px;
+}
+
+.lc-form-footer > p {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--lc-muted);
+  margin-bottom: 22px;
+}
+
+.lc-form-footer > p svg {
+  flex-shrink: 0;
+  color: var(--lc-terracotta);
+}
+
+.lc-submit-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  min-height: 59px;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 0;
+  background: var(--lc-coral);
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.lc-submit-btn:hover:not(:disabled) {
+  background: var(--lc-deep);
+  transform: translateY(-2px);
+}
+
+.lc-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.lc-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: lc-spin 0.7s linear infinite;
+}
+
+@keyframes lc-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.lc-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  margin-top: 17px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.lc-alert svg {
+  flex-shrink: 0;
+}
+
+.lc-alert-success {
+  background: #e8f6ed;
+  color: #287a45;
+}
+
+.lc-alert-error {
+  background: #fff0ee;
+  color: #b54137;
+}
+
+/* =========================================
+   GOOGLE MAP
+========================================= */
+
+.lc-map-section {
+  padding: 110px 0 115px;
+  background: var(--lc-cream);
+}
+
+.lc-map-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 50px;
+  margin-bottom: 44px;
+}
+
+.lc-map-heading h2 {
+  font-size: clamp(42px, 5vw, 65px);
+  margin: 22px 0 0;
+}
+
+.lc-map-heading > p {
+  max-width: 360px;
+  color: var(--lc-muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.lc-map-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 460px;
+  background: #e8e4df;
+  overflow: hidden;
+}
+
+.lc-map-wrapper iframe {
+  display: block;
+  width: 100%;
+  height: 460px;
+  border: 0;
+  filter: saturate(0.85);
+}
+
+.lc-map-overlay {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  width: min(350px, calc(100% - 48px));
+  padding: 27px;
+  background: #fff;
+  box-shadow: 0 15px 55px rgba(0, 0, 0, 0.13);
+}
+
+.lc-map-overlay-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--lc-peach);
+  color: var(--lc-coral);
+  margin-bottom: 17px;
+}
+
+.lc-map-overlay-text {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.lc-map-overlay-text span {
+  color: var(--lc-terracotta);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.lc-map-overlay-text strong {
+  font-family: "Playfair Display", serif;
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.lc-map-overlay-text p {
+  font-size: 12px;
+  color: var(--lc-muted);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.lc-map-directions {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--lc-coral);
+  color: var(--lc-coral);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: gap 0.3s;
+}
+
+.lc-map-directions:hover {
+  gap: 16px;
+}
+
+.lc-map-note {
+  color: var(--lc-muted);
+  font-size: 11px;
+  margin-top: 16px;
+}
+
+/* =========================================
+   FAQ
+========================================= */
+
+.lc-faq-section {
+  background: #fff;
+  padding: 115px 0;
+}
+
+.lc-faq-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(50px, 8vw, 130px);
+}
+
+.lc-faq-intro h2 {
+  font-size: clamp(40px, 4.5vw, 60px);
+  line-height: 1.2;
+  margin: 26px 0;
+}
+
+.lc-faq-intro > p {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--lc-muted);
+  margin-bottom: 29px;
+}
+
+.lc-faq-list {
+  border-top: 1px solid var(--lc-border);
+}
+
+.lc-faq-item {
+  border-bottom: 1px solid var(--lc-border);
+}
+
+.lc-faq-question {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 26px 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  color: var(--lc-dark);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.6;
+  cursor: pointer;
+}
+
+.lc-faq-number {
+  color: var(--lc-coral);
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.lc-faq-question > span:nth-child(2) {
+  flex: 1;
+}
+
+.lc-faq-question > svg {
+  color: var(--lc-terracotta);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.lc-faq-item.active .lc-faq-question > svg {
+  transform: rotate(180deg);
+}
+
+.lc-faq-item.active .lc-faq-question {
+  color: var(--lc-deep);
+}
+
+.lc-faq-answer {
+  padding: 0 35px 25px;
+}
+
+.lc-faq-answer p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--lc-muted);
+  margin: 0;
+}
+
+/* =========================================
+   FINAL CTA
+========================================= */
+
+.lc-contact-cta {
+  position: relative;
+  padding: 115px 0 125px;
+  background: #26201e;
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.lc-contact-cta::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -120px;
+  width: 450px;
+  height: 450px;
+  border: 1px solid rgba(242, 107, 94, 0.16);
+  border-radius: 50%;
+}
+
+.lc-contact-cta::after {
+  content: "";
+  position: absolute;
+  bottom: -250px;
+  left: -160px;
+  width: 500px;
+  height: 500px;
+  border: 1px solid rgba(242, 107, 94, 0.13);
+  border-radius: 50%;
+}
+
+.lc-cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.lc-cta-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  margin: 0 auto 26px;
+  border: 1px solid rgba(242, 107, 94, 0.4);
+  border-radius: 50%;
+  color: var(--lc-coral);
+}
+
+.lc-cta-inner > span {
+  display: block;
+  color: #e4a18f;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.lc-cta-inner h2 {
+  font-size: clamp(44px, 6vw, 80px);
+  line-height: 1.18;
+  margin: 25px 0;
+}
+
+.lc-cta-inner h2 em {
+  color: #f59b8e;
+}
+
+.lc-cta-inner > p {
+  max-width: 510px;
+  margin: 0 auto 32px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: #c5b9b4;
+}
+
+.lc-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 19px 28px;
+  background: var(--lc-coral);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.lc-cta-button:hover {
+  background: var(--lc-deep);
+  transform: translateY(-4px);
+}
+
+.lc-cta-decoration {
+  position: absolute;
+  right: 0;
+  bottom: -65px;
+  color: rgba(242, 107, 94, 0.09);
+  pointer-events: none;
+}
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+  .lc-intro-grid {
+    gap: 50px;
+  }
+
+  .lc-main-grid {
+    gap: 35px;
+  }
+
+  .lc-form-panel {
+    padding: 30px;
+  }
+
+  .lc-form-grid {
+    gap: 20px 14px;
+  }
+
+  .lc-faq-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 850px) {
+  .lc-contact-intro,
+  .lc-contact-main,
+  .lc-map-section,
+  .lc-faq-section {
+    padding: 75px 0;
+  }
+
+  .lc-intro-grid,
+  .lc-main-grid,
+  .lc-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .lc-intro-right p {
+    max-width: 650px;
+  }
+
+  .lc-contact-sidebar {
+    padding-top: 0;
+  }
+
+  .lc-contact-info-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 25px;
+  }
+
+  .lc-quote-card {
+    margin-top: 40px;
+  }
+
+  .lc-map-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lc-faq-grid {
+    gap: 40px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .lc-container {
+    width: calc(100% - 36px);
+  }
+
+  .lc-contact-intro {
+    padding: 65px 0;
+  }
+
+  .lc-contact-intro h2 {
+    font-size: clamp(35px, 9vw, 48px);
+    line-height: 1.2;
+  }
+
+  .lc-intro-grid {
+    gap: 24px;
+  }
+
+  .lc-intro-right p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .lc-contact-main {
+    padding: 70px 0;
+  }
+
+  .lc-main-grid {
+    gap: 45px;
+  }
+
+  .lc-sidebar-heading h2 {
+    font-size: 39px;
+  }
+
+  .lc-contact-info-list {
+    grid-template-columns: 1fr;
+    margin-top: 32px;
+  }
+
+  .lc-info-card {
+    padding: 20px 0;
+  }
+
+  .lc-social-section {
+    margin-top: 32px;
+  }
+
+  .lc-quote-card {
+    padding: 28px;
+    margin-top: 38px;
+  }
+
+  .lc-quote-card p {
+    font-size: 22px;
+  }
+
+  .lc-form-panel {
+    padding: 28px 20px;
+  }
+
+  .lc-form-header h2 {
+    font-size: 37px;
+  }
+
+  .lc-form-grid {
+    grid-template-columns: 1fr;
+    gap: 21px;
+  }
+
+  .lc-field.lc-full {
+    grid-column: auto;
+  }
+
+  .lc-field input,
+  .lc-field select,
+  .lc-field textarea {
+    font-size: 16px;
+  }
+
+  .lc-map-section {
+    padding: 70px 0;
+  }
+
+  .lc-map-heading h2 {
+    font-size: 43px;
+  }
+
+  .lc-map-wrapper {
+    min-height: 0;
+  }
+
+  .lc-map-wrapper iframe {
+    height: 330px;
+  }
+
+  .lc-map-overlay {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    box-shadow: none;
+    padding: 25px;
+  }
+
+  .lc-faq-section {
+    padding: 75px 0;
+  }
+
+  .lc-faq-intro h2 {
+    font-size: 41px;
+  }
+
+  .lc-faq-question {
+    gap: 13px;
+    padding: 22px 0;
+    font-size: 13px;
+  }
+
+  .lc-faq-answer {
+    padding: 0 0 22px 32px;
+  }
+
+  .lc-contact-cta {
+    padding: 85px 0 95px;
+  }
+
+  .lc-cta-inner h2 {
+    font-size: clamp(38px, 9vw, 53px);
+  }
+
+  .lc-cta-inner > p {
+    font-size: 13px;
+  }
+
+  .lc-cta-button {
+    width: 100%;
+    gap: 14px;
+  }
+
+  .lc-cta-decoration {
+    display: none;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.lc-contact-page a:focus-visible,
+.lc-contact-page button:focus-visible {
+  outline: 3px solid var(--lc-coral);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-contact-page *,
+  .lc-contact-page *::before,
+  .lc-contact-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ==========================================
+   LENSCRAFT — CINEMATIC CONTACT HERO
+========================================== */
+
+.lc-contact-hero {
+  position: relative;
+  width: 100%;
+  min-height: 760px;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  background: #211b1a;
+  color: #fff;
+}
+
+/* BACKGROUND IMAGE */
+
+.lc-contact-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+
+  background-image:url("/images/contact.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  animation: lcHeroZoom 16s ease-out both;
+}
+
+@keyframes lcHeroZoom {
+  from {
+    transform: scale(1.1);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* CINEMATIC OVERLAY */
+
+.lc-contact-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 13, 13, 0.82) 0%,
+      rgba(18, 13, 13, 0.58) 45%,
+      rgba(18, 13, 13, 0.14) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(18, 13, 13, 0.6),
+      transparent 35%
+    );
+}
+
+/* CONTENT */
+
+.lc-contact-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 150px 0 125px;
+}
+
+.lc-contact-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  color: #ffd0c3;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  margin-bottom: 30px;
+
+  animation: lcHeroFade 0.8s ease both;
+}
+
+.lc-contact-hero-line {
+  width: 36px;
+  height: 1px;
+  background: #f26b5e;
+}
+
+.lc-contact-hero h1 {
+  max-width: 1050px;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(48px, 6.5vw, 100px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.12;
+  margin: 0;
+
+  animation: lcHeroFade 1s ease 0.15s both;
+}
+
+.lc-contact-hero h1 em {
+  color: #ffa99a;
+  font-weight: 400;
+}
+
+.lc-contact-hero-content > p {
+  max-width: 530px;
+  margin: 31px 0 0;
+
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.95;
+
+  animation: lcHeroFade 1s ease 0.3s both;
+}
+
+/* BUTTONS */
+
+.lc-contact-hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 43px;
+
+  animation: lcHeroFade 1s ease 0.45s both;
+}
+
+.lc-contact-hero-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+
+  padding: 19px 27px;
+  background: #f26b5e;
+  color: #fff;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: background 0.3s, transform 0.3s;
+}
+
+.lc-contact-hero-primary:hover {
+  background: #d95749;
+  transform: translateY(-4px);
+}
+
+.lc-contact-hero-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding-bottom: 8px;
+
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.lc-contact-hero-secondary:hover {
+  color: #ffa99a;
+  border-color: #ffa99a;
+}
+
+/* BOTTOM BAR */
+
+.lc-contact-hero-bottom {
+  position: absolute;
+  z-index: 3;
+  bottom: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(1200px, calc(100% - 80px));
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.lc-contact-hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.lc-contact-scroll-line {
+  width: 45px;
+  height: 1px;
+  background: #f26b5e;
+  transform-origin: left;
+  animation: lcScrollLine 2s ease-in-out infinite;
+}
+
+@keyframes lcScrollLine {
+  0%, 100% {
+    transform: scaleX(0.5);
+  }
+  50% {
+    transform: scaleX(1);
+  }
+}
+
+/* DECORATIVE NUMBER */
+
+.lc-contact-hero-number {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  writing-mode: vertical-rl;
+
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ENTRANCE ANIMATION */
+
+@keyframes lcHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 900px) {
+  .lc-contact-hero-content {
+    width: calc(100% - 60px);
+  }
+
+  .lc-contact-hero h1 {
+    font-size: clamp(48px, 7vw, 75px);
+  }
+
+  .lc-contact-hero-number {
+    display: none;
+  }
+
+  .lc-contact-hero-bottom {
+    width: calc(100% - 60px);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+  .lc-contact-hero {
+    min-height: 720px;
+    min-height: 100svh;
+    align-items: center;
+  }
+
+  .lc-contact-hero-bg {
+    background-position: 60% center;
+  }
+
+  .lc-contact-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(18, 13, 13, 0.83),
+        rgba(18, 13, 13, 0.4)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(18, 13, 13, 0.65),
+        transparent 45%
+      );
+  }
+
+  .lc-contact-hero-content {
+    width: calc(100% - 40px);
+    padding: 120px 0 105px;
+  }
+
+  .lc-contact-hero-eyebrow {
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    margin-bottom: 23px;
+  }
+
+  .lc-contact-hero h1 {
+    font-size: clamp(43px, 10vw, 60px);
+    line-height: 1.18;
+  }
+
+  .lc-contact-hero-content > p {
+    font-size: 13px;
+    line-height: 1.85;
+    margin-top: 25px;
+  }
+
+  .lc-contact-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin-top: 34px;
+  }
+
+  .lc-contact-hero-primary {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .lc-contact-hero-secondary {
+    align-self: flex-start;
+  }
+
+  .lc-contact-hero-bottom {
+    width: calc(100% - 40px);
+    bottom: 25px;
+  }
+
+  .lc-contact-hero-bottom > span:first-child,
+  .lc-contact-hero-bottom > span:last-child {
+    display: none;
+  }
+
+  .lc-contact-hero-scroll {
+    font-size: 9px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .lc-contact-hero-bg,
+  .lc-contact-hero-content *,
+  .lc-contact-scroll-line {
+    animation: none !important;
+  }
+}
+
+/* ============================================
+   LENSCRAFT CONTACT — SOFT LAVENDER THEME
+   Coral + Lavender + Warm Cream
+============================================ */
+
+/* COLOR VARIABLES */
+
+.lc-contact-page {
+  --lc-lavender: #f3eeff;
+  --lc-lavender-light: #faf7ff;
+  --lc-lavender-border: #e5d8fa;
+  --lc-violet: #a78bc8;
+
+  background: #fffaf6;
+}
+
+/* INTRO SECTION */
+
+.lc-contact-intro {
+  background:
+    radial-gradient(
+      circle at 8% 25%,
+      rgba(167, 139, 200, 0.13),
+      transparent 38%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf6 0%,
+      #faf7ff 55%,
+      #fff5ef 100%
+    );
+}
+
+.lc-contact-intro h2 em {
+  color: #a78bc8;
+}
+
+.lc-eyebrow {
+  color: #9273b5;
+}
+
+.lc-eyebrow-line {
+  background: linear-gradient(
+    90deg,
+    #f26b5e,
+    #c7a8e5
+  );
+}
+
+/* MAIN CONTACT SECTION */
+
+.lc-contact-main {
+  background: linear-gradient(
+    145deg,
+    #ffffff 0%,
+    #faf7ff 55%,
+    #ffffff 100%
+  );
+}
+
+/* CONTACT INFORMATION */
+
+.lc-contact-info-list {
+  border-top-color: #e9def5;
+}
+
+.lc-info-card {
+  border-bottom-color: #e9def5;
+}
+
+.lc-info-icon {
+  background: linear-gradient(
+    135deg,
+    #fff0e6,
+    #eee3ff
+  );
+
+  color: #a78bc8;
+
+  border: 1px solid #e5d8fa;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.lc-info-card:hover .lc-info-icon {
+  background: #f26b5e;
+  color: #ffffff;
+  transform: rotate(-5deg);
+}
+
+/* SOCIAL ICONS */
+
+.lc-social-links a {
+  background: #faf7ff;
+  border-color: #e5d8fa;
+}
+
+.lc-social-links a:hover {
+  background: #f26b5e;
+  border-color: #f26b5e;
+  color: #ffffff;
+}
+
+/* QUOTE CARD */
+
+.lc-quote-card {
+  background: linear-gradient(
+    135deg,
+    #f3eeff,
+    #fff0e6
+  );
+
+  border: 1px solid #e5d8fa;
+
+  box-shadow: 0 15px 45px rgba(128, 101, 164, 0.08);
+}
+
+.lc-quote-card > svg {
+  color: #a78bc8;
+}
+
+/* CONTACT FORM PANEL */
+
+.lc-form-panel {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #faf7ff
+  );
+
+  border: 1px solid #e5d8fa;
+
+  box-shadow:
+    0 25px 70px rgba(128, 101, 164, 0.1),
+    0 5px 20px rgba(242, 107, 94, 0.04);
+}
+
+.lc-form-decor {
+  color: #a78bc8;
+}
+
+/* FORM INPUTS */
+
+.lc-field input,
+.lc-field select,
+.lc-field textarea {
+  background: #ffffff;
+  border-color: #e5d8fa;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.lc-field input:focus,
+.lc-field select:focus,
+.lc-field textarea:focus {
+  border-color: #a78bc8;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(167, 139, 200, 0.13);
+}
+
+/* KEEP SUBMIT BUTTON CORAL */
+
+.lc-submit-btn {
+  background: #f26b5e;
+  color: #ffffff;
+}
+
+.lc-submit-btn:hover:not(:disabled) {
+  background: #d95749;
+  box-shadow: 0 12px 30px rgba(242, 107, 94, 0.22);
+}
+
+/* GOOGLE MAP SECTION */
+
+.lc-map-section {
+  background:
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(167, 139, 200, 0.13),
+      transparent 35%
+    ),
+    linear-gradient(
+      135deg,
+      #fffaf6,
+      #f3eeff,
+      #faf7ff
+    );
+}
+
+.lc-map-wrapper {
+  border: 1px solid #e5d8fa;
+
+  box-shadow: 0 20px 55px rgba(128, 101, 164, 0.1);
+}
+
+.lc-map-overlay {
+  background: #faf7ff;
+  border: 1px solid #e5d8fa;
+}
+
+.lc-map-overlay-icon {
+  background: linear-gradient(
+    135deg,
+    #fff0e6,
+    #e9ddff
+  );
+
+  color: #a78bc8;
+}
+
+/* FAQ SECTION */
+
+.lc-faq-section {
+  background: linear-gradient(
+    145deg,
+    #ffffff,
+    #faf7ff
+  );
+}
+
+.lc-faq-list {
+  border-top-color: #e5d8fa;
+}
+
+.lc-faq-item {
+  border-bottom-color: #e5d8fa;
+}
+
+.lc-faq-number {
+  color: #a78bc8;
+}
+
+.lc-faq-question > svg {
+  color: #a78bc8;
+}
+
+.lc-faq-item.active .lc-faq-question {
+  color: #d95749;
+}
+
+.lc-faq-answer {
+  background: rgba(243, 238, 255, 0.35);
+}
+
+/* FINAL CTA — DARK WITH LAVENDER GLOW */
+
+.lc-contact-cta {
+  background:
+    radial-gradient(
+      ellipse at 20% 30%,
+      rgba(167, 139, 200, 0.18),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(242, 107, 94, 0.13),
+      transparent 50%
+    ),
+    #211b20;
+}
+
+.lc-contact-cta::before {
+  border-color: rgba(199, 168, 229, 0.2);
+}
+
+.lc-contact-cta::after {
+  border-color: rgba(242, 107, 94, 0.15);
+}
+
+.lc-cta-icon {
+  border-color: rgba(199, 168, 229, 0.4);
+  color: #e5d8fa;
+}
+
+.lc-cta-inner h2 em {
+  color: #e5d8fa;
+}
+
+/* KEEP CTA BUTTON CORAL */
+
+.lc-cta-button {
+  background: #f26b5e;
+  color: #ffffff;
+}
+
+.lc-cta-button:hover {
+  background: #d95749;
+}
+
+/* ACCESSIBILITY */
+
+.lc-contact-page a:focus-visible,
+.lc-contact-page button:focus-visible {
+  outline: 3px solid #a78bc8;
+  outline-offset: 4px;
+}
+
+
+/* Shared Lenscraft typography (import this after page CSS if possible) */
+.lc-contact-page { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.lc-contact-page :is(h1,h2,h3,h4) { font-family: var(--brand-heading-font, "Playfair Display", Georgia, serif); }
+.lc-contact-page :is(p,button,input,select,textarea,label,a) { font-family: var(--brand-body-font, "DM Sans", sans-serif); }
+.lc-contact-page h2 { font-size: var(--brand-section-size, clamp(40px,5vw,72px)); }
+.lc-contact-page h3 { font-size: var(--brand-subheading-size, clamp(24px,3vw,36px)); }
+.lc-contact-page :is(h1,h2,h3) em { color: var(--brand-coral, #f26b5e); }
+.lc-contact-page :is(.about-hero,.portfolio-hero,.services-cinematic-hero) h1 { font-size: var(--brand-hero-size, clamp(50px,6.5vw,100px)); color: white; }
+.lc-contact-page :is(.about-hero,.portfolio-hero,.services-cinematic-hero) :is(h1,h2) em { color: #ffb5a5; }
+@media(max-width:767px) { .lc-contact-page h2 { font-size:clamp(32px,8vw,46px); } .lc-contact-page h3 { font-size:clamp(22px,5vw,30px); } }
+
+/* LENSCRAFT — SHARED LOGO-ALIGNED CONTENT GUTTER
+   Match Navbar logo by setting its inner wrapper to the same 1200px/64px container. */
+
+.lc-contact-page .lc-container,.lc-contact-page .lc-contact-hero-content {width:min(1200px,calc(100% - 64px));margin-inline:auto;}
+.lc-contact-page .lc-contact-hero-content {padding-left:0;padding-right:0;}
+@media(max-width:767px){.lc-contact-page .lc-container,.lc-contact-page .lc-contact-hero-content{width:calc(100% - 40px);}}
+
+/* ==========================================
+   ABOUT HERO — CONTACT PAGE ANIMATION STYLE
+========================================== */
+
+@keyframes aboutHeroFade {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Small heading */
+.about-family-content .about-family-eyebrow {
+  animation: aboutHeroFade 0.8s ease both;
+}
+
+/* Main heading */
+.about-family-content h1 {
+  animation: aboutHeroFade 1s ease 0.15s both;
+}
+
+/* Description */
+.about-family-content p {
+  animation: aboutHeroFade 1s ease 0.3s both;
+}
+
+/* Buttons */
+.about-family-actions {
+  animation: aboutHeroFade 1s ease 0.45s both;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .about-family-content .about-family-eyebrow,
+  .about-family-content h1,
+  .about-family-content p,
+  .about-family-actions {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

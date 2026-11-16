@@ -1,0 +1,525 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap");
+
+/* ============================================
+   LENSCRAFT — GLOBAL DESIGN SYSTEM
+   ALL PUBLIC + AUTH + ADMIN PAGES
+============================================ */
+
+:root {
+  /* BRAND COLORS */
+  --brand-coral: #f26b5e;
+  --brand-coral-hover: #d95749;
+  --brand-terracotta: #b96d55;
+  --brand-peach: #fff0e6;
+  --brand-cream: #fffaf6;
+
+  /* TEXT COLORS */
+  --brand-ink: #211c1b;
+  --brand-muted: #756e6a;
+  --brand-border: #eadfd8;
+  --brand-white: #ffffff;
+
+  /* FONTS */
+  --brand-heading-font:
+    "Playfair Display", Georgia, serif;
+
+  --brand-body-font:
+    "DM Sans", Arial, sans-serif;
+
+  /* TYPOGRAPHY */
+  --brand-hero-size:
+    clamp(50px, 6.5vw, 100px);
+
+  --brand-section-size:
+    clamp(40px, 5vw, 72px);
+
+  --brand-subheading-size:
+    clamp(24px, 3vw, 36px);
+
+  --brand-body-size: 15px;
+  --brand-small-size: 13px;
+
+  /* COMPONENTS */
+  --brand-radius: 12px;
+  --brand-transition: 0.3s ease;
+}
+
+/* ============================================
+   GLOBAL BASE
+============================================ */
+
+html {
+  font-family: var(--brand-body-font);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: var(--brand-body-font);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* ============================================
+   GLOBAL FONT FAMILY
+============================================ */
+
+body,
+button,
+input,
+textarea,
+select,
+label,
+option,
+table,
+th,
+td {
+  font-family: var(--brand-body-font);
+}
+
+p,
+span,
+a,
+li,
+small,
+strong,
+label {
+  font-family: inherit;
+}
+
+/* ============================================
+   GLOBAL HEADINGS
+============================================ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--brand-heading-font);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* MAIN PAGE TITLES */
+
+h1 {
+  line-height: 1.12;
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+  line-height: 1.15;
+}
+
+/* SUBHEADINGS */
+
+h3 {
+  line-height: 1.25;
+}
+
+/* SMALL HEADINGS */
+
+h4,
+h5,
+h6 {
+  line-height: 1.35;
+}
+
+/* ============================================
+   GLOBAL BODY TEXT
+============================================ */
+
+p {
+  font-size: var(--brand-body-size);
+  line-height: 1.9;
+}
+
+/* ============================================
+   BRAND ACCENT TEXT
+============================================ */
+
+h1 em,
+h2 em,
+h3 em {
+  font-family: var(--brand-heading-font);
+  font-weight: 400;
+  color: var(--brand-coral);
+}
+
+/* ============================================
+   PUBLIC PAGE TYPOGRAPHY
+============================================ */
+
+:is(
+  .lenscraft-home,
+  .about-page,
+  .services-page,
+  .portfolio-page,
+  .lc-contact-page
+) h2 {
+  font-size: var(--brand-section-size);
+}
+
+:is(
+  .lenscraft-home,
+  .about-page,
+  .services-page,
+  .portfolio-page,
+  .lc-contact-page
+) h3 {
+  font-size: var(--brand-subheading-size);
+}
+
+/* ============================================
+   EYEBROW / SECTION LABELS
+============================================ */
+
+:is(
+  .eyebrow,
+  .about-kicker,
+  .lc-eyebrow,
+  .portfolio-kicker,
+  .portfolio-section-kicker,
+  .services-hero-label,
+  .about-family-eyebrow
+) {
+  font-family: var(--brand-body-font);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-terracotta);
+}
+
+/* ============================================
+   CINEMATIC HERO TYPOGRAPHY
+============================================ */
+
+:is(
+  .pose-hero,
+  .about-family-hero,
+  .services-cinematic-hero,
+  .portfolio-hero,
+  .lc-contact-hero
+) h1 {
+  font-family: var(--brand-heading-font);
+  font-size: var(--brand-hero-size);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  color: #ffffff;
+}
+
+:is(
+  .pose-hero,
+  .about-family-hero,
+  .services-cinematic-hero,
+  .portfolio-hero,
+  .lc-contact-hero
+) h1 em {
+  color: #ffb5a5;
+}
+
+:is(
+  .pose-hero,
+  .about-family-hero,
+  .services-cinematic-hero,
+  .portfolio-hero,
+  .lc-contact-hero
+) p {
+  font-family: var(--brand-body-font);
+  font-size: 15px;
+  line-height: 1.95;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================
+   ADMIN TYPOGRAPHY
+   Smaller than public marketing pages
+============================================ */
+
+/* These selectors support common admin
+   class names without changing layout. */
+
+:is(
+  .admin-dashboard,
+  .admin-page,
+  .admin-container,
+  .admin-layout,
+  .admin-portfolio,
+  .admin-bookings,
+  .admin-services,
+  .admin-photographers,
+  .admin-packages
+) {
+  font-family: var(--brand-body-font);
+}
+
+/* ADMIN MAIN TITLES */
+
+:is(
+  .admin-dashboard,
+  .admin-page,
+  .admin-container,
+  .admin-layout,
+  .admin-portfolio,
+  .admin-bookings,
+  .admin-services,
+  .admin-photographers,
+  .admin-packages
+) h1 {
+  font-family: var(--brand-heading-font);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* ADMIN SECTION TITLES */
+
+:is(
+  .admin-dashboard,
+  .admin-page,
+  .admin-container,
+  .admin-layout,
+  .admin-portfolio,
+  .admin-bookings,
+  .admin-services,
+  .admin-photographers,
+  .admin-packages
+) h2 {
+  font-family: var(--brand-heading-font);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 500;
+}
+
+/* ADMIN CARD TITLES */
+
+:is(
+  .admin-dashboard,
+  .admin-page,
+  .admin-container,
+  .admin-layout,
+  .admin-portfolio,
+  .admin-bookings,
+  .admin-services,
+  .admin-photographers,
+  .admin-packages
+) h3 {
+  font-family: var(--brand-heading-font);
+  font-size: clamp(18px, 2vw, 24px);
+}
+
+/* ADMIN BODY TEXT */
+
+:is(
+  .admin-dashboard,
+  .admin-page,
+  .admin-container,
+  .admin-layout,
+  .admin-portfolio,
+  .admin-bookings,
+  .admin-services,
+  .admin-photographers,
+  .admin-packages
+) p {
+  font-family: var(--brand-body-font);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* ============================================
+   ADMIN TABLES
+============================================ */
+
+table {
+  font-family: var(--brand-body-font);
+  font-size: 13px;
+}
+
+th {
+  font-family: var(--brand-body-font);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+td {
+  font-family: var(--brand-body-font);
+  font-size: 13px;
+}
+
+/* ============================================
+   FORM TYPOGRAPHY
+============================================ */
+
+input,
+textarea,
+select {
+  font-family: var(--brand-body-font);
+  font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-family: var(--brand-body-font);
+}
+
+/* Focus colors only on supported inputs */
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline-color: var(--brand-coral);
+}
+
+/* ============================================
+   BUTTON TYPOGRAPHY
+============================================ */
+
+button,
+[role="button"] {
+  font-family: var(--brand-body-font);
+  font-weight: 600;
+}
+
+/* Only buttons explicitly marked as primary
+   receive the coral background. */
+
+.btn-primary,
+.button-primary,
+.admin-btn-primary,
+.lc-primary-button {
+  background-color: var(--brand-coral);
+  color: #ffffff;
+  border-color: var(--brand-coral);
+  transition:
+    background-color var(--brand-transition),
+    border-color var(--brand-transition),
+    transform var(--brand-transition);
+}
+
+.btn-primary:hover,
+.button-primary:hover,
+.admin-btn-primary:hover,
+.lc-primary-button:hover {
+  background-color: var(--brand-coral-hover);
+  border-color: var(--brand-coral-hover);
+}
+
+/* ============================================
+   BADGES / STATUS COLORS
+============================================ */
+
+.status-pending {
+  color: #a86c19;
+}
+
+.status-confirmed,
+.status-completed {
+  color: #21805a;
+}
+
+.status-cancelled {
+  color: #c64747;
+}
+
+/* ============================================
+   RESPONSIVE — TABLET
+============================================ */
+
+@media (max-width: 1024px) {
+  :root {
+    --brand-hero-size:
+      clamp(48px, 6vw, 76px);
+
+    --brand-section-size:
+      clamp(36px, 5vw, 58px);
+  }
+}
+
+/* ============================================
+   RESPONSIVE — MOBILE
+============================================ */
+
+@media (max-width: 767px) {
+  :root {
+    --brand-hero-size:
+      clamp(42px, 10vw, 60px);
+
+    --brand-section-size:
+      clamp(32px, 8vw, 46px);
+
+    --brand-subheading-size:
+      clamp(22px, 5vw, 30px);
+
+    --brand-body-size: 14px;
+  }
+
+  :is(
+    .pose-hero,
+    .about-family-hero,
+    .services-cinematic-hero,
+    .portfolio-hero,
+    .lc-contact-hero
+  ) p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  :is(
+    .admin-dashboard,
+    .admin-page,
+    .admin-container,
+    .admin-layout,
+    .admin-portfolio,
+    .admin-bookings,
+    .admin-services,
+    .admin-photographers,
+    .admin-packages
+  ) h1 {
+    font-size: 28px;
+  }
+
+  :is(
+    .admin-dashboard,
+    .admin-page,
+    .admin-container,
+    .admin-layout,
+    .admin-portfolio,
+    .admin-bookings,
+    .admin-services,
+    .admin-photographers,
+    .admin-packages
+  ) h2 {
+    font-size: 23px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    font-size: 12px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary,
+  .button-primary,
+  .admin-btn-primary,
+  .lc-primary-button {
+    transition: none !important;
+  }
+}

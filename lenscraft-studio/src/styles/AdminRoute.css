@@ -1,0 +1,114 @@
+.admin-access-page {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: #0b0b0b;
+  color: #fff;
+  text-align: center;
+  font-family: Inter, sans-serif;
+}
+
+.admin-access-icon {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 50%;
+  color: #d4af37;
+  margin-bottom: 25px;
+}
+
+.admin-access-label {
+  color: #d4af37;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+}
+
+.admin-access-page h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(32px, 5vw, 52px);
+  color: #d4af37;
+  margin-bottom: 20px;
+}
+
+.admin-access-page h2 {
+  color: #d4af37;
+  margin: 20px 0 10px;
+}
+
+.admin-access-page p {
+  color: #aaa;
+  font-size: 15px;
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 25px;
+}
+
+.admin-access-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.admin-access-btn,
+.admin-access-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-access-btn {
+  background: #d4af37;
+  border: 1px solid #d4af37;
+  color: #111;
+}
+
+.admin-access-btn:hover {
+  background: #f0ce63;
+}
+
+.admin-access-secondary {
+  background: transparent;
+  border: 1px solid #555;
+  color: #fff;
+}
+
+.admin-access-secondary:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.admin-loading-icon {
+  color: #d4af37;
+  animation: admin-rotate 1s linear infinite;
+}
+
+@keyframes admin-rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-access-actions {
+    flex-direction: column;
+    width: 100%;
+    max-width: 280px;
+  }
+}

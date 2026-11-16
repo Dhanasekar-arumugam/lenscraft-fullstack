@@ -1,0 +1,573 @@
+
+/* =========================================
+   LENSCRAFT STUDIO — PREMIUM FOOTER
+   CORAL + DARK NAVY THEME
+========================================= */
+
+.pose-footer {
+  --accent: #f26b5e;
+  --accent-dark: #d95749;
+  --accent-soft: #ffb5a5;
+  --footer-bg: #101827;
+  --footer-text: #e6e9ee;
+  --footer-muted: #aeb7c3;
+
+  width: 100%;
+  overflow: hidden;
+  background: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: "Work Sans", sans-serif;
+}
+
+.pose-footer *,
+.pose-footer *::before,
+.pose-footer *::after {
+  box-sizing: border-box;
+}
+
+.pose-footer a {
+  text-decoration: none;
+}
+
+/* =========================================
+   FOOTER CALL TO ACTION
+========================================= */
+
+.pose-footer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 35px;
+
+  padding: 70px max(6%, calc((100% - 1250px) / 2));
+
+  background: #f26b5e;
+  color: #ffffff;
+}
+
+.pose-footer-cta span {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+}
+
+.pose-footer-cta h2 {
+  margin: 20px 0 0;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(2.2rem, 4.3vw, 4.6rem);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.04em;
+}
+
+.pose-footer-cta h2 em {
+  font-weight: 300;
+}
+
+.pose-footer-cta > a {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+
+  padding: 19px 25px;
+
+  background: #ffffff;
+  color: #101827;
+  border-radius: 3px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.pose-footer-cta > a:hover {
+  background: #101827;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   FOOTER MAIN GRID
+========================================= */
+
+.pose-footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.3fr 1.5fr;
+  gap: 55px;
+
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 85px 6% 60px;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.pose-footer-brand {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  color: #ffffff;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.pose-footer-brand svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.pose-footer-brand small {
+  color: var(--accent-soft);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.pose-footer-about > p {
+  max-width: 310px;
+  margin: 23px 0;
+
+  color: var(--footer-muted);
+  line-height: 1.9;
+}
+
+/* =========================================
+   SOCIAL MEDIA ICONS
+========================================= */
+
+.pose-socials {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 25px;
+}
+
+.pose-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+
+  background: transparent;
+  color: #ffffff;
+
+  font-size: 21px;
+  line-height: 1;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pose-socials a svg {
+  width: 21px;
+  height: 21px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.pose-socials a:hover {
+  transform: translateY(-5px) scale(1.08);
+}
+
+.pose-socials a:hover svg {
+  transform: scale(1.08);
+}
+
+/* =========================================
+   FACEBOOK — ORIGINAL BLUE
+========================================= */
+
+.pose-socials .pose-social-facebook:hover {
+  background: #0866ff;
+  border-color: #0866ff;
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(8, 102, 255, 0.3);
+}
+
+/* =========================================
+   INSTAGRAM — ORIGINAL GRADIENT
+========================================= */
+
+.pose-socials .pose-social-instagram:hover {
+  background: linear-gradient(
+    45deg,
+    #feda75 0%,
+    #fa7e1e 20%,
+    #d62976 45%,
+    #962fbf 70%,
+    #4f5bd5 100%
+  );
+
+  border-color: transparent;
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(214, 41, 118, 0.3);
+}
+
+/* =========================================
+   TWITTER — SKY BLUE
+========================================= */
+
+.pose-socials .pose-social-twitter:hover {
+  background: #1da1f2;
+  border-color: #1da1f2;
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(29, 161, 242, 0.3);
+}
+
+/* =========================================
+   WHATSAPP — ORIGINAL GREEN
+========================================= */
+
+.pose-socials .pose-social-whatsapp:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: #ffffff;
+
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+/* KEYBOARD FOCUS */
+
+.pose-socials a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* =========================================
+   FOOTER COLUMNS
+========================================= */
+
+.pose-footer-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.pose-footer-col h3 {
+  margin: 3px 0 14px;
+
+  color: #ffffff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.pose-footer-col > a {
+  color: var(--footer-muted);
+  font-size: 13px;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.pose-footer-col > a:hover {
+  color: var(--accent-soft);
+  transform: translateX(4px);
+}
+
+/* =========================================
+   CONTACT DETAILS
+========================================= */
+
+.pose-footer-contact p {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+
+  margin: 0;
+
+  color: var(--footer-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.pose-footer-contact svg {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.pose-footer-contact small {
+  color: #7f8998;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   LARGE BRAND WATERMARK
+========================================= */
+
+.pose-footer-wordmark {
+  max-width: 1350px;
+  margin: 0 auto;
+
+  color: rgba(255, 255, 255, 0.035);
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(4.5rem, 16vw, 14rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.085em;
+  text-align: center;
+
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* =========================================
+   COPYRIGHT
+========================================= */
+
+.pose-footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+
+  padding: 25px 6%;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.11);
+
+  color: #99a4b2;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.pose-footer-bottom button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 5px 0;
+
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+
+  font: inherit;
+  cursor: pointer;
+
+  transition: color 0.3s ease;
+}
+
+.pose-footer-bottom button:hover {
+  color: var(--accent-soft);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+  .pose-footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+  }
+
+  .pose-footer-cta {
+    padding: 55px 6%;
+  }
+
+  .pose-footer-cta h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .pose-footer-cta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+
+    padding: 55px 6%;
+  }
+
+  .pose-footer-cta h2 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .pose-footer-cta > a {
+    gap: 18px;
+    padding: 16px 22px;
+  }
+
+  .pose-footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 38px 20px;
+
+    padding: 60px 6%;
+  }
+
+  .pose-footer-about,
+  .pose-footer-contact {
+    grid-column: 1 / -1;
+  }
+
+  .pose-footer-col h3 {
+    font-size: 18px;
+  }
+
+  .pose-footer-col > a {
+    font-size: 12px;
+  }
+
+  .pose-socials {
+    gap: 12px;
+  }
+
+  .pose-socials a {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pose-footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+
+    padding: 25px 6%;
+  }
+
+  .pose-footer-bottom > span:nth-child(2) {
+    display: none;
+  }
+
+  .pose-footer-wordmark {
+    font-size: 17vw;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .pose-footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .pose-footer-about,
+  .pose-footer-contact {
+    grid-column: auto;
+  }
+
+  .pose-footer-cta h2 {
+    font-size: 30px;
+  }
+}
+
+/* =========================================
+   REUSABLE BRAND COLORS
+   CORAL — NO VIOLET
+========================================= */
+
+:root {
+  --lc-dark: #101827;
+  --lc-primary: #f26b5e;
+  --lc-deep-coral: #d95749;
+  --lc-terracotta: #b96d55;
+  --lc-peach: #fff0e6;
+  --lc-ivory: #fffaf6;
+
+  --lc-text: #272126;
+  --lc-muted: #71666b;
+
+  --lc-brand-gradient: linear-gradient(
+    110deg,
+    #f26b5e 0%,
+    #d95749 45%,
+    #b96d55 100%
+  );
+}
+
+/* GRADIENT TEXT */
+
+.brand-gradient-text {
+  background: var(--lc-brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* REUSABLE PRIMARY BUTTON */
+
+.brand-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  padding: 15px 28px;
+
+  background: var(--lc-brand-gradient);
+  color: #ffffff;
+
+  border: 1px solid #d95749;
+  border-radius: 0;
+
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.brand-button:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(217, 87, 73, 0.3);
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .pose-footer a,
+  .pose-footer button,
+  .pose-footer svg {
+    transition: none !important;
+  }
+
+  .pose-footer a:hover,
+  .pose-footer button:hover {
+    transform: none !important;
+  }
+}

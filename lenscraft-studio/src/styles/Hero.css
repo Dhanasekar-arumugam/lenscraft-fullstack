@@ -1,0 +1,890 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap");
+
+/* =========================================
+   LENSCRAFT STUDIO — PREMIUM HERO
+   Coral + Metallic Charcoal + Silver
+========================================= */
+
+/* =========================================
+   01. HERO MAIN
+========================================= */
+
+.pose-hero,
+.pose-page-hero {
+  --coral: #ff705f;
+  --coral-light: #ff9b8c;
+  --coral-dark: #dc5146;
+  --charcoal: #25232c;
+  --dark: #17161d;
+  --silver: #bfc0c9;
+  --ivory: #fff1eb;
+
+  font-family: "Work Sans", sans-serif;
+  color: #ffffff;
+}
+
+.pose-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 750px;
+  height: 100svh;
+  max-height: 1100px;
+
+  overflow: hidden;
+  isolation: isolate;
+
+  background: var(--dark);
+}
+
+/* =========================================
+   02. BACKGROUND IMAGE
+========================================= */
+
+.pose-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  will-change: opacity, transform;
+}
+
+/* Premium dark overlay */
+
+.pose-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(18, 17, 23, 0.91) 0%,
+      rgba(30, 27, 34, 0.76) 35%,
+      rgba(37, 35, 44, 0.38) 68%,
+      rgba(15, 14, 20, 0.12) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(18, 17, 23, 0.84) 0%,
+      transparent 38%
+    );
+}
+
+/* =========================================
+   03. HERO CONTENT
+========================================= */
+
+.pose-hero-inner {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1280px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  padding: 110px 5% 135px;
+  box-sizing: border-box;
+}
+
+.pose-hero-copy {
+  width: 100%;
+  max-width: 830px;
+}
+
+/* =========================================
+   04. HERO KICKER
+========================================= */
+
+.pose-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #ffd2ca;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.pose-kicker i {
+  display: block;
+  flex-shrink: 0;
+
+  width: 36px;
+  height: 2px;
+
+  background: var(--coral);
+
+  box-shadow:
+    0 0 15px rgba(255, 112, 95, 0.45);
+}
+
+/* =========================================
+   05. HERO TYPOGRAPHY
+========================================= */
+
+/* LOVE, IN EVERY — PURE WHITE */
+
+.pose-hero h1 {
+  font-family: "Josefin Sans", sans-serif;
+
+  font-size: clamp(3.8rem, 7.8vw, 8rem);
+  font-weight: 600;
+
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+
+  margin: 26px 0;
+
+  color: #ffffff !important;
+
+  text-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* LITTLE MOMENT — CORAL */
+
+.pose-hero h1 em {
+  display: inline-block;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+
+  color: #ff9b8c !important;
+
+  text-shadow:
+    0 4px 28px rgba(255, 112, 95, 0.15);
+}
+
+/* Description */
+
+.pose-hero-copy > p {
+  width: 100%;
+  max-width: 550px;
+
+  margin: 0;
+
+  color: #e2dfe4;
+
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.9;
+}
+
+/* =========================================
+   06. HERO BUTTONS
+========================================= */
+
+.pose-hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+  flex-wrap: wrap;
+
+  margin-top: 35px;
+}
+
+.pose-btn-primary,
+.pose-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  min-height: 54px;
+  padding: 17px 25px;
+
+  border-radius: 5px;
+
+  font-family: "Work Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  box-sizing: border-box;
+}
+
+/* Primary coral button */
+
+.pose-btn-primary {
+  background: linear-gradient(
+    135deg,
+    #ff9382 0%,
+    #ff705f 55%,
+    #ed594d 100%
+  );
+
+  color: #201b20;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 12px 30px rgba(255, 112, 95, 0.2);
+}
+
+.pose-btn-primary:hover {
+  background: linear-gradient(
+    135deg,
+    #ffab9e,
+    #ff705f
+  );
+
+  color: #17161d;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(255, 112, 95, 0.3);
+}
+
+/* Secondary transparent button */
+
+.pose-btn-outline {
+  background: rgba(37, 35, 44, 0.22);
+
+  color: #ffffff;
+
+  border: 1px solid rgba(225, 221, 229, 0.55);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pose-btn-outline:hover {
+  background: var(--ivory);
+
+  color: var(--charcoal);
+
+  border-color: var(--ivory);
+
+  transform: translateY(-3px);
+}
+
+/* Button icon */
+
+.pose-hero-actions svg {
+  flex-shrink: 0;
+
+  transition: transform 0.3s ease;
+}
+
+.pose-hero-actions a:hover svg {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   07. BOTTOM NAVIGATION
+========================================= */
+
+.pose-hero-bottom {
+  position: absolute;
+  z-index: 3;
+
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  padding:
+    25px
+    max(5%, calc((100% - 1280px) / 2));
+
+  background: linear-gradient(
+    0deg,
+    rgba(20, 19, 26, 0.55),
+    transparent
+  );
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.16);
+
+  box-sizing: border-box;
+}
+
+/* =========================================
+   08. SCROLL INDICATOR
+========================================= */
+
+.pose-scroll {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: #dedbe2;
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
+}
+
+.pose-scroll svg {
+  color: var(--coral);
+
+  transition: transform 0.3s ease;
+}
+
+.pose-scroll:hover {
+  color: #ffffff;
+}
+
+.pose-scroll:hover svg {
+  transform: translateY(5px);
+}
+
+/* =========================================
+   09. SLIDE INDICATORS
+========================================= */
+
+.pose-hero-tabs {
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+}
+
+.pose-hero-tabs button {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 0;
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 2px solid transparent;
+
+  color: rgba(230, 227, 235, 0.62);
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.pose-hero-tabs button:hover {
+  color: #ffffff;
+}
+
+.pose-hero-tabs button.selected {
+  color: #ffffff;
+
+  border-bottom-color: var(--coral);
+}
+
+.pose-hero-tabs small {
+  color: var(--coral-light);
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* =========================================
+   10. SLIDER ARROWS
+========================================= */
+
+.pose-hero-arrows {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.pose-hero-arrows button {
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  background: rgba(37, 35, 44, 0.45);
+
+  color: #ffffff;
+
+  border:
+    1px solid rgba(225, 221, 229, 0.4);
+
+  border-radius: 50%;
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pose-hero-arrows button:hover {
+  background: var(--coral);
+
+  color: #17161d;
+
+  border-color: var(--coral);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 5px 22px rgba(255, 112, 95, 0.35);
+}
+
+.pose-hero-arrows button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================================
+   11. INNER PAGE HERO
+========================================= */
+
+.pose-page-hero {
+  position: relative;
+
+  padding: 170px 6% 110px;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 0%,
+      rgba(255, 112, 95, 0.14),
+      transparent 60%
+    ),
+    linear-gradient(
+      135deg,
+      #25232c,
+      #17161d
+    );
+
+  color: #ffffff;
+  text-align: center;
+}
+
+.pose-page-hero span {
+  display: inline-block;
+
+  color: var(--coral-light);
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+
+.pose-page-hero h1 {
+  margin: 25px auto;
+
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 600;
+
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+
+  color: #ffffff;
+}
+
+.pose-page-hero p {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #d5d1d9;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   12. TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 1024px) {
+  .pose-hero-inner {
+    padding: 110px 6% 140px;
+  }
+
+  .pose-hero h1 {
+    font-size: clamp(3.8rem, 8vw, 6rem);
+  }
+
+  .pose-hero-bottom {
+    gap: 15px;
+    padding: 22px 5%;
+  }
+
+  .pose-hero-tabs {
+    gap: 20px;
+  }
+}
+
+/* =========================================
+   13. MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+  .pose-hero {
+    height: 90svh;
+    min-height: 620px;
+    max-height: none;
+  }
+
+  .pose-hero-image {
+    background-position: 60% center;
+  }
+
+  .pose-hero-shade {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(18, 17, 23, 0.88),
+        rgba(18, 17, 23, 0.5)
+      ),
+      linear-gradient(
+        0deg,
+        rgba(18, 17, 23, 0.85),
+        transparent 45%
+      );
+  }
+
+  .pose-hero-inner {
+    padding: 100px 7% 140px;
+  }
+
+  .pose-hero-copy {
+    max-width: 650px;
+  }
+
+  .pose-hero h1 {
+    font-size: clamp(3.3rem, 12vw, 5rem);
+  }
+
+  .pose-hero-copy > p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .pose-hero-bottom {
+    padding: 20px 7%;
+  }
+
+  .pose-scroll,
+  .pose-hero-tabs button span {
+    display: none;
+  }
+
+  .pose-hero-tabs {
+    gap: 18px;
+  }
+
+  .pose-hero-tabs button {
+    padding: 10px;
+  }
+
+  .pose-hero-arrows button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .pose-page-hero {
+    padding: 145px 7% 85px;
+  }
+}
+
+/* =========================================
+   14. SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+  .pose-hero {
+    min-height: 650px;
+    height: 100svh;
+  }
+
+  .pose-hero-inner {
+    padding: 110px 6% 120px;
+  }
+
+  .pose-kicker {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+  }
+
+  .pose-kicker i {
+    width: 25px;
+  }
+
+  .pose-hero h1 {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+    margin: 22px 0;
+  }
+
+  .pose-hero-copy > p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .pose-hero-actions {
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .pose-btn-primary,
+  .pose-btn-outline {
+    min-height: 46px;
+    padding: 13px 15px;
+
+    font-size: 11px;
+    gap: 8px;
+  }
+
+  .pose-hero-bottom {
+    gap: 10px;
+    padding: 15px 5%;
+  }
+
+  .pose-hero-tabs {
+    gap: 8px;
+  }
+
+  .pose-hero-tabs button {
+    padding: 8px 5px;
+  }
+
+  .pose-hero-arrows {
+    gap: 5px;
+  }
+
+  .pose-hero-arrows button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pose-hero-arrows button svg {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+/* =========================================
+   15. ACCESSIBILITY
+========================================= */
+
+.pose-hero button:focus-visible,
+.pose-hero a:focus-visible {
+  outline: 2px solid var(--coral-light);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pose-hero-image,
+  .pose-hero-copy,
+  .pose-hero button,
+  .pose-hero a,
+  .pose-hero svg {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   16. UNIFIED LENSCRAFT HOME HERO — FINAL OVERRIDES
+   Matches About / Services / Portfolio hero design.
+   Retains slideshow, background image, controls and buttons.
+============================================================ */
+
+.pose-hero,
+.pose-page-hero {
+  --coral: #f26b5e;
+  --coral-light: #ffb5a5;
+  --coral-dark: #d95749;
+  --ivory: #fff0e6;
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Desktop: align hero copy to the shared left gutter */
+.pose-hero .pose-hero-inner {
+  max-width: none;
+  margin: 0;
+  padding: 110px 10.15% 125px;
+  justify-content: flex-start;
+  align-items: center;
+}
+.pose-hero .pose-hero-copy {
+  width: 100%;
+  max-width: 750px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  animation: none;
+}
+.pose-hero .pose-kicker {
+  color: #ffd0c3;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  animation: poseHeroContentReveal .8s ease both;
+}
+.pose-hero .pose-hero-copy h1 {
+  margin: 22px 0 25px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(50px, 6.5vw, 100px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -.045em;
+  color: #fff !important;
+  text-align: left;
+  animation: poseHeroContentReveal 1s ease .15s both;
+}
+.pose-hero .pose-hero-copy h1 em {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: inherit;
+  color: #ffb5a5 !important;
+}
+.pose-hero .pose-hero-copy > p {
+  max-width: 560px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.95;
+  color: rgba(255,255,255,.85);
+  text-align: left;
+  animation: poseHeroContentReveal 1s ease .3s both;
+}
+.pose-hero .pose-hero-actions {
+  justify-content: flex-start;
+  animation: poseHeroContentReveal 1s ease .45s both;
+}
+.pose-hero .pose-btn-primary,
+.pose-hero .pose-btn-outline {
+  font-family: "DM Sans", sans-serif;
+}
+.pose-hero .pose-btn-primary {
+  background: #f26b5e;
+  color: #211c1b;
+}
+.pose-hero .pose-btn-primary:hover {
+  background: #d95749;
+  color: #fff;
+}
+.pose-hero .pose-hero-bottom {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Inner-page variant uses the same type palette */
+.pose-page-hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -.045em;
+}
+.pose-page-hero p,
+.pose-page-hero span {
+  font-family: "DM Sans", sans-serif;
+}
+
+@keyframes poseHeroContentReveal {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .pose-hero .pose-hero-inner { padding: 110px 8% 130px; }
+  .pose-hero .pose-hero-copy h1 { font-size: clamp(48px, 6vw, 76px); }
+}
+@media (max-width: 768px) {
+  .pose-hero .pose-hero-inner {
+    padding: 110px 24px 130px;
+    align-items: center;
+  }
+  .pose-hero .pose-hero-copy { max-width: 100%; }
+  .pose-hero .pose-hero-copy h1 {
+    font-size: clamp(42px, 10vw, 60px);
+    line-height: 1.12;
+  }
+  .pose-hero .pose-hero-copy > p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+}
+@media (max-width: 480px) {
+  .pose-hero .pose-hero-inner { padding: 105px 24px 125px; }
+  .pose-hero .pose-hero-copy h1 { font-size: clamp(38px, 10vw, 50px); }
+  .pose-hero .pose-hero-actions { gap: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pose-hero .pose-kicker,
+  .pose-hero .pose-hero-copy h1,
+  .pose-hero .pose-hero-copy > p,
+  .pose-hero .pose-hero-actions {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

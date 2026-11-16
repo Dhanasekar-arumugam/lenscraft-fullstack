@@ -1,0 +1,32 @@
+{
+  "name": "lenscraft-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:run": "vitest run"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "bootstrap-icons": "^1.13.2",
+    "lucide-react": "^0.468.0",
+    "motion": "^12.43.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.0.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.12",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^31.0.1",
+    "vite": "^6.0.0",
+    "vitest": "^3.2.7"
+  }
+}

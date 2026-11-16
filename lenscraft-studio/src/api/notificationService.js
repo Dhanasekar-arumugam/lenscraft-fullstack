@@ -1,0 +1,21 @@
+import api from "./axios"; // Update this import if your Axios client has another name.
+
+export const getNotifications = async () => {
+  const response = await api.get("/notifications/");
+  return response.data;
+};
+
+export const getUnreadCount = async () => {
+  const response = await api.get("/notifications/unread-count/");
+  return response.data;
+};
+
+export const markNotificationRead = async (id) => {
+  const response = await api.patch(`/notifications/${id}/read/`);
+  return response.data;
+};
+
+export const markAllNotificationsRead = async () => {
+  const response = await api.post("/notifications/mark-all-read/");
+  return response.data;
+};

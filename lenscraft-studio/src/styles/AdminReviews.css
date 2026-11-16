@@ -1,0 +1,243 @@
+
+.admin-reviews-page {
+  min-height: 100vh;
+  background: #0b0b0b;
+  color: #fff;
+  padding: 140px 24px 90px;
+}
+
+.admin-reviews-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.admin-reviews-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 42px;
+}
+
+.admin-reviews-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f26b5e;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.admin-reviews-header h1 {
+  margin: 16px 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(34px, 5vw, 56px);
+  font-weight: 500;
+}
+
+.admin-reviews-header h1 em {
+  color: #f26b5e;
+  font-weight: 400;
+}
+
+.admin-reviews-header p {
+  color: #999;
+}
+
+.admin-reviews-refresh {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 20px;
+  border-radius: 10px;
+  border: 1px solid rgba(242, 107, 94, 0.3);
+  background: rgba(242, 107, 94, 0.08);
+  color: #f26b5e;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-reviews-refresh:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-reviews-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-bottom: 24px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #292929;
+}
+
+.admin-review-filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-review-filters button {
+  border: 1px solid #333;
+  background: #151515;
+  color: #aaa;
+  padding: 10px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.admin-review-filters button:hover,
+.admin-review-filters button.active {
+  background: #f26b5e;
+  border-color: #f26b5e;
+  color: #111;
+}
+
+.admin-review-count {
+  color: #999;
+  font-size: 13px;
+}
+
+.admin-reviews-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.admin-review-item {
+  background: #111;
+  border: 1px solid #282828;
+  border-radius: 22px;
+  padding: 16px;
+}
+
+.admin-review-item .review-card {
+  border: 0;
+  background: transparent;
+  padding: 12px;
+}
+
+.admin-review-item .review-card:hover {
+  transform: none;
+}
+
+.admin-review-meta {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px;
+  color: #f26b5e;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #282828;
+}
+
+.admin-review-actions {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+}
+
+.admin-review-actions button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.admin-review-actions button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.admin-review-actions button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.admin-approve-btn {
+  background: #f26b5e;
+  color: #111;
+}
+
+.admin-reject-btn {
+  background: #292929;
+  color: #fff;
+}
+
+.admin-review-error,
+.admin-review-success {
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.admin-review-error {
+  background: rgba(255, 80, 80, 0.12);
+  color: #ff9b9b;
+}
+
+.admin-review-success {
+  background: rgba(100, 210, 145, 0.12);
+  color: #91e0b2;
+}
+
+.admin-reviews-state,
+.admin-reviews-empty {
+  text-align: center;
+  padding: 85px 20px;
+  color: #aaa;
+  background: #141414;
+  border-radius: 20px;
+}
+
+.admin-reviews-empty svg {
+  color: #f26b5e;
+}
+
+.admin-reviews-empty h3 {
+  color: #fff;
+}
+
+@media (max-width: 800px) {
+  .admin-reviews-list {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-reviews-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-reviews-page {
+    padding: 115px 15px 60px;
+  }
+
+  .admin-review-filters {
+    gap: 7px;
+  }
+
+  .admin-review-filters button {
+    padding: 9px 13px;
+  }
+
+  .admin-review-actions {
+    flex-direction: column;
+  }
+}

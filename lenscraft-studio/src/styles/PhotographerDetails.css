@@ -1,0 +1,1063 @@
+
+/* =====================================================
+   LENSCRAFT STUDIO
+   EDITORIAL PHOTOGRAPHER PROFILE
+   Warm Ivory / Terracotta / Sand
+===================================================== */
+
+.pd-page {
+  --pd-bg: #f8f5f0;
+  --pd-white: #ffffff;
+  --pd-ink: #292724;
+  --pd-muted: #817a72;
+  --pd-accent: #bd6d57;
+  --pd-accent-dark: #9e5542;
+  --pd-soft: #eee5dc;
+  --pd-border: #e8dfd5;
+  --pd-sand: #e9ded1;
+
+  width: 100%;
+  min-height: 100vh;
+  background: var(--pd-bg);
+  color: var(--pd-ink);
+  overflow-x: clip;
+  font-family: "DM Sans", sans-serif;
+}
+
+.pd-page *,
+.pd-page *::before,
+.pd-page *::after {
+  box-sizing: border-box;
+}
+
+.pd-page a {
+  text-decoration: none;
+}
+
+.pd-page h1,
+.pd-page h2,
+.pd-page h3 {
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.pd-container {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+.pd-topbar {
+  width: 100%;
+  padding: 110px 0 24px;
+  background: var(--pd-bg);
+}
+
+.pd-topbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.pd-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  flex-shrink: 0;
+  color: var(--pd-ink);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  transition: color 0.3s ease;
+}
+
+.pd-back-link svg {
+  transition: transform 0.3s ease;
+}
+
+.pd-back-link:hover {
+  color: var(--pd-accent);
+}
+
+.pd-back-link:hover svg {
+  transform: translateX(-4px);
+}
+
+.pd-breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+  color: #aaa198;
+  font-size: 11px;
+}
+
+.pd-breadcrumb a {
+  color: var(--pd-muted);
+  transition: color 0.3s ease;
+}
+
+.pd-breadcrumb a:hover {
+  color: var(--pd-accent);
+}
+
+.pd-breadcrumb strong {
+  color: var(--pd-ink);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   PROFILE SECTION
+===================================================== */
+
+.pd-profile-section {
+  position: relative;
+  width: 100%;
+  padding: 35px 0 110px;
+  background: var(--pd-bg);
+}
+
+.pd-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(45px, 6vw, 85px);
+}
+
+/* =====================================================
+   PROFILE IMAGE
+===================================================== */
+
+.pd-visual {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  padding: 0 0 25px 24px;
+  isolation: isolate;
+}
+
+.pd-image-frame {
+  position: relative;
+  width: 100%;
+  height: clamp(480px, 53vw, 650px);
+  overflow: hidden;
+  background: var(--pd-soft);
+  border-radius: 3px;
+  z-index: 2;
+  box-shadow: 0 22px 55px rgba(54, 42, 32, 0.11);
+}
+
+.pd-profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.pd-image-frame:hover .pd-profile-image {
+  transform: scale(1.045);
+}
+
+.pd-image-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  color: var(--pd-accent);
+  background: linear-gradient(145deg, #eee3d8, #dfcfc0);
+}
+
+.pd-image-placeholder span {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 4px;
+}
+
+.pd-image-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 65px 30px 25px;
+  color: #fff;
+  background: linear-gradient(
+    to top,
+    rgba(30, 25, 20, 0.7),
+    rgba(30, 25, 20, 0)
+  );
+}
+
+.pd-image-overlay span {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.pd-image-overlay svg {
+  color: #e7b9a5;
+}
+
+.pd-image-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 18px;
+  color: var(--pd-muted);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.pd-visual-decoration {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  right: 24px;
+  bottom: 0;
+  border: 1px solid #cba994;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =====================================================
+   PROFILE CONTENT
+===================================================== */
+
+.pd-profile-content {
+  width: 100%;
+  min-width: 0;
+  padding: 10px 0;
+}
+
+.pd-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--pd-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  line-height: 1.5;
+}
+
+.pd-eyebrow-line {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 35px;
+  height: 1px;
+  background: currentColor;
+}
+
+.pd-name {
+  margin: 24px 0 16px;
+  color: var(--pd-ink);
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 1.13;
+  letter-spacing: -2px;
+  overflow-wrap: anywhere;
+}
+
+.pd-name-dot {
+  color: var(--pd-accent);
+}
+
+.pd-role-line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  color: var(--pd-accent);
+}
+
+.pd-role {
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+}
+
+.pd-role-divider {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 30px;
+  height: 1px;
+  background: #d3b5a5;
+}
+
+.pd-intro-divider {
+  width: 100%;
+  height: 1px;
+  margin: 30px 0;
+  background: var(--pd-border);
+}
+
+.pd-intro-text {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.pd-intro-text svg {
+  flex-shrink: 0;
+  margin-top: 5px;
+  color: var(--pd-accent);
+}
+
+.pd-intro-text p {
+  max-width: 490px;
+  margin: 0;
+  color: #625a52;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.75;
+}
+
+/* =====================================================
+   INFORMATION CARDS
+===================================================== */
+
+.pd-info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+.pd-info-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  min-width: 0;
+  min-height: 95px;
+  padding: 17px 15px;
+  background: var(--pd-white);
+  border: 1px solid var(--pd-border);
+  border-radius: 4px;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pd-info-item:hover {
+  transform: translateY(-4px);
+  border-color: #d5a18c;
+  box-shadow: 0 12px 28px rgba(70, 48, 35, 0.07);
+}
+
+.pd-info-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  background: #f6ece5;
+  color: var(--pd-accent);
+  border-radius: 50%;
+}
+
+.pd-info-item > div {
+  min-width: 0;
+}
+
+.pd-info-label {
+  display: block;
+  margin-bottom: 7px;
+  color: #a49a90;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  line-height: 1.4;
+}
+
+.pd-info-item h3 {
+  margin: 0;
+  color: var(--pd-ink);
+  font-family: "DM Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   BIOGRAPHY
+===================================================== */
+
+.pd-biography {
+  margin-top: 36px;
+}
+
+.pd-section-kicker {
+  display: inline-block;
+  color: var(--pd-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.pd-biography h2 {
+  margin: 12px 0 14px;
+  color: var(--pd-ink);
+  font-size: 34px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+.pd-biography p {
+  margin: 0;
+  color: var(--pd-muted);
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  line-height: 1.9;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+/* =====================================================
+   PROFILE BUTTONS
+===================================================== */
+
+.pd-actions {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.pd-primary-button,
+.pd-instagram-button {
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  padding: 13px 21px;
+  border-radius: 3px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.pd-primary-button {
+  color: #fff;
+  background: var(--pd-accent);
+  border: 1px solid var(--pd-accent);
+  box-shadow: 0 7px 18px rgba(189, 109, 87, 0.15);
+}
+
+.pd-primary-button:hover {
+  color: #fff;
+  background: var(--pd-accent-dark);
+  border-color: var(--pd-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(189, 109, 87, 0.22);
+}
+
+.pd-primary-button svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.pd-primary-button:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.pd-instagram-button {
+  color: var(--pd-ink);
+  background: transparent;
+  border: 1px solid #d9cec2;
+}
+
+.pd-instagram-button:hover {
+  color: var(--pd-accent);
+  border-color: var(--pd-accent);
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+.pd-instagram-button svg {
+  flex-shrink: 0;
+}
+
+.pd-profile-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 22px;
+  color: #91877d;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+.pd-profile-footer svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #76977b;
+}
+
+/* =====================================================
+   CUSTOMER REVIEWS SECTION
+===================================================== */
+
+.pd-reviews-section {
+  width: 100%;
+  padding: 85px 0;
+  background: #eee6dd;
+  color: var(--pd-ink);
+}
+
+.pd-reviews-section .pd-container {
+  width: min(1150px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+/* =====================================================
+   QUOTE SECTION
+===================================================== */
+
+.pd-quote-section {
+  position: relative;
+  width: 100%;
+  padding: 105px 0;
+  overflow: hidden;
+  background: #f8f3ec;
+}
+
+.pd-quote-section::before {
+  content: "“";
+  position: absolute;
+  top: -55px;
+  left: 5%;
+  color: rgba(189, 109, 87, 0.07);
+  font-family: Georgia, serif;
+  font-size: 320px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pd-quote-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.pd-quote-content > svg {
+  flex-shrink: 0;
+  margin-top: 25px;
+  color: var(--pd-accent);
+}
+
+.pd-quote-content h2 {
+  max-width: 850px;
+  margin: 24px 0 28px;
+  color: var(--pd-ink);
+  font-size: clamp(30px, 4.2vw, 54px);
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.pd-quote-content h2 em {
+  color: var(--pd-accent);
+  font-weight: 400;
+}
+
+.pd-quote-line {
+  display: block;
+  width: 55px;
+  height: 2px;
+  background: var(--pd-accent);
+}
+
+.pd-quote-content p {
+  margin: 23px 0 0;
+  color: #9b9086;
+  font-family: "DM Sans", sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* =====================================================
+   LOADING AND ERROR STATES
+===================================================== */
+
+.pd-state-page {
+  width: 100%;
+  min-height: 75vh;
+  padding: 80px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--pd-bg);
+  color: var(--pd-ink);
+  font-family: "DM Sans", sans-serif;
+  text-align: center;
+}
+
+.pd-state-page h2 {
+  margin: 20px 0 12px;
+  color: var(--pd-ink);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+.pd-state-page p {
+  max-width: 450px;
+  margin: 0 0 22px;
+  color: var(--pd-muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.pd-state-icon,
+.pd-loader {
+  width: 85px;
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0e4db;
+  color: var(--pd-accent);
+}
+
+.pd-loader svg {
+  animation: pdRotate 2s linear infinite;
+}
+
+@keyframes pdRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pd-state-page .pd-primary-button {
+  margin-top: 10px;
+}
+
+/* =====================================================
+   FOCUS STATES
+===================================================== */
+
+.pd-page a:focus-visible,
+.pd-state-page a:focus-visible {
+  outline: 3px solid rgba(189, 109, 87, 0.45);
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   LARGE SCREEN ALIGNMENT
+===================================================== */
+
+@media (min-width: 1440px) {
+  .pd-profile-grid {
+    gap: 100px;
+  }
+
+  .pd-image-frame {
+    height: 680px;
+  }
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1050px) {
+  .pd-container {
+    width: calc(100% - 60px);
+  }
+
+  .pd-profile-grid {
+    gap: 40px;
+  }
+
+  .pd-image-frame {
+    height: 540px;
+  }
+
+  .pd-name {
+    font-size: clamp(42px, 5.2vw, 58px);
+  }
+
+  .pd-intro-text p {
+    font-size: 17px;
+  }
+
+  .pd-info-grid {
+    gap: 10px;
+  }
+
+  .pd-info-item {
+    padding: 15px 11px;
+    gap: 10px;
+  }
+
+  .pd-info-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .pd-info-item h3 {
+    font-size: 11px;
+  }
+
+  .pd-primary-button,
+  .pd-instagram-button {
+    padding: 12px 16px;
+    font-size: 10px;
+  }
+}
+
+/* =====================================================
+   TABLET PORTRAIT
+===================================================== */
+
+@media (max-width: 850px) {
+  .pd-profile-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 48px;
+  }
+
+  .pd-visual {
+    width: 85%;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+
+  .pd-image-frame {
+    height: 620px;
+  }
+
+  .pd-profile-content {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .pd-name {
+    font-size: clamp(48px, 8vw, 68px);
+  }
+
+  .pd-intro-text p {
+    max-width: 600px;
+    font-size: 19px;
+  }
+
+  .pd-info-item {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .pd-info-item h3 {
+    font-size: 13px;
+  }
+
+  .pd-info-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .pd-primary-button,
+  .pd-instagram-button {
+    padding: 13px 22px;
+    font-size: 11px;
+  }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+  .pd-container {
+    width: calc(100% - 36px);
+  }
+
+  .pd-topbar {
+    padding: 100px 0 18px;
+  }
+
+  .pd-topbar-inner {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .pd-breadcrumb {
+    justify-content: flex-start;
+    gap: 8px;
+    font-size: 10px;
+  }
+
+  .pd-profile-section {
+    padding: 25px 0 70px;
+  }
+
+  .pd-profile-grid {
+    gap: 40px;
+  }
+
+  .pd-visual {
+    width: 92%;
+    padding: 0 12px 18px 0;
+  }
+
+  .pd-image-frame {
+    height: 470px;
+  }
+
+  .pd-visual-decoration {
+    top: 15px;
+    left: 15px;
+    right: 0;
+    bottom: 0;
+  }
+
+  .pd-image-overlay {
+    padding: 55px 18px 20px;
+  }
+
+  .pd-image-overlay span {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+
+  .pd-image-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .pd-profile-content {
+    padding: 0;
+  }
+
+  .pd-eyebrow {
+    font-size: 9px;
+    letter-spacing: 2px;
+    gap: 10px;
+  }
+
+  .pd-eyebrow-line {
+    width: 25px;
+  }
+
+  .pd-name {
+    margin: 19px 0 13px;
+    font-size: clamp(38px, 10vw, 50px);
+    letter-spacing: -1.3px;
+    line-height: 1.15;
+  }
+
+  .pd-role {
+    font-size: 12px;
+  }
+
+  .pd-intro-divider {
+    margin: 25px 0;
+  }
+
+  .pd-intro-text {
+    gap: 12px;
+  }
+
+  .pd-intro-text svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .pd-intro-text p {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .pd-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 27px;
+  }
+
+  .pd-info-item {
+    min-height: 110px;
+    padding: 14px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .pd-info-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .pd-info-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+
+  .pd-info-label {
+    font-size: 8px;
+  }
+
+  .pd-info-item h3 {
+    font-size: 11px;
+  }
+
+  .pd-biography {
+    margin-top: 32px;
+  }
+
+  .pd-biography h2 {
+    margin: 12px 0;
+    font-size: 29px;
+  }
+
+  .pd-biography p {
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .pd-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: 25px;
+  }
+
+  .pd-primary-button,
+  .pd-instagram-button {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 16px;
+  }
+
+  .pd-profile-footer {
+    margin-top: 19px;
+    font-size: 10px;
+  }
+
+  .pd-reviews-section {
+    padding: 60px 0;
+  }
+
+  .pd-reviews-section .pd-container {
+    width: calc(100% - 36px);
+  }
+
+  .pd-quote-section {
+    padding: 75px 0;
+  }
+
+  .pd-quote-section::before {
+    top: -30px;
+    left: 0;
+    font-size: 200px;
+  }
+
+  .pd-quote-content > svg {
+    margin-top: 20px;
+  }
+
+  .pd-quote-content h2 {
+    margin: 20px 0 25px;
+    font-size: clamp(27px, 7vw, 36px);
+    line-height: 1.4;
+  }
+
+  .pd-quote-content p {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+}
+
+/* =====================================================
+   EXTRA SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+  .pd-container {
+    width: calc(100% - 28px);
+  }
+
+  .pd-image-frame {
+    height: 400px;
+  }
+
+  .pd-name {
+    font-size: 37px;
+  }
+
+  .pd-role {
+    font-size: 11px;
+  }
+
+  .pd-info-grid {
+    gap: 8px;
+  }
+
+  .pd-info-item {
+    padding: 12px 9px;
+  }
+
+  .pd-info-item h3 {
+    font-size: 10px;
+  }
+
+  .pd-biography h2 {
+    font-size: 26px;
+  }
+
+  .pd-quote-content h2 {
+    font-size: 27px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .pd-page *,
+  .pd-page *::before,
+  .pd-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

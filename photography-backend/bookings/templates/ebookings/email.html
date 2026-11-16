@@ -1,0 +1,562 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenscraft Studio - Booking Update</title>
+</head>
+
+<body style="
+    margin:0;
+    padding:30px 12px;
+    background-color:#f8f5f0;
+    font-family:'Segoe UI',Arial,sans-serif;
+    color:#292724;
+">
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td align="center">
+
+    <!-- MAIN EMAIL CARD -->
+
+    <table width="600" cellpadding="0" cellspacing="0" border="0"
+        style="
+            max-width:600px;
+            width:100%;
+            background:#ffffff;
+            border-radius:14px;
+            overflow:hidden;
+            border:1px solid #eee7df;
+        ">
+
+        <!-- HEADER -->
+
+        <tr>
+            <td align="center" style="
+                padding:35px 25px;
+                background:#fffaf6;
+                border-bottom:1px solid #f0e6de;
+            ">
+
+                <h1 style="
+                    margin:0;
+                    color:#bd6d57;
+                    font-family:Georgia,serif;
+                    font-size:29px;
+                    font-weight:600;
+                    letter-spacing:2px;
+                ">
+                    LENSCRAFT STUDIO
+                </h1>
+
+                <p style="
+                    margin:10px 0 0;
+                    color:#817a72;
+                    font-size:12px;
+                    letter-spacing:2px;
+                    text-transform:uppercase;
+                ">
+                    Capturing Moments, Creating Memories
+                </p>
+
+                <div style="
+                    width:55px;
+                    height:2px;
+                    background:#bd6d57;
+                    margin:20px auto 0;
+                "></div>
+
+            </td>
+        </tr>
+
+        <!-- EMAIL CONTENT -->
+
+        <tr>
+            <td style="padding:35px 30px;">
+
+                <p style="
+                    margin:0 0 18px;
+                    font-size:15px;
+                    color:#514b45;
+                    line-height:1.7;
+                ">
+                    Dear <strong>{{ customer_name }}</strong>,
+                </p>
+
+                <!-- PENDING STATUS -->
+
+                {% if status == "pending" %}
+
+                    <h2 style="
+                        margin:0 0 15px;
+                        color:#bd6d57;
+                        font-family:Georgia,serif;
+                        font-size:25px;
+                        font-weight:500;
+                    ">
+                        Booking Request Received!
+                    </h2>
+
+                    <p style="
+                        font-size:14px;
+                        line-height:1.8;
+                        color:#716a63;
+                    ">
+                        Thank you for choosing Lenscraft Studio.
+                        We have successfully received your booking request.
+                        Our team will review your details and confirm your
+                        booking shortly.
+                    </p>
+
+                <!-- CONFIRMED STATUS -->
+
+                {% elif status == "confirmed" %}
+
+                    <h2 style="
+                        margin:0 0 15px;
+                        color:#47866a;
+                        font-family:Georgia,serif;
+                        font-size:25px;
+                        font-weight:500;
+                    ">
+                        Your Booking Is Confirmed!
+                    </h2>
+
+                    <p style="
+                        font-size:14px;
+                        line-height:1.8;
+                        color:#716a63;
+                    ">
+                        Great news! Your photography booking has been
+                        successfully confirmed. We look forward to
+                        capturing your beautiful moments.
+                    </p>
+
+                <!-- CANCELLED STATUS -->
+
+                {% elif status == "cancelled" %}
+
+                    <h2 style="
+                        margin:0 0 15px;
+                        color:#c45d57;
+                        font-family:Georgia,serif;
+                        font-size:25px;
+                        font-weight:500;
+                    ">
+                        Booking Cancelled
+                    </h2>
+
+                    <p style="
+                        font-size:14px;
+                        line-height:1.8;
+                        color:#716a63;
+                    ">
+                        Your photography booking has been cancelled.
+                        If you have any questions or need assistance,
+                        please feel free to contact our team.
+                    </p>
+
+                <!-- COMPLETED STATUS -->
+
+                {% elif status == "completed" %}
+
+                    <h2 style="
+                        margin:0 0 15px;
+                        color:#47866a;
+                        font-family:Georgia,serif;
+                        font-size:25px;
+                        font-weight:500;
+                    ">
+                        Booking Completed!
+                    </h2>
+
+                    <p style="
+                        font-size:14px;
+                        line-height:1.8;
+                        color:#716a63;
+                    ">
+                        Thank you for choosing Lenscraft Studio.
+                        Your booking has been successfully completed.
+                        We hope you enjoyed our photography service!
+                    </p>
+
+                {% endif %}
+
+
+                <!-- PENDING BADGE -->
+
+                {% if status == "pending" %}
+
+                    <table cellpadding="0" cellspacing="0" border="0"
+                        style="margin:22px 0 30px;">
+                        <tr>
+                            <td style="
+                                padding:9px 18px;
+                                border-radius:30px;
+                                background-color:#fbf0e9;
+                                color:#bd6d57;
+                                font-size:12px;
+                                font-weight:bold;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            ">
+                                {{ status|title }}
+                            </td>
+                        </tr>
+                    </table>
+
+                <!-- CONFIRMED BADGE -->
+
+                {% elif status == "confirmed" %}
+
+                    <table cellpadding="0" cellspacing="0" border="0"
+                        style="margin:22px 0 30px;">
+                        <tr>
+                            <td style="
+                                padding:9px 18px;
+                                border-radius:30px;
+                                background-color:#e9f4ed;
+                                color:#47866a;
+                                font-size:12px;
+                                font-weight:bold;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            ">
+                                {{ status|title }}
+                            </td>
+                        </tr>
+                    </table>
+
+                <!-- CANCELLED BADGE -->
+
+                {% elif status == "cancelled" %}
+
+                    <table cellpadding="0" cellspacing="0" border="0"
+                        style="margin:22px 0 30px;">
+                        <tr>
+                            <td style="
+                                padding:9px 18px;
+                                border-radius:30px;
+                                background-color:#fcebea;
+                                color:#c45d57;
+                                font-size:12px;
+                                font-weight:bold;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            ">
+                                {{ status|title }}
+                            </td>
+                        </tr>
+                    </table>
+
+                <!-- COMPLETED BADGE -->
+
+                {% elif status == "completed" %}
+
+                    <table cellpadding="0" cellspacing="0" border="0"
+                        style="margin:22px 0 30px;">
+                        <tr>
+                            <td style="
+                                padding:9px 18px;
+                                border-radius:30px;
+                                background-color:#e9f4ed;
+                                color:#47866a;
+                                font-size:12px;
+                                font-weight:bold;
+                                letter-spacing:1px;
+                                text-transform:uppercase;
+                            ">
+                                {{ status|title }}
+                            </td>
+                        </tr>
+                    </table>
+
+                {% endif %}
+
+
+                <!-- BOOKING DETAILS HEADING -->
+
+                <h3 style="
+                    margin:0 0 18px;
+                    padding-bottom:12px;
+                    border-bottom:1px solid #e9ddd3;
+                    color:#292724;
+                    font-family:Georgia,serif;
+                    font-size:20px;
+                    font-weight:500;
+                ">
+                    Your Booking Details
+                </h3>
+
+
+                <!-- BOOKING DETAILS TABLE -->
+
+                <table width="100%" cellpadding="0" cellspacing="0"
+                    border="0" style="
+                        background:#fffaf6;
+                        border:1px solid #f0e6de;
+                        border-radius:9px;
+                        font-size:14px;
+                    ">
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            width:42%;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Booking ID
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:600;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            #{{ booking.id }}
+                        </td>
+                    </tr>
+
+                    {% if service_name %}
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Service
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:500;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            {{ service_name }}
+                        </td>
+                    </tr>
+
+                    {% endif %}
+
+
+                    {% if photographer_name %}
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Photographer
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:500;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            {{ photographer_name }}
+                        </td>
+                    </tr>
+
+                    {% endif %}
+
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Event Date
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:500;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            {{ booking.event_date|date:"d M Y" }}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Event Time
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:500;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            {{ booking.event_time|default:"Not specified" }}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            Event Location
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#292724;
+                            font-weight:500;
+                            border-bottom:1px solid #eee7df;
+                        ">
+                            {{ booking.location|default:"Not specified" }}
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td style="
+                            padding:14px 15px;
+                            color:#817a72;
+                        ">
+                            Booking Status
+                        </td>
+
+                        <td style="
+                            padding:14px 15px;
+                            color:#bd6d57;
+                            font-weight:600;
+                        ">
+                            {{ status|title }}
+                        </td>
+                    </tr>
+
+                </table>
+
+
+                <!-- SPECIAL REQUIREMENTS -->
+
+                {% if booking.special_requirements %}
+
+                <div style="
+                    margin-top:22px;
+                    padding:18px;
+                    background:#fffaf6;
+                    border-left:3px solid #bd6d57;
+                    border-radius:5px;
+                ">
+
+                    <p style="
+                        margin:0 0 8px;
+                        color:#292724;
+                        font-weight:600;
+                        font-size:14px;
+                    ">
+                        Special Requirements
+                    </p>
+
+                    <p style="
+                        margin:0;
+                        color:#817a72;
+                        font-size:13px;
+                        line-height:1.7;
+                    ">
+                        {{ booking.special_requirements }}
+                    </p>
+
+                </div>
+
+                {% endif %}
+
+
+                <!-- CLOSING MESSAGE -->
+
+                <p style="
+                    margin:30px 0 18px;
+                    color:#716a63;
+                    font-size:14px;
+                    line-height:1.8;
+                ">
+                    If you have any questions regarding your booking,
+                    please contact our team. We are always happy to help.
+                </p>
+
+                <p style="
+                    margin:0;
+                    color:#514b45;
+                    font-size:14px;
+                    line-height:1.8;
+                ">
+                    Warm regards,<br>
+
+                    <strong style="color:#bd6d57;">
+                        Lenscraft Studio Team
+                    </strong>
+                </p>
+
+            </td>
+        </tr>
+
+
+        <!-- FOOTER -->
+
+        <tr>
+            <td align="center" style="
+                padding:25px 20px;
+                background:#f8f5f0;
+                border-top:1px solid #eee7df;
+            ">
+
+                <p style="
+                    margin:0;
+                    color:#bd6d57;
+                    font-family:Georgia,serif;
+                    font-size:17px;
+                    letter-spacing:1px;
+                ">
+                    LENSCRAFT STUDIO
+                </p>
+
+                <p style="
+                    margin:10px 0 0;
+                    color:#817a72;
+                    font-size:12px;
+                    line-height:1.7;
+                ">
+                    Thank you for trusting us with your special moments.
+                </p>
+
+                <p style="
+                    margin:15px 0 0;
+                    color:#a69d94;
+                    font-size:11px;
+                ">
+                    © Lenscraft Studio. All rights reserved.
+                </p>
+
+            </td>
+        </tr>
+
+    </table>
+
+</td>
+</tr>
+</table>
+
+</body>
+</html>

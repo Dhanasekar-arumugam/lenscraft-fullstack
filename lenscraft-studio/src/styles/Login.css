@@ -1,0 +1,1455 @@
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+/* ============================================
+   LENSCRAFT — CINEMATIC SPOTLIGHT LOGIN
+============================================ */
+
+.spotlight-login {
+  --coral: #f26b5e;
+  --deep-coral: #d95749;
+  --cream: #fffaf6;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  background: #141312;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+}
+
+.spotlight-login *,
+.spotlight-login *::before,
+.spotlight-login *::after {
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+
+.spotlight-background {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.spotlight-background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  animation: spotlightZoom 30s ease-in-out infinite alternate;
+}
+
+.spotlight-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -9;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12, 10, 10, 0.64),
+      rgba(16, 13, 13, 0.47) 45%,
+      rgba(9, 8, 8, 0.78)
+    );
+  pointer-events: none;
+}
+
+/* POINTER SPOTLIGHT */
+
+.spotlight-mouse-light {
+  position: absolute;
+  inset: 0;
+  z-index: -8;
+  background: radial-gradient(
+    420px circle at var(--mouse-x) var(--mouse-y),
+    rgba(242, 107, 94, 0.12),
+    transparent 75%
+  );
+  pointer-events: none;
+}
+
+/* ============================================
+   BACKGROUND TYPOGRAPHY
+============================================ */
+
+.spotlight-typography {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.spotlight-type-label {
+  position: absolute;
+  top: 24%;
+  left: 5%;
+  color: rgba(255, 232, 220, 0.65);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.spotlight-type-main {
+  width: 100%;
+  text-align: center;
+}
+
+.spotlight-type-main span {
+  display: block;
+  width: 100%;
+  color: rgba(255, 239, 229, 0.16);
+  font-family: "Playfair Display", serif;
+  font-size: clamp(75px, 13vw, 210px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -5px;
+  white-space: nowrap;
+  animation: spotlightWordEnter 0.6s ease both;
+  text-shadow: 0 0 70px rgba(242, 107, 94, 0.16);
+}
+
+.spotlight-type-symbols {
+  position: absolute;
+  bottom: 22%;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 45px;
+}
+
+.spotlight-type-symbols span {
+  max-width: 90%;
+  overflow: hidden;
+  color: rgba(255, 202, 190, 0.55);
+  font-size: clamp(16px, 3vw, 32px);
+  letter-spacing: 9px;
+  white-space: nowrap;
+  text-shadow: 0 0 25px rgba(242, 107, 94, 0.3);
+}
+
+.spotlight-type-symbols i {
+  width: 3px;
+  height: 30px;
+  background: var(--coral);
+  box-shadow: 0 0 15px rgba(242, 107, 94, 0.5);
+  animation: spotlightCaret 1s steps(1) infinite;
+}
+
+.spotlight-type-symbols i.typing {
+  animation-duration: 0.4s;
+}
+
+/* KEYSTROKE PULSE */
+
+.spotlight-keystroke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: -4;
+  width: 100px;
+  height: 100px;
+  border: 1px solid rgba(242, 107, 94, 0.35);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: spotlightPulse 0.6s ease-out forwards;
+}
+
+/* ============================================
+   TOP BRAND
+============================================ */
+
+.spotlight-topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 36px 55px;
+}
+
+.spotlight-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-decoration: none;
+}
+
+.spotlight-brand svg {
+  color: var(--coral);
+}
+
+.spotlight-top-caption {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* ============================================
+   CENTER CARD
+============================================ */
+
+.spotlight-center {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 125px 20px 100px;
+}
+
+.spotlight-card {
+  position: relative;
+  width: min(100%, 465px);
+  border-radius: 24px;
+  background: rgba(20, 19, 18, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(26px) saturate(145%);
+  -webkit-backdrop-filter: blur(26px) saturate(145%);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  animation: spotlightCardEnter 0.8s ease both;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.spotlight-card:focus-within {
+  border-color: rgba(242, 107, 94, 0.45);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.38),
+    0 0 50px rgba(242, 107, 94, 0.09);
+}
+
+.spotlight-card-glow {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  width: 90px;
+  height: 3px;
+  transform: translateX(-50%);
+  background: var(--coral);
+  border-radius: 0 0 10px 10px;
+}
+
+.spotlight-card-inner {
+  padding: 38px 43px 31px;
+  text-align: center;
+}
+
+/* HEADING */
+
+.spotlight-emblem {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin: 0 auto 21px;
+  border: 1px solid rgba(242, 107, 94, 0.35);
+  border-radius: 50%;
+  background: rgba(242, 107, 94, 0.09);
+  color: #ffb4a6;
+}
+
+.spotlight-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #f6b7aa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.spotlight-card h1 {
+  margin: 18px 0 14px;
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(39px, 4vw, 51px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -1px;
+}
+
+.spotlight-card h1 em {
+  color: #ffb6a8;
+  font-weight: 400;
+}
+
+.spotlight-subtitle {
+  max-width: 315px;
+  margin: 0 auto 30px;
+  color: rgba(255, 255, 255, 0.73);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* ============================================
+   INPUTS
+============================================ */
+
+.spotlight-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.spotlight-field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+.spotlight-field label {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.spotlight-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 55px;
+  padding: 0 15px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.spotlight-input > svg {
+  flex-shrink: 0;
+  color: #c1b8b1;
+  transition: color 0.3s;
+}
+
+.spotlight-input.active {
+  border-color: rgba(242, 107, 94, 0.9);
+  box-shadow:
+    0 0 0 4px rgba(242, 107, 94, 0.08),
+    0 0 25px rgba(242, 107, 94, 0.12);
+}
+
+.spotlight-input.active > svg {
+  color: #ffb6a8;
+}
+
+.spotlight-input input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #fff;
+  caret-color: var(--coral);
+  font-family: inherit;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+.spotlight-input input::placeholder {
+  color: rgba(255, 255, 255, 0.47);
+}
+
+.spotlight-input input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* MOVING BORDER LIGHT */
+
+.spotlight-input-beam {
+  position: absolute;
+  bottom: 0;
+  left: -40%;
+  width: 40%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #ffb7a8,
+    var(--coral),
+    transparent
+  );
+  opacity: 0;
+  pointer-events: none;
+}
+
+.spotlight-input.active .spotlight-input-beam {
+  opacity: 1;
+  animation: spotlightBeam 2s linear infinite;
+}
+
+/* PASSWORD EYE */
+
+.spotlight-eye {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #c1b8b1;
+  cursor: pointer;
+}
+
+.spotlight-eye:hover {
+  color: #ffb6a8;
+}
+
+/* ERROR */
+
+.spotlight-error {
+  padding: 13px 15px;
+  border: 1px solid rgba(242, 107, 94, 0.35);
+  border-radius: 8px;
+  background: rgba(150, 36, 29, 0.18);
+  color: #ffd0c7;
+  font-size: 12px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* SUBMIT */
+
+.spotlight-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  min-height: 56px;
+  margin-top: 7px;
+  padding: 15px 19px;
+  border: 1px solid var(--coral);
+  border-radius: 10px;
+  background: var(--coral);
+  color: #fff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.spotlight-submit:hover:not(:disabled) {
+  background: var(--deep-coral);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(242, 107, 94, 0.25);
+}
+
+.spotlight-submit svg {
+  transition: transform 0.3s;
+}
+
+.spotlight-submit:hover:not(:disabled) svg {
+  transform: translateX(5px);
+}
+
+.spotlight-submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.spotlight-spinner {
+  width: 19px;
+  height: 19px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spotlightSpin 0.8s linear infinite;
+}
+
+/* REGISTER */
+
+.spotlight-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 26px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.spotlight-register a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffb6a8;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.spotlight-register a:hover {
+  color: #fff;
+}
+
+/* SECURITY */
+
+.spotlight-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 27px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+}
+
+.spotlight-security svg {
+  color: #f2aa9b;
+}
+
+/* FOOTER */
+
+.spotlight-footer {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px 55px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.spotlight-footer a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #ffb6a8;
+  text-decoration: none;
+}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+
+@keyframes spotlightZoom {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes spotlightCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spotlightWordEnter {
+  from {
+    opacity: 0;
+    filter: blur(14px);
+    transform: translateY(25px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spotlightCaret {
+  0%, 49% {
+    opacity: 1;
+  }
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spotlightPulse {
+  from {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(5);
+  }
+}
+
+@keyframes spotlightBeam {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes spotlightSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 900px) {
+  .spotlight-topbar {
+    padding: 30px;
+  }
+
+  .spotlight-footer {
+    padding: 22px 30px;
+  }
+
+  .spotlight-type-main span {
+    font-size: 14vw;
+  }
+}
+
+/* ============================================
+   MOBILE
+============================================ */
+
+@media (max-width: 600px) {
+  .spotlight-topbar {
+    padding: 24px 20px;
+  }
+
+  .spotlight-brand {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .spotlight-top-caption {
+    display: none;
+  }
+
+  .spotlight-center {
+    padding: 110px 18px 85px;
+  }
+
+  .spotlight-card {
+    width: 100%;
+    border-radius: 18px;
+    backdrop-filter: blur(18px);
+  }
+
+  .spotlight-card-inner {
+    padding: 32px 24px 27px;
+  }
+
+  .spotlight-card h1 {
+    font-size: 40px;
+  }
+
+  .spotlight-input input {
+    font-size: 16px;
+  }
+
+  .spotlight-type-main span {
+    font-size: 17vw;
+    letter-spacing: -2px;
+  }
+
+  .spotlight-type-label {
+    top: 18%;
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .spotlight-type-symbols {
+    bottom: 15%;
+  }
+
+  .spotlight-footer {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .spotlight-footer > span:nth-child(2),
+  .spotlight-footer a {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .spotlight-card-inner {
+    padding: 27px 18px;
+  }
+
+  .spotlight-card h1 {
+    font-size: 35px;
+  }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-login *,
+  .spotlight-login *::before,
+  .spotlight-login *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   LENSCRAFT — EDITORIAL GLASS LOGIN
+   NEW LANDSCAPE STYLE
+============================================ */
+
+/* CENTER ALIGNMENT */
+
+.spotlight-center {
+  padding: 120px 25px 95px;
+}
+
+/* LANDSCAPE CARD */
+
+.spotlight-card {
+  position: relative;
+  width: min(94vw, 940px);
+  max-width: none;
+  min-height: 490px;
+  overflow: hidden;
+
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+
+  background: rgba(24, 20, 19, 0.65);
+
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+
+  box-shadow:
+    0 35px 110px rgba(0, 0, 0, 0.42),
+    0 0 60px rgba(242, 107, 94, 0.06);
+
+  transition:
+    box-shadow 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.spotlight-card:hover {
+  border-color: rgba(255, 220, 205, 0.38);
+  box-shadow:
+    0 45px 120px rgba(0, 0, 0, 0.48),
+    0 0 70px rgba(242, 107, 94, 0.1);
+}
+
+/* TOP DECORATIVE LINE */
+
+.spotlight-card-glow {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  transform: none;
+  border-radius: 0;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f26b5e 25%,
+    #fff0e6 50%,
+    #f26b5e 75%,
+    transparent
+  );
+}
+
+/* ============================================
+   TWO-COLUMN LAYOUT
+============================================ */
+
+.spotlight-card-inner {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 0.95fr)
+    minmax(0, 1.05fr);
+  grid-template-rows: repeat(4, auto) 1fr;
+
+  column-gap: 0;
+  align-items: center;
+  align-content: center;
+
+  min-height: 490px;
+  padding: 0;
+  text-align: left;
+}
+
+/* ============================================
+   LEFT SIDE — STORYTELLING
+============================================ */
+
+.spotlight-emblem,
+.spotlight-eyebrow,
+.spotlight-card h1,
+.spotlight-subtitle {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+}
+
+.spotlight-emblem {
+  grid-row: 1;
+  justify-self: start;
+
+  width: 65px;
+  height: 65px;
+  margin: 0 0 26px 45px;
+
+  border-radius: 20px;
+  border: 1px solid rgba(242, 107, 94, 0.42);
+
+  background: rgba(242, 107, 94, 0.13);
+  color: #ffb5a5;
+
+  transform: rotate(-8deg);
+  transition: transform 0.4s ease;
+}
+
+.spotlight-card:hover .spotlight-emblem {
+  transform: rotate(0);
+}
+
+.spotlight-eyebrow {
+  grid-row: 2;
+  justify-self: start;
+  margin-left: 45px;
+
+  color: #f9b4a5;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+
+.spotlight-card h1 {
+  grid-row: 3;
+  margin: 20px 30px 16px 45px;
+
+  color: #fffaf6;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(44px, 4.4vw, 65px);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.spotlight-card h1 em {
+  color: #f8ad9e;
+  font-weight: 400;
+}
+
+.spotlight-subtitle {
+  grid-row: 4;
+  max-width: 330px;
+  margin: 0 30px 0 45px;
+
+  color: rgba(255, 250, 246, 0.72);
+  font-size: 13px;
+  line-height: 1.95;
+}
+
+/* LEFT DECORATIVE GLOW */
+
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -150px;
+  bottom: -200px;
+  width: 450px;
+  height: 450px;
+
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(242, 107, 94, 0.2),
+    transparent 68%
+  );
+
+  pointer-events: none;
+}
+
+/* ============================================
+   RIGHT SIDE — CREAM LOGIN PANEL
+============================================ */
+
+.spotlight-card form {
+  grid-column: 2;
+  grid-row: 1 / 5;
+
+  align-self: stretch;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  margin: 0;
+  padding: 48px 48px 15px;
+
+  background: #fffaf6;
+  border: none;
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+/* FORM LABELS */
+
+.spotlight-card form .spotlight-field label {
+  color: #63544e;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+/* INPUTS */
+
+.spotlight-card form .spotlight-input {
+  height: 56px;
+  padding: 0 16px;
+
+  border-radius: 10px;
+  border: 1px solid #e9dcd5;
+
+  background: #ffffff;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.spotlight-card form .spotlight-input:hover {
+  border-color: #d8a69a;
+  background: #fffdfb;
+}
+
+.spotlight-card form .spotlight-input:focus-within {
+  border-color: #f26b5e;
+  background: #fff;
+
+  box-shadow:
+    0 0 0 4px rgba(242, 107, 94, 0.1),
+    0 8px 25px rgba(242, 107, 94, 0.08);
+}
+
+.spotlight-card form .spotlight-input > svg {
+  color: #b96d55;
+}
+
+.spotlight-card form .spotlight-input input {
+  color: #242424;
+  caret-color: #f26b5e;
+  font-size: 14px;
+}
+
+.spotlight-card form .spotlight-input input::placeholder {
+  color: #a69b96;
+}
+
+.spotlight-card form .spotlight-eye {
+  color: #8d7770;
+}
+
+.spotlight-card form .spotlight-eye:hover {
+  color: #d95749;
+}
+
+/* INPUT BORDER ANIMATION */
+
+.spotlight-card form .spotlight-input-beam {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #f26b5e,
+    #d95749,
+    transparent
+  );
+}
+
+/* ============================================
+   LOGIN BUTTON
+============================================ */
+
+.spotlight-card form .spotlight-submit {
+  min-height: 56px;
+  margin-top: 7px;
+  padding: 0 20px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #242424;
+  color: #fffaf6;
+
+  font-weight: 800;
+  letter-spacing: 0.3px;
+
+  box-shadow: 0 8px 22px rgba(36, 36, 36, 0.12);
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.spotlight-card form .spotlight-submit:hover:not(:disabled) {
+  background: #f26b5e;
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 30px rgba(242, 107, 94, 0.25);
+}
+
+/* ============================================
+   REGISTER & SECURITY
+============================================ */
+
+.spotlight-register {
+  grid-column: 2;
+  grid-row: 5;
+
+  align-self: stretch;
+  justify-content: center;
+
+  margin: 0;
+  padding: 16px 20px 8px;
+
+  background: #fffaf6;
+  color: #85736c;
+
+  font-size: 12px;
+}
+
+.spotlight-register a {
+  color: #d95749;
+  font-weight: 800;
+}
+
+.spotlight-register a:hover {
+  color: #242424;
+}
+
+.spotlight-security {
+  grid-column: 2;
+  grid-row: 6;
+
+  align-self: stretch;
+  justify-content: center;
+
+  margin: 0;
+  padding: 14px 20px 30px;
+
+  border: none;
+  background: #fffaf6;
+
+  color: #a18d85;
+  font-size: 9px;
+}
+
+.spotlight-security svg {
+  color: #d95749;
+}
+
+/* ============================================
+   ERROR MESSAGE
+============================================ */
+
+.spotlight-card form .spotlight-error {
+  background: #fff0e6;
+  border: 1px solid #f1c5b9;
+  border-left: 3px solid #d95749;
+  color: #a83f34;
+}
+
+/* ============================================
+   BACKGROUND REFINEMENT
+============================================ */
+
+.spotlight-overlay {
+  background: linear-gradient(
+    110deg,
+    rgba(18, 14, 13, 0.64),
+    rgba(27, 19, 17, 0.43),
+    rgba(15, 12, 12, 0.67)
+  );
+}
+
+.spotlight-type-main span {
+  color: rgba(255, 235, 225, 0.13);
+  text-shadow:
+    0 0 50px rgba(242, 107, 94, 0.15);
+}
+
+/* ============================================
+   TABLET
+============================================ */
+
+@media (max-width: 900px) {
+  .spotlight-card {
+    width: min(95vw, 860px);
+  }
+
+  .spotlight-card h1 {
+    font-size: 45px;
+    margin-left: 30px;
+  }
+
+  .spotlight-emblem,
+  .spotlight-eyebrow {
+    margin-left: 30px;
+  }
+
+  .spotlight-subtitle {
+    margin-left: 30px;
+  }
+
+  .spotlight-card form {
+    padding: 38px 30px 12px;
+  }
+}
+
+/* ============================================
+   MOBILE — SINGLE COLUMN
+============================================ */
+
+@media (max-width: 650px) {
+  .spotlight-center {
+    padding: 110px 16px 85px;
+  }
+
+  .spotlight-card {
+    width: 100%;
+    min-height: auto;
+    border-radius: 20px;
+  }
+
+  .spotlight-card-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-height: auto;
+  }
+
+  .spotlight-emblem {
+    width: 50px;
+    height: 50px;
+    margin: 28px auto 16px;
+    border-radius: 15px;
+  }
+
+  .spotlight-eyebrow {
+    align-self: center;
+    margin: 0;
+    font-size: 9px;
+  }
+
+  .spotlight-card h1 {
+    margin: 15px 20px 12px;
+    font-size: 39px;
+    text-align: center;
+  }
+
+  .spotlight-subtitle {
+    max-width: 300px;
+    margin: 0 auto 25px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .spotlight-card form {
+    width: 100%;
+    padding: 30px 24px 12px;
+    border-radius: 0;
+    gap: 19px;
+  }
+
+  .spotlight-card form .spotlight-input input {
+    font-size: 16px;
+  }
+
+  .spotlight-register {
+    padding-top: 15px;
+  }
+
+  .spotlight-security {
+    padding-bottom: 25px;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE
+============================================ */
+
+@media (max-width: 380px) {
+  .spotlight-card h1 {
+    font-size: 34px;
+  }
+
+  .spotlight-card form {
+    padding: 26px 18px 12px;
+  }
+
+  .spotlight-register {
+    font-size: 11px;
+  }
+}
+
+/* ============================================
+   REDUCED MOTION
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-card,
+  .spotlight-card *,
+  .spotlight-card::before {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ============================================
+   LENSCRAFT — TRANSPARENT LANDSCAPE LOGIN
+============================================ */
+
+/* MAIN TRANSPARENT GLASS CARD */
+
+.spotlight-card {
+  background: rgba(15, 15, 15, 0.12) !important;
+
+  backdrop-filter: blur(12px) saturate(125%);
+  -webkit-backdrop-filter: blur(12px) saturate(125%);
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* REMOVE CREAM FORM BACKGROUND */
+
+.spotlight-card form {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* TRANSPARENT REGISTER AREA */
+
+.spotlight-card .spotlight-register {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* TRANSPARENT SECURITY AREA */
+
+.spotlight-card .spotlight-security {
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.65);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* WHITE TEXT ON TRANSPARENT BACKGROUND */
+
+.spotlight-card form .spotlight-field label {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.spotlight-card form .spotlight-input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.26);
+}
+
+.spotlight-card form .spotlight-input:hover {
+  background: rgba(255, 255, 255, 0.11);
+  border-color: rgba(242, 107, 94, 0.55);
+}
+
+.spotlight-card form .spotlight-input:focus-within {
+  background: rgba(242, 107, 94, 0.09);
+  border-color: #f26b5e;
+
+  box-shadow:
+    0 0 0 3px rgba(242, 107, 94, 0.1);
+}
+
+.spotlight-card form .spotlight-input input {
+  color: #fff;
+}
+
+.spotlight-card form .spotlight-input input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.spotlight-card form .spotlight-input > svg,
+.spotlight-card form .spotlight-eye {
+  color: #ffc0b1;
+}
+
+/* TRANSPARENT CORAL BUTTON */
+
+.spotlight-card form .spotlight-submit {
+  background: rgba(242, 107, 94, 0.22);
+  border: 1px solid rgba(242, 107, 94, 0.8);
+  color: #fff;
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  box-shadow: none;
+}
+
+.spotlight-card form .spotlight-submit:hover:not(:disabled) {
+  background: #f26b5e;
+  border-color: #f26b5e;
+
+  box-shadow:
+    0 12px 30px rgba(242, 107, 94, 0.25);
+}
+
+/* LINKS */
+
+.spotlight-card .spotlight-register a {
+  color: #ffb5a5;
+}
+
+.spotlight-card .spotlight-register a:hover {
+  color: #fff;
+}
+
+/* SOFT CORAL GLOW */
+
+.spotlight-card:hover {
+  border-color: rgba(242, 107, 94, 0.4);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.25),
+    0 0 45px rgba(242, 107, 94, 0.07);
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+  .spotlight-card {
+    background: rgba(15, 15, 15, 0.18) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .spotlight-card form,
+  .spotlight-card .spotlight-register,
+  .spotlight-card .spotlight-security {
+    background: transparent !important;
+  }
+}
+
+/* ============================================
+   REMOVE WHITE INPUT BACKGROUND
+============================================ */
+
+.spotlight-card form .spotlight-input,
+.spotlight-card form .spotlight-input:hover,
+.spotlight-card form .spotlight-input.active,
+.spotlight-card form .spotlight-input:focus-within {
+  background: rgba(20, 15, 15, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* INPUT TEXT */
+
+.spotlight-card form .spotlight-input input {
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff;
+  box-shadow: none !important;
+}
+
+/* REMOVE BROWSER AUTOFILL WHITE/BLUE BACKGROUND */
+
+.spotlight-card form .spotlight-input input:-webkit-autofill,
+.spotlight-card form .spotlight-input input:-webkit-autofill:hover,
+.spotlight-card form .spotlight-input input:-webkit-autofill:focus,
+.spotlight-card form .spotlight-input input:-webkit-autofill:active {
+  -webkit-box-shadow:
+    0 0 0 1000px #352421 inset !important;
+
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff;
+  transition: background-color 9999s ease-out;
+}
+
+/* PASSWORD VISIBILITY BUTTON */
+
+.spotlight-card form .spotlight-eye {
+  background: transparent !important;
+  color: #ffc0b1;
+}
+
+/* ICON COLORS */
+
+.spotlight-card form .spotlight-input > svg {
+  color: #ffc0b1;
+}
+
+/* FOCUS EFFECT */
+
+.spotlight-card form .spotlight-input:focus-within {
+  border-color: #f26b5e;
+
+  box-shadow:
+    0 0 0 3px rgba(242, 107, 94, 0.1),
+    0 0 20px rgba(242, 107, 94, 0.08);
+}
