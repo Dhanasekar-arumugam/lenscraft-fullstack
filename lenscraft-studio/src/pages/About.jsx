@@ -193,10 +193,9 @@ export default function About() {
           </p>
 
           <div className="about-family-actions">
-            <a href="#about-intro" className="about-family-primary">
-              DISCOVER OUR STORY
-              <ArrowUpRight size={19} />
-            </a>
+            <Link to="/about#about-intro">
+              DISCOVER OUR STORY <ArrowUpRight size={19} />
+            </Link>
 
             <Link to="/contact" className="about-family-secondary">
               GET IN TOUCH

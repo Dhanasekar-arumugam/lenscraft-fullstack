@@ -226,14 +226,12 @@ export default function Services() {
           </p>
 
           <div className="services-hero-actions">
-            <a href="#services-intro" className="services-hero-primary">
-              EXPLORE OUR SERVICES
-              <ArrowUpRight size={18} />
-            </a>
+            <Link to="/services#services-intro">
+              EXPLORE OUR SERVICES <ArrowUpRight size={18} />
+            </Link>
 
             <Link to="/contact" className="services-hero-secondary">
-              LET'S TALK
-              <ArrowRight size={18} />
+              LET'S TALK <ArrowRight size={18} />
             </Link>
           </div>
         </motion.div>
@@ -589,8 +587,6 @@ export default function Services() {
       {/* =====================================
           CTA
       ===================================== */}
-
-     
     </main>
   );
 }

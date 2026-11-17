@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
+  ArrowUpRight,
   Aperture,
   Camera,
   ImageOff,
@@ -9,10 +10,10 @@ import {
   RefreshCw,
   X,
 } from "lucide-react";
-
+import { Link } from "react-router-dom";
 import { getPortfolioPhotos } from "../api/portfolioService";
 import "../styles/Portfolio.css";
-
+import { motion } from "motion/react";
 const CATEGORIES = [
   { value: "all", label: "All Stories" },
   { value: "wedding", label: "Weddings" },
@@ -114,7 +115,12 @@ export default function Portfolio() {
       <section className="portfolio-hero">
         <div className="portfolio-hero-glow" />
 
-        <div className="portfolio-hero-content">
+        <motion.div
+          className="portfolio-hero-content"
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+        >
           <span className="portfolio-kicker">
             <Aperture size={17} />
             THE LENSCRAFT COLLECTION
@@ -131,15 +137,15 @@ export default function Portfolio() {
             beautiful stories captured through our lens.
           </p>
 
-          <a href="#portfolio-gallery" className="portfolio-explore">
-            Explore Our Work
-            <ArrowRight size={18} />
-          </a>
-        </div>
+          <Link to="/portfolio#portfolio-gallery">
+            Explore Our Work <ArrowUpRight size={18} />
+          </Link>
+        </motion.div>
 
         <div className="portfolio-hero-bottom">
           <span>CAPTURED WITH PASSION</span>
-          <span>SCROLL TO EXPLORE</span>
+
+          <a href="#portfolio-gallery">SCROLL TO EXPLORE</a>
         </div>
       </section>
 

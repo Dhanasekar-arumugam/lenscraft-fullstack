@@ -64,19 +64,28 @@ const AdminPackages = lazy(() => import("./pages/admin/AdminPackages"));
 // SCROLL TO TOP
 // ============================================
 
+
 function ScrollTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
-  }, [pathname]);
+    if (hash) {
+      requestAnimationFrame(() => {
+        document
+          .getElementById(decodeURIComponent(hash.slice(1)))
+          ?.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+      });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
 
   return null;
 }
+
 
 // ============================================
 // PAGE LOADER

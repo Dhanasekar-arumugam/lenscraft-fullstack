@@ -242,7 +242,7 @@ export default function Navbar() {
         >
           {!logoError ? (
             <img
-              src="/images/LensCraft-Logo.png"
+              src={`${import.meta.env.BASE_URL}images/LensCraft-Logo.png`}
               alt="Lenscraft Studio"
               className="nav-logo"
               onError={() => setLogoError(true)}

@@ -39,9 +39,7 @@
   position: relative;
   min-height: 100svh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 150px max(6%, calc((100% - 1200px) / 2)) 65px;
+  align-items: center;
   background: #211b1a;
   color: #fff;
   isolation: isolate;
@@ -98,6 +96,7 @@
   z-index: 2;
   width: 100%;
   max-width: 1050px;
+  margin-left: 20px;
   animation: portfolioFadeUp 1s ease both;
 }
 
@@ -1054,5 +1053,123 @@
     animation: none !important;
     opacity: 1 !important;
     transform: none;
+  }
+}
+
+/* ==========================================
+   LENSCRAFT — CONSISTENT PAGE HERO POSITION
+   Preserve individual backgrounds and colours
+========================================== */
+
+.services-cinematic-hero,
+.portfolio-hero,
+.lc-contact-hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* COMMON CONTENT POSITION */
+
+.services-hero-content,
+.portfolio-hero-content,
+.lc-contact-hero-content {
+  position: relative;
+  z-index: 3;
+  width: min(100% - 100px, 1200px);
+  margin-inline: auto;
+  padding-top: 75px;
+  padding-bottom: 75px;
+  text-align: left;
+}
+
+/* Portfolio: move content slightly to the right */
+.portfolio-hero-content {
+  transform: translateX(35px);
+}
+
+/* SERVICES */
+
+.services-hero-content {
+  margin-inline: auto;
+}
+
+/* PORTFOLIO */
+
+.portfolio-hero-content {
+  margin-inline: auto;
+}
+
+/* CONTACT */
+
+.lc-contact-hero-content {
+  margin-inline: auto;
+}
+
+/* BOTTOM ELEMENTS */
+
+.services-hero-scroll,
+.portfolio-hero-bottom,
+.lc-contact-hero-bottom {
+  position: absolute;
+  z-index: 4;
+  bottom: 45px;
+}
+
+.services-hero-scroll {
+  left: max(50px, calc((100% - 1200px) / 2));
+}
+
+.portfolio-hero-bottom {
+  left: max(50px, calc((100% - 1200px) / 2));
+  right: max(50px, calc((100% - 1200px) / 2));
+}
+
+.lc-contact-hero-bottom {
+  left: max(50px, calc((100% - 1200px) / 2));
+  right: max(50px, calc((100% - 1200px) / 2));
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .services-hero-content,
+  .portfolio-hero-content,
+  .lc-contact-hero-content {
+    width: calc(100% - 40px);
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .services-hero-scroll {
+    left: 20px;
+    bottom: 25px;
+  }
+
+  .portfolio-hero-bottom,
+  .lc-contact-hero-bottom {
+    left: 20px;
+    right: 20px;
+    bottom: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .portfolio-hero-content {
+    transform: translateX(0);
+  }
+}
+/* Move Portfolio hero content slightly to the right */
+.portfolio-page .portfolio-hero-content {
+  margin-left: 20px !important;
+  margin-right: auto !important;
+}
+
+/* Keep the original alignment on mobile */
+@media (max-width: 768px) {
+  .portfolio-page .portfolio-hero-content {
+    margin-left: 0 !important;
   }
 }

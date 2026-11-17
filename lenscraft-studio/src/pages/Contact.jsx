@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   ArrowUpRight,
   ArrowRight,
@@ -20,13 +20,15 @@ import {
   CalendarDays,
   Send,
   ShieldCheck,
+  RefreshCw,
+  X,
 } from "lucide-react";
 
 import api from "../api/axios";
 import Hero from "../components/Hero";
 import { services } from "../assets/data";
 import "../styles/Contact.css";
-
+import { motion } from "motion/react";
 const emptyForm = {
   name: "",
   email: "",
@@ -241,12 +243,18 @@ export default function Contact() {
   return (
     <main className="lc-contact-page">
       {/* HERO */}
+
       <section className="lc-contact-hero">
         <div className="lc-contact-hero-bg" />
 
         <div className="lc-contact-hero-overlay" />
 
-        <div className="lc-contact-hero-content">
+        <motion.div
+          className="lc-contact-hero-content"
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: "easeOut" }}
+        >
           <div className="lc-contact-hero-eyebrow">
             <span className="lc-contact-hero-line" />
             LENSCRAFT STUDIO — GET IN TOUCH
@@ -264,17 +272,14 @@ export default function Contact() {
           </p>
 
           <div className="lc-contact-hero-actions">
-            <a href="#contact-form" className="lc-contact-hero-primary">
-              Let's Create Together
-              <ArrowUpRight size={19} />
-            </a>
+            <Link to="/contact#contact-form">Let's Create Together</Link>
 
             <a href="#studio-location" className="lc-contact-hero-secondary">
               <MapPin size={18} />
               Find Our Studio
             </a>
           </div>
-        </div>
+        </motion.div>
 
         <div className="lc-contact-hero-bottom">
           <span>CAPTURING STORIES, CREATING MEMORIES</span>
@@ -289,6 +294,7 @@ export default function Contact() {
 
         <div className="lc-contact-hero-number">01 / 04</div>
       </section>
+
       {/* INTRO */}
       <section className="lc-contact-intro">
         <div className="lc-container lc-intro-grid">
@@ -746,7 +752,6 @@ export default function Contact() {
       </section>
 
       {/* FINAL CTA */}
-      
     </main>
   );
 }
