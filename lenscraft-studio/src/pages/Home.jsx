@@ -27,7 +27,7 @@ const portfolio = [
     id: 1,
     title: "Timeless Romance",
     category: "Wedding Photography",
-    image: "/images/portfolio-106.jpg",
+    image: `${import.meta.env.BASE_URL}images/portfolio-106.jpg`,
     size: "large",
   },
   {
@@ -41,14 +41,14 @@ const portfolio = [
     id: 3,
     title: "Beautiful Celebrations",
     category: "Event Photography",
-    image: "/images/event.jpg",
+    image: `${import.meta.env.BASE_URL}images/event.jpg`,
     size: "small",
   },
   {
     id: 4,
     title: "Creative Expressions",
     category: "Fashion Photography",
-    image: "photo-1529139574466-a303027c1d8b",
+    image: `${import.meta.env.BASE_URL}images/fashion.jpg`,
     size: "large",
   },
 ];
@@ -463,7 +463,7 @@ export default function Home() {
                 aria-label="Show main photograph in front"
               >
                 <img
-                  src="/images/photoimg.jpg"
+                  src={`${import.meta.env.BASE_URL}images/photoimg.jpg`}
                   alt="Beautiful photography moments"
                   loading="lazy"
                 />
@@ -475,7 +475,7 @@ export default function Home() {
                 aria-label="Show second photograph in front"
               >
                 <img
-                  src="/images/camtool.webp"
+                  src={`${import.meta.env.BASE_URL}images/camtool.webp`}
                   alt="Behind the lens at Lenscraft"
                   loading="lazy"
                 />

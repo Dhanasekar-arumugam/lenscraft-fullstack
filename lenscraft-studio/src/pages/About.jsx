@@ -46,19 +46,19 @@ const specialties = [
     number: "01",
     title: "Wedding",
     subtitle: "Where love becomes timeless.",
-    image: "/images/wedding1.jpg",
+    image: `${import.meta.env.BASE_URL}images/wedding.jpg`,
   },
   {
     number: "02",
     title: "Portrait",
     subtitle: "Every face tells a story.",
-    image: "/images/pooja2.jpg",
+    image: `${import.meta.env.BASE_URL}images/pooja2.jpg`,
   },
   {
     number: "03",
     title: "Events",
     subtitle: "Moments worth remembering.",
-    image: "/images/halloween.webp",
+    image: `${import.meta.env.BASE_URL}images/halloween.webp`,
   },
 ];
 
