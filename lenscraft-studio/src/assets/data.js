@@ -1,20 +1,23 @@
 
+
 export const photo = (id, w = 1200) => {
-  if (!id) return "";
+  if (!id || typeof id !== "string") return "";
 
-  // Local images from the public folder
-  if (id.startsWith("/")) {
-    return id;
+  const value = id.trim();
+
+  if (!value) return "";
+
+  if (/^(https?:\/\/|data:|blob:)/i.test(value)) {
+    return value;
   }
 
-  // Full external image URLs
-  if (id.startsWith("http://") || id.startsWith("https://")) {
-    return id;
+  if (value.startsWith("/")) {
+    return value;
   }
 
-  // Unsplash image IDs
-  return `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=85`;
+  return `https://images.unsplash.com/${value}?auto=format&fit=crop&w=${w}&q=85`;
 };
+
 
 // ===============================
 // PHOTOGRAPHY SERVICES

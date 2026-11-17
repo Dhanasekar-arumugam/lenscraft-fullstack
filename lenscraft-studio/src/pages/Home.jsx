@@ -128,22 +128,48 @@ function getResults(data) {
   return Array.isArray(data?.results) ? data.results : [];
 }
 
+
 function getImage(value, width = 1000) {
+  const fallback = "/images/photoimg.jpg";
+
   if (!value || typeof value !== "string") {
-    return "/images/photoimg.jpg";
+    return fallback;
   }
 
-  if (
-    value.startsWith("/") ||
-    value.startsWith("http://") ||
-    value.startsWith("https://") ||
-    value.startsWith("data:")
-  ) {
-    return value;
+  const image = value.trim();
+
+  if (!image) {
+    return fallback;
   }
 
-  return photo(value, width);
+  // Already complete image URLs
+  if (/^(https?:\/\/|data:|blob:)/i.test(image)) {
+    return image;
+  }
+
+  // Local public folder images
+  if (/^\/?images\//i.test(image)) {
+    return image.startsWith("/") ? image : `/${image}`;
+  }
+
+  // Unsplash image IDs
+  if (/^photo-[a-zA-Z0-9_-]+$/.test(image)) {
+    return photo(image, width);
+  }
+
+  // Django uploaded media images
+  const apiBase = api.defaults.baseURL || window.location.origin;
+
+  try {
+    const apiOrigin = new URL(apiBase, window.location.origin).origin;
+
+    return new URL(image.replace(/^\/+/, ""), `${apiOrigin}/`).href;
+  } catch (error) {
+    console.error("Invalid image URL:", image, error);
+    return fallback;
+  }
 }
+
 
 /* ==========================================
    ANIMATED COUNTER

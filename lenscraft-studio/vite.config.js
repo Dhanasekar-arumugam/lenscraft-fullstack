@@ -3,5 +3,17 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
+
+  // GitHub Pages repository name
   base: "/lenscraft-fullstack/",
+
+  server: {
+    host: true,
+    port: 5173,
+  },
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
+  },
 });
