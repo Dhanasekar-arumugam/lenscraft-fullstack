@@ -46,7 +46,7 @@ const specialties = [
     number: "01",
     title: "Wedding",
     subtitle: "Where love becomes timeless.",
-    image: `${import.meta.env.BASE_URL}images/wedding.jpg`,
+    image: `${import.meta.env.BASE_URL}images/wedding1.jpg`,
   },
   {
     number: "02",
