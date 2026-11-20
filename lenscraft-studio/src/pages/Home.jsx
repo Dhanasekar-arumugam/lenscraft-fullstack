@@ -42,6 +42,7 @@ function getApiOrigin() {
    IMAGE URL HELPER
 ========================================== */
 
+
 function getImage(value, width = 1000) {
   if (!value || typeof value !== "string") {
     return FALLBACK_IMAGE;
@@ -49,11 +50,9 @@ function getImage(value, width = 1000) {
 
   const image = value.trim();
 
-  if (!image) {
-    return FALLBACK_IMAGE;
-  }
+  if (!image) return FALLBACK_IMAGE;
 
-  // External URLs, data URLs and blob URLs
+  // External URLs
   if (/^(https?:\/\/|data:|blob:)/i.test(image)) {
     return image;
   }
@@ -63,35 +62,31 @@ function getImage(value, width = 1000) {
     return photo(image, width);
   }
 
-  // Remove accidental whitespace and normalize separators
   const normalized = image.replace(/\\/g, "/");
 
-  // Local images inside the Vite public/images folder
-  if (/^\/?images\//i.test(normalized)) {
-    const cleanPath = normalized.replace(/^\/+/, "");
+  // Remove Vite BASE_URL if already included
+  const baseUrl = import.meta.env.BASE_URL;
+  const withoutBase = normalized.startsWith(baseUrl)
+    ? normalized.slice(baseUrl.length)
+    : normalized.replace(/^\/+/, "");
 
-    return `${import.meta.env.BASE_URL}${cleanPath}`;
+  // Frontend public/images paths
+  if (withoutBase.toLowerCase().startsWith("images/")) {
+    return `${baseUrl}${withoutBase}`;
   }
 
-  // Django media images
-  try {
-    const apiOrigin = getApiOrigin();
+  // Django media paths
+  const apiOrigin = getApiOrigin();
 
-    if (/^\/?media\//i.test(normalized)) {
-      return new URL(`/${normalized.replace(/^\/+/, "")}`, apiOrigin).href;
-    }
-
-    // Other absolute backend paths
-    if (normalized.startsWith("/")) {
-      return new URL(normalized, apiOrigin).href;
-    }
-
-    // Relative Django media paths
-    return new URL(normalized, `${apiOrigin}/`).href;
-  } catch (error) {
-    console.error("Invalid image path:", image, error);
-    return FALLBACK_IMAGE;
+  if (/^media\//i.test(withoutBase)) {
+    return new URL(withoutBase, `${apiOrigin}/`).href;
   }
+
+  if (normalized.startsWith("/")) {
+    return new URL(normalized, apiOrigin).href;
+  }
+
+  return new URL(normalized, `${apiOrigin}/`).href;
 }
 
 /* ==========================================
@@ -129,7 +124,7 @@ const portfolio = [
     id: 2,
     title: "The Art of Portraits",
     category: "Portrait Photography",
-    image: "photo-1488426862026-3ee34a7d66df",
+    image: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800",
     size: "small",
   },
   {
