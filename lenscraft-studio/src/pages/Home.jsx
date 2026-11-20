@@ -138,7 +138,7 @@ const portfolio = [
     id: 4,
     title: "Creative Expressions",
     category: "Fashion Photography",
-    image: `${import.meta.env.BASE_URL}images/fashion.jpg`,
+    image: `${import.meta.env.BASE_URL}images/fashionhome.webp`,
     size: "large",
   },
 ];
@@ -178,30 +178,29 @@ const processSteps = [
    JOURNAL
 ========================================== */
 
+
+
 const journal = [
   {
     id: 1,
-    category: "WEDDING STORIES",
-    title: "The Beauty of Candid Wedding Photography",
-    image: "photo-1519741497674-611481863552",
-    description:
-      "The most beautiful wedding moments are often the ones that happen naturally.",
+    title: "Beautiful Landscapes",
+    category: "Travel Photography",
+    image: `${import.meta.env.BASE_URL}images/travel.avif`,
+    size: "large",
   },
   {
     id: 2,
-    category: "PORTRAIT STORIES",
-    title: "Creating Beautiful Portraits With Natural Light",
-    image: "photo-1534528741775-53994a69daeb",
-    description:
-      "Discover how light, expression, and composition create meaningful portraits.",
+    title: "Product Perfection",
+    category: "Product Photography",
+    image: `${import.meta.env.BASE_URL}images/product.avif`,
+    size: "small",
   },
   {
     id: 3,
-    category: "BEHIND THE LENS",
-    title: "The Art Behind Every Perfect Photograph",
-    image: "photo-1542038784456-1ea8e935640e",
-    description:
-      "A closer look at the creativity and passion behind professional photography.",
+    title: "Urban Life",
+    category: "Street Photography",
+    image: `${import.meta.env.BASE_URL}images/street.jpg`,
+    size: "small",
   },
 ];
 
