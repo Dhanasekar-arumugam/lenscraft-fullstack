@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lenscraft Studio</title>
+
+    <script>
+      (function () {
+        var segmentCount = 1;
+
+        var location = window.location;
+        var pathSegments = location.pathname
+          .split("/")
+          .filter(Boolean);
+
+        var route = pathSegments.slice(segmentCount).join("/");
+
+        var redirect =
+          location.protocol +
+          "//" +
+          location.host +
+          location.pathname
+            .split("/")
+            .slice(0, segmentCount + 1)
+            .join("/") +
+          "/?/" +
+          route +
+          location.search.replace(/&/g, "~and~") +
+          location.hash;
+
+        window.location.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting to Lenscraft Studio...
+  </body>
+</html>
