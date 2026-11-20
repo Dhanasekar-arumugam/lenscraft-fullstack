@@ -457,7 +457,7 @@ export default function About() {
       <section className="about-experience">
         <div className="about-experience-image">
           <img
-            src="/images/feel2.jpg"
+            src={`${import.meta.env.BASE_URL}images/feel2.jpg`}
             alt="Lenscraft photography experience"
             loading="lazy"
           />
