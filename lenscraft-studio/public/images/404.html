@@ -1,41 +1,39 @@
 
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Lenscraft Studio</title>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Lenscraft Studio</title>
 
-  <script>
-    (function () {
-      var segmentCount = 1;
-      var location = window.location;
+    <script>
+      (function () {
+        var segmentCount = 1;
 
-      var redirect =
-        location.protocol +
-        "//" +
-        location.hostname +
-        (location.port ? ":" + location.port : "") +
-        location.pathname
+        var location = window.location;
+        var pathSegments = location.pathname
           .split("/")
-          .slice(0, 1 + segmentCount)
-          .join("/") +
-        "/?/" +
-        location.pathname
-          .slice(1)
-          .split("/")
-          .slice(segmentCount)
-          .join("/")
-          .replace(/&/g, "~and~") +
-        (location.search
-          ? "&" + location.search.slice(1).replace(/&/g, "~and~")
-          : "") +
-        location.hash;
+          .filter(Boolean);
 
-      location.replace(redirect);
-    })();
-  </script>
-</head>
-<body>
-  <p>Redirecting to Lenscraft Studio...</p>
-</body>
+        var route = pathSegments.slice(segmentCount).join("/");
+
+        var redirect =
+          location.protocol +
+          "//" +
+          location.host +
+          location.pathname
+            .split("/")
+            .slice(0, segmentCount + 1)
+            .join("/") +
+          "/?/" +
+          route +
+          location.search.replace(/&/g, "~and~") +
+          location.hash;
+
+        window.location.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting to Lenscraft Studio...
+  </body>
 </html>
