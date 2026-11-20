@@ -19,6 +19,101 @@ import { photo } from "../assets/data";
 import "../styles/Home.css";
 
 /* ==========================================
+   IMAGE CONFIGURATION
+========================================== */
+
+const FALLBACK_IMAGE = `${import.meta.env.BASE_URL}images/photoimg.jpg`;
+
+function getApiOrigin() {
+  try {
+    const apiBase =
+      api.defaults.baseURL ||
+      import.meta.env.VITE_API_BASE_URL ||
+      window.location.origin;
+
+    return new URL(apiBase, window.location.origin).origin;
+  } catch (error) {
+    console.error("Unable to determine API origin:", error);
+    return window.location.origin;
+  }
+}
+
+/* ==========================================
+   IMAGE URL HELPER
+========================================== */
+
+function getImage(value, width = 1000) {
+  if (!value || typeof value !== "string") {
+    return FALLBACK_IMAGE;
+  }
+
+  const image = value.trim();
+
+  if (!image) {
+    return FALLBACK_IMAGE;
+  }
+
+  // External URLs, data URLs and blob URLs
+  if (/^(https?:\/\/|data:|blob:)/i.test(image)) {
+    return image;
+  }
+
+  // Unsplash image IDs
+  if (/^photo-[a-zA-Z0-9_-]+$/.test(image)) {
+    return photo(image, width);
+  }
+
+  // Remove accidental whitespace and normalize separators
+  const normalized = image.replace(/\\/g, "/");
+
+  // Local images inside the Vite public/images folder
+  if (/^\/?images\//i.test(normalized)) {
+    const cleanPath = normalized.replace(/^\/+/, "");
+
+    return `${import.meta.env.BASE_URL}${cleanPath}`;
+  }
+
+  // Django media images
+  try {
+    const apiOrigin = getApiOrigin();
+
+    if (/^\/?media\//i.test(normalized)) {
+      return new URL(`/${normalized.replace(/^\/+/, "")}`, apiOrigin).href;
+    }
+
+    // Other absolute backend paths
+    if (normalized.startsWith("/")) {
+      return new URL(normalized, apiOrigin).href;
+    }
+
+    // Relative Django media paths
+    return new URL(normalized, `${apiOrigin}/`).href;
+  } catch (error) {
+    console.error("Invalid image path:", image, error);
+    return FALLBACK_IMAGE;
+  }
+}
+
+/* ==========================================
+   IMAGE ERROR HANDLER
+========================================== */
+
+function handleImageError(event) {
+  const img = event.currentTarget;
+
+  if (img.dataset.fallbackApplied === "true") {
+    img.style.visibility = "hidden";
+    console.error("Fallback image could not be loaded:", img.src);
+    return;
+  }
+
+  img.dataset.fallbackApplied = "true";
+  img.src = FALLBACK_IMAGE;
+
+  console.warn("Image failed to load. Using fallback:", img.alt);
+}
+
+/* ==========================================
    STATIC PORTFOLIO
 ========================================== */
 
@@ -53,6 +148,10 @@ const portfolio = [
   },
 ];
 
+/* ==========================================
+   PROCESS STEPS
+========================================== */
+
 const processSteps = [
   {
     number: "01",
@@ -79,6 +178,10 @@ const processSteps = [
       "Receive a carefully edited collection of photographs you'll treasure.",
   },
 ];
+
+/* ==========================================
+   JOURNAL
+========================================== */
 
 const journal = [
   {
@@ -108,7 +211,7 @@ const journal = [
 ];
 
 /* ==========================================
-   HELPERS AND ANIMATIONS
+   ANIMATIONS
 ========================================== */
 
 const fadeUp = {
@@ -123,53 +226,14 @@ const fadeUp = {
   },
 };
 
+/* ==========================================
+   API RESPONSE HELPER
+========================================== */
+
 function getResults(data) {
   if (Array.isArray(data)) return data;
   return Array.isArray(data?.results) ? data.results : [];
 }
-
-
-function getImage(value, width = 1000) {
-  const fallback = "/images/photoimg.jpg";
-
-  if (!value || typeof value !== "string") {
-    return fallback;
-  }
-
-  const image = value.trim();
-
-  if (!image) {
-    return fallback;
-  }
-
-  // Already complete image URLs
-  if (/^(https?:\/\/|data:|blob:)/i.test(image)) {
-    return image;
-  }
-
-  // Local public folder images
-  if (/^\/?images\//i.test(image)) {
-    return image.startsWith("/") ? image : `/${image}`;
-  }
-
-  // Unsplash image IDs
-  if (/^photo-[a-zA-Z0-9_-]+$/.test(image)) {
-    return photo(image, width);
-  }
-
-  // Django uploaded media images
-  const apiBase = api.defaults.baseURL || window.location.origin;
-
-  try {
-    const apiOrigin = new URL(apiBase, window.location.origin).origin;
-
-    return new URL(image.replace(/^\/+/, ""), `${apiOrigin}/`).href;
-  } catch (error) {
-    console.error("Invalid image URL:", image, error);
-    return fallback;
-  }
-}
-
 
 /* ==========================================
    ANIMATED COUNTER
@@ -177,10 +241,12 @@ function getImage(value, width = 1000) {
 
 function Counter({ target, label }) {
   const ref = useRef(null);
+
   const seen = useInView(ref, {
     once: true,
     amount: 0.4,
   });
+
   const [value, setValue] = useState(0);
 
   useEffect(() => {
@@ -203,6 +269,7 @@ function Counter({ target, label }) {
     };
 
     frame = requestAnimationFrame(animate);
+
     return () => cancelAnimationFrame(frame);
   }, [seen, target]);
 
@@ -239,6 +306,7 @@ function PhotographyTicker() {
             <span className="signature-sparkle">✦</span>
             THE LENSCRAFT COLLECTION
           </span>
+
           <h2>
             An eye for <em>the extraordinary.</em>
           </h2>
@@ -246,6 +314,7 @@ function PhotographyTicker() {
 
         <div className="signature-intro-right">
           <span className="signature-intro-line" />
+
           <p>
             CURATED WITH LOVE
             <br />
@@ -268,10 +337,13 @@ function PhotographyTicker() {
                   key={`${copy}-${category.number}`}
                 >
                   <span className="signature-number">{category.number}</span>
+
                   <div className="signature-item-content">
                     <span className="signature-name">{category.name}</span>
+
                     <span className="signature-detail">{category.detail}</span>
                   </div>
+
                   <span className="signature-diamond" aria-hidden="true">
                     ✧
                   </span>
@@ -284,9 +356,11 @@ function PhotographyTicker() {
 
       <div className="signature-ticker-footer">
         <span>CRAFTED IN LIGHT</span>
+
         <span className="signature-footer-center">
           <span>✦</span>A TIMELESS PERSPECTIVE<span>✦</span>
         </span>
+
         <span>MADE TO BE REMEMBERED</span>
       </div>
     </section>
@@ -315,7 +389,12 @@ function PortfolioCard({ item }) {
         aria-expanded={active}
         aria-label={`Show ${item.title} details`}
       >
-        <img src={getImage(item.image, 1100)} alt={item.title} loading="lazy" />
+        <img
+          src={getImage(item.image, 1100)}
+          alt={item.title}
+          loading="lazy"
+          onError={handleImageError}
+        />
 
         <span className="portfolio-view-icon">
           <MoveUpRight size={22} />
@@ -325,6 +404,7 @@ function PortfolioCard({ item }) {
           <span className="portfolio-content">
             <span className="portfolio-category">{item.category}</span>
             <strong>{item.title}</strong>
+
             <span className="portfolio-hint">
               Discover this story <ArrowUpRight size={17} />
             </span>
@@ -337,6 +417,7 @@ function PortfolioCard({ item }) {
           <span>{item.category}</span>
           <h3>{item.title}</h3>
         </div>
+
         <Link
           to="/contact"
           className="portfolio-footer-link"
@@ -357,6 +438,10 @@ export default function Home() {
   const [remoteServices, setRemoteServices] = useState([]);
   const [servicesLoading, setServicesLoading] = useState(true);
   const [servicesError, setServicesError] = useState(false);
+
+  /* ==========================================
+     PAGE TITLE
+  ========================================== */
 
   useEffect(() => {
     document.title = "Lenscraft Studio | Creative Photography";
@@ -439,10 +524,12 @@ export default function Home() {
               <span className="about-label-dot" />
               <span>THE LENSCRAFT PHILOSOPHY</span>
             </div>
+
             <div className="about-heading-row">
               <h2>
                 Life is made of<em> moments.</em>
               </h2>
+
               <span className="about-heading-index">01 / 04</span>
             </div>
           </motion.div>
@@ -466,6 +553,7 @@ export default function Home() {
                   src={`${import.meta.env.BASE_URL}images/photoimg.jpg`}
                   alt="Beautiful photography moments"
                   loading="lazy"
+                  onError={handleImageError}
                 />
               </button>
 
@@ -478,6 +566,7 @@ export default function Home() {
                   src={`${import.meta.env.BASE_URL}images/camtool.webp`}
                   alt="Behind the lens at Lenscraft"
                   loading="lazy"
+                  onError={handleImageError}
                 />
               </button>
 
@@ -541,6 +630,7 @@ export default function Home() {
 
               <Link to="/about" className="about-story-link">
                 <span>EXPLORE OUR STORY</span>
+
                 <span className="about-story-arrow">
                   <ArrowUpRight size={22} />
                 </span>
@@ -570,9 +660,11 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <p className="eyebrow">WHAT WE LOVE TO DO</p>
+
             <h2>
               Our Creative <em>Expertise.</em>
             </h2>
+
             <p>
               From intimate portraits to unforgettable celebrations, every story
               deserves its own artistic perspective.
@@ -609,8 +701,9 @@ export default function Home() {
                     <div className="home-service-image">
                       <img
                         src={getImage(service.image, 900)}
-                        alt={service.title}
+                        alt={service.title || "Lenscraft photography service"}
                         loading="lazy"
+                        onError={handleImageError}
                       />
 
                       <span className="home-service-number">
@@ -637,6 +730,7 @@ export default function Home() {
                         <span className="home-service-label">
                           LENSCRAFT STUDIO
                         </span>
+
                         <Aperture size={18} />
                       </div>
 
@@ -645,6 +739,7 @@ export default function Home() {
 
                       <Link to="/services" className="home-service-link">
                         <span>Discover Service</span>
+
                         <span className="home-service-link-icon">
                           <ArrowUpRight size={19} />
                         </span>
@@ -678,9 +773,11 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <p className="eyebrow">THE STORIES WE TELL</p>
+
             <h2>
               A Collection of<em> Beautiful Moments.</em>
             </h2>
+
             <p>
               Real emotions, artistic compositions, and memories captured
               through our lens.
@@ -719,6 +816,7 @@ export default function Home() {
             <Counter key={label} target={number} label={label} />
           ))}
         </div>
+
         <p className="stats-note">
           Illustrative studio metrics — replace with verified figures.
         </p>
@@ -738,9 +836,11 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <p className="eyebrow">THE LENSCRAFT EXPERIENCE</p>
+
             <h2>
               It's Not Just a Photo.<em> It's a Feeling.</em>
             </h2>
+
             <p>
               We believe the best photographs are created when people feel
               comfortable, confident, and free to be themselves.
@@ -768,11 +868,13 @@ export default function Home() {
                 },
               ].map((feature) => {
                 const Icon = feature.icon;
+
                 return (
                   <div className="why-feature" key={feature.title}>
                     <div className="why-icon">
                       <Icon size={24} />
                     </div>
+
                     <div>
                       <h3>{feature.title}</h3>
                       <p>{feature.description}</p>
@@ -795,10 +897,12 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <img
-              src="/images/photographer.jpg"
+              src={`${import.meta.env.BASE_URL}images/photographer.jpg`}
               alt="Professional photographer"
               loading="lazy"
+              onError={handleImageError}
             />
+
             <div className="why-image-label">
               <Aperture size={23} />
               <span>Made With Passion</span>
@@ -821,9 +925,11 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <p className="eyebrow">THE CREATIVE JOURNEY</p>
+
             <h2>
               From Your Vision<em> to Beautiful Memories.</em>
             </h2>
+
             <p>
               A thoughtful photography experience designed around your story.
             </p>
@@ -864,9 +970,11 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <p className="eyebrow">THE PHOTOGRAPHY JOURNAL</p>
+
             <h2>
               Stories, Ideas &<em> Inspiration.</em>
             </h2>
+
             <p>
               A collection of creative thoughts, photography stories, and
               inspiration from behind the lens.
@@ -888,13 +996,16 @@ export default function Home() {
                     src={getImage(item.image, 850)}
                     alt={item.title}
                     loading="lazy"
+                    onError={handleImageError}
                   />
+
                   <span className="journal-category">{item.category}</span>
                 </div>
 
                 <div className="journal-content">
                   <h3>{item.title}</h3>
                   <p>{item.description}</p>
+
                   <Link to="/contact" className="journal-link">
                     Plan Your Photoshoot <ArrowUpRight size={18} />
                   </Link>
